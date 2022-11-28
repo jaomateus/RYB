@@ -10,11 +10,75 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_28_140531) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_28_160532) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "logs", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.date "date"
+    t.bigint "site_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["site_id"], name: "index_logs_on_site_id"
+  end
+
+  create_table "plants", force: :cascade do |t|
+    t.string "name"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "latin_name"
+    t.string "common_name"
+    t.text "description"
+    t.integer "hardiness"
+    t.boolean "planted"
+    t.integer "edibility_rate"
+    t.boolean "well_drained"
+    t.boolean "moist_soil"
+    t.boolean "wet_soil"
+    t.boolean "water_plant"
+    t.boolean "full_sun"
+    t.boolean "part_shade"
+    t.boolean "full_shade"
+    t.boolean "n_fixer"
+    t.boolean "maritime_exposure"
+    t.boolean "atmospheric_polution"
+    t.integer "medicinal_rating"
+    t.bigint "site_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["site_id"], name: "index_plants_on_site_id"
+  end
+
+  create_table "plants_logs", force: :cascade do |t|
+    t.bigint "log_id", null: false
+    t.bigint "plant_id", null: false
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["log_id"], name: "index_plants_logs_on_log_id"
+    t.index ["plant_id"], name: "index_plants_logs_on_plant_id"
+  end
+
+  create_table "sites", force: :cascade do |t|
+    t.string "project_name"
+    t.text "description"
+    t.string "address"
+    t.string "project_type"
+    t.float "project_area"
+    t.float "latitude"
+    t.float "longitude"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sites_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
+    t.string "fist_name"
+    t.string "last_name"
+    t.string "location"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -26,4 +90,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_28_140531) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "plants_logs", "logs"
+  add_foreign_key "plants_logs", "plants"
 end
