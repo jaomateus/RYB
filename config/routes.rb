@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get "uikit", to: "pages#ui_kit"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  resources :sites, only: [ :index, :show ]
+  resources :sites, only: [:index, :show]
 
   # Defines the root path route ("/")
   # root "articles#index"
