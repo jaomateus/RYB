@@ -1,4 +1,5 @@
 <h1>My Sites</h1>
-<%= @sites.each do|site| %>
-<%= end %>
-
+<% @sites.each do|site| %>
+  <%= site.project_name %>
+ <%= link_to "go to site", site_path(site) %>
+<% end %>
