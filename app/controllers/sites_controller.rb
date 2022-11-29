@@ -10,7 +10,11 @@ class SitesController < ApplicationController
   def create
     @site = Site.new(site_params)
     @site.user = current_user
-    @site.save
+    if @site.save
+      redirect_to site_path(@site)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def show
@@ -19,7 +23,8 @@ class SitesController < ApplicationController
   
   private
 
-    def site_params
-      params.require(:site).permit(:project_name, :description, :address, :project_type, :project_area)
-    end
+  def site_params
+    params.require(:site).permit(:project_name, :description, :address, :project_type, :project_area)
+  end
+
 end
