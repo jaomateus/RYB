@@ -10,8 +10,11 @@ class SitesController < ApplicationController
   def create
     @site = Site.new(site_params)
     @site.user = current_user
-    @site.save
-    redirect_to restaurant_path(@restaurant)
+    if @site.save
+      redirect_to site_path(@site)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   private
