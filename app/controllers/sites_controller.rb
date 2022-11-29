@@ -11,12 +11,12 @@ class SitesController < ApplicationController
     @site = Site.new(site_params)
     @site.user = current_user
     @site.save
+    redirect_to restaurant_path(@restaurant)
   end
 
   private
 
-    def site_params
-      params.require(:site).permit(:project_name, :description, :address, :project_type, :project_area)
-    end
-
+  def site_params
+    params.require(:site).permit(:project_name, :description, :address, :project_type, :project_area)
+  end
 end
