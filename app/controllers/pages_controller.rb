@@ -6,4 +6,7 @@ class PagesController < ApplicationController
 
   def ui
   end
+
+  def projDashboard
+  end
 end
