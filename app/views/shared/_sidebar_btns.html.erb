@@ -3,9 +3,11 @@
   <%# SIDEBAR %>
   <div class="sidebar">
     <div class="logo">
-      <div class="btn-side-bar bckg-none">
-        <%= image_tag("RYB.png", :alt => "rss feed") %>
-      </div>
+       <%= link_to sites_path do %>
+        <div class="btn-side-bar bckg-none">
+          <%= image_tag("RYB.png", :alt => "rss feed") %>
+        </div>
+       <% end %>
     </div>
 
     <%# MIDDLE BUTTONS %>
