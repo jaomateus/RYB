@@ -5,7 +5,7 @@
   color: white;
   // border: 1px solid $black;
   padding: 8px 24px;
-  border-radius: 100px;
+  border-radius: 4px;
   // opacity: 0.8;
   transition: opacity 0.3s ease;
 
@@ -37,4 +37,19 @@
   &:active {
     background: $green-medium;
   }
+}
+
+// botton from UI kit Le Wagon. Used in the search bar phaf
+
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: $green-medium;
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+  background: $green-dark;
+  color: white;
 }
