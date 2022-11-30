@@ -1,0 +1,918 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head id="Head1"><meta charset="utf-8"/>
+<script data-ezscrex='false' data-cfasync='false' data-pagespeed-no-defer>var __ez=__ez||{};__ez.stms=Date.now();__ez.evt={};__ez.script={};__ez.ck=__ez.ck||{};__ez.template={};__ez.template.isOrig=true;__ez.queue=function(){var e=0,i=0,t=[],n=!1,s=[],r=[],o=!0,a=function(e,i,n,s,r,o,a){var l=this;this.name=e,this.funcName=i,this.parameters=null===n?null:n instanceof Array?n:[n],this.isBlock=s,this.blockedBy=r,this.deleteWhenComplete=o,this.isError=!1,this.isComplete=!1,this.isInitialized=!1,this.proceedIfError=a,this.isTimeDelay=!1,this.process=function(){u("... func = "+e),l.isInitialized=!0,l.isComplete=!0,u("... func.apply: "+e);var i=l.funcName.split("."),n=null;i.length>3||(n=3===i.length?window[i[0]][i[1]][i[2]]:2===i.length?window[i[0]][i[1]]:window[l.funcName]),null!=n&&n.apply(null,this.parameters),!0===l.deleteWhenComplete&&delete t[e],!0===l.isBlock&&(u("----- F'D: "+l.name),f())}},l=function(e,i,t,n,s,r,o){var a=this;this.name=e,this.path=i,this.async=s,this.defer=r,this.isBlock=t,this.blockedBy=n,this.isInitialized=!1,this.isError=!1,this.isComplete=!1,this.proceedIfError=o,this.isTimeDelay=!1,this.isPath=function(e){return"/"===e[0]&&"/"!==e[1]},this.getSrc=function(e){return void 0!==window.__ezScriptHost&&this.isPath(e)?window.__ezScriptHost+e:e},this.process=function(){a.isInitialized=!0,u("... file = "+e);var i=document.createElement("script");i.src=this.getSrc(this.path),!0===s?i.async=!0:!0===r&&(i.defer=!0),i.onerror=function(){u("----- ERR'D: "+a.name),a.isError=!0,!0===a.isBlock&&f()},i.onreadystatechange=i.onload=function(){var e=i.readyState;u("----- F'D: "+a.name),e&&!/loaded|complete/.test(e)||(a.isComplete=!0,!0===a.isBlock&&f())},document.getElementsByTagName("head")[0].appendChild(i)}},c=function(e,i){this.name=e,this.path="",this.async=!1,this.defer=!1,this.isBlock=!1,this.blockedBy=[],this.isInitialized=!0,this.isError=!1,this.isComplete=i,this.proceedIfError=!1,this.isTimeDelay=!1,this.process=function(){}};function d(e){!0!==h(e)&&0!=o&&e.process()}function h(e){if(!0===e.isTimeDelay&&!1===n)return u(e.name+" blocked = TIME DELAY!"),!0;if(e.blockedBy instanceof Array)for(var i=0;i<e.blockedBy.length;i++){var s=e.blockedBy[i];if(!1===t.hasOwnProperty(s))return u(e.name+" blocked = "+s),!0;if(!0===e.proceedIfError&&!0===t[s].isError)return!1;if(!1===t[s].isComplete)return u(e.name+" blocked = "+s),!0}return!1}function u(e){var i=window.location.href,t=new RegExp("[?&]ezq=([^&#]*)","i").exec(i);"1"===(t?t[1]:null)&&console.debug(e)}function f(){++e>200||(u("let's go"),m(s),m(r))}function m(e){for(var i in e)if(!1!==e.hasOwnProperty(i)){var t=e[i];!0===t.isComplete||h(t)||!0===t.isInitialized||!0===t.isError?!0===t.isError?u(t.name+": error"):!0===t.isComplete?u(t.name+": complete already"):!0===t.isInitialized&&u(t.name+": initialized already"):t.process()}}return window.addEventListener("load",(function(){setTimeout((function(){n=!0,u("TDELAY -----"),f()}),5e3)}),!1),{addFile:function(e,i,n,o,a,c,h,u){var f=new l(e,i,n,o,a,c,h);!0===u?s[e]=f:r[e]=f,t[e]=f,d(f)},addDelayFile:function(e,i){var n=new l(e,i,!1,[],!1,!1,!0);n.isTimeDelay=!0,u(e+" ...  FILE! TDELAY"),r[e]=n,t[e]=n,d(n)},addFunc:function(e,n,o,l,c,h,u,f,m){!0===h&&(e=e+"_"+i++);var p=new a(e,n,o,l,c,u,f);!0===m?s[e]=p:r[e]=p,t[e]=p,d(p)},addDelayFunc:function(e,i,n){var s=new a(e,i,n,!1,[],!0,!0);s.isTimeDelay=!0,u(e+" ...  FUNCTION! TDELAY"),r[e]=s,t[e]=s,d(s)},items:t,processAll:f,setallowLoad:function(e){o=e},markLoaded:function(e){if(e&&0!==e.length){if(e in t){var i=t[e];!0===i.isComplete?u(i.name+" "+e+": error loaded duplicate"):(i.isComplete=!0,i.isInitialized=!0)}else t[e]=new c(e,!0);u("markLoaded dummyfile: "+t[e].name)}},logWhatsBlocked:function(){for(var e in t)!1!==t.hasOwnProperty(e)&&h(t[e])}}}();__ez.evt.add=function(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent?e.attachEvent("on"+t,n):e["on"+t]=n()},__ez.evt.remove=function(e,t,n){e.removeEventListener?e.removeEventListener(t,n,!1):e.detachEvent?e.detachEvent("on"+t,n):delete e["on"+t]};__ez.script.add=function(e){var t=document.createElement("script");t.src=e,t.async=!0,t.type="text/javascript",document.getElementsByTagName("head")[0].appendChild(t)};__ez.dot={};!function(){var e;__ez.vep=(e=[],{Add:function(i,t){__ez.dot.isDefined(i)&&__ez.dot.isValid(t)&&e.push({type:"video",video_impression_id:i,domain_id:__ez.dot.getDID(),t_epoch:__ez.dot.getEpoch(0),data:__ez.dot.dataToStr(t)})},Fire:function(){if(void 0===document.visibilityState||"prerender"!==document.visibilityState){if(__ez.dot.isDefined(e)&&e.length>0)for(;e.length>0;){var i=5;i>e.length&&(i=e.length);var t=e.splice(0,i),o=__ez.dot.getURL("/detroitchicago/grapefruit.gif")+"?orig="+(!0===__ez.template.isOrig?1:0)+"&v="+btoa(JSON.stringify(t));__ez.dot.Fire(o)}e=[]}}})}();</script><script data-ezscrex='false' data-cfasync='false' data-pagespeed-no-defer></script><title>
+	Pfaf Plant Search
+</title>
+	
+	 <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"/><meta id="description" name="description"/><meta id="keywords" name="keywords"/>
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css"/><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/><link rel="stylesheet" href="../print.css" type="text/css" media="print"/><link href="../../jquery/jquery.alerts.css" rel="stylesheet"/><link rel="SHORTCUT ICON" href="../../pfaf.ico" type="image/x-icon"/><link rel="ICON" href="../../pfaf.ico" type="image/x-icon"/><link href="../css/horMenu.css" rel="stylesheet" type="text/css"/><link href="../css/stylesheet.css" rel="stylesheet"/><link rel="stylesheet" type="text/css" href="../css/boot.css"/>
+    <script src="../jquery/jquery-1.2.6.js" type="text/javascript"></script>
+
+<link rel='canonical' href='https://pfaf.org/user/plant.aspx%5C?latinname%5C=Arbutus+unedo' />
+<script type="text/javascript">var ezouid = "1";</script><base href="https://pfaf.org/user/plant.aspx%5C?latinname%5C=Arbutus+unedo"><script type='text/javascript'>
+var ezoTemplate = 'old_site_noads';
+if(typeof ezouid == 'undefined')
+{
+    var ezouid = 'none';
+}
+var ezoFormfactor = '1';
+var ezo_elements_to_check = Array();
+</script><!-- START EZHEAD -->
+<script data-ezscrex="false" type='text/javascript'>
+var soc_app_id = '0';
+var did = 409096;
+var ezdomain = 'pfaf.org';
+var ezoicSearchable = 1;
+</script>
+<!--{jquery}-->
+<!-- END EZHEAD -->
+<script data-ezscrex="false" type="text/javascript" data-cfasync="false">var _ezaq = {"ad_cache_level":0,"ad_lazyload_version":0,"ad_load_version":0,"city":"Amsterdam","country":"NL","days_since_last_visit":-1,"domain_id":409096,"engaged_time_visit":0,"ezcache_level":1,"ezcache_skip_code":11,"form_factor_id":1,"framework_id":1,"is_return_visitor":false,"is_sitespeed":0,"last_page_load":"","last_pageview_id":"","lt_cache_level":0,"metro_code":0,"page_ad_positions":"","page_view_count":0,"page_view_id":"636673fc-9e5f-47b4-7589-ce9799b26974","position_selection_id":0,"postal_code":"1079","pv_event_count":0,"response_size_orig":37527,"response_time_orig":543,"serverid":"18.196.181.158:4517","state":"NH","t_epoch":1669803671,"template_id":120,"time_on_site_visit":0,"url":"https://pfaf.org/user/plant.aspx%5C?latinname\\=Arbutus+unedo","user_id":0,"word_count":726,"worst_bad_word_level":0};var _ezExtraQueries = "&ez_orig=1";</script>
+<script data-ezscrex='false' data-pagespeed-no-defer data-cfasync='false'>
+function create_ezolpl(pvID, rv) {
+    var d = new Date();
+    d.setTime(d.getTime() + (365*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    __ez.ck.setByCat("ezux_lpl_409096=" + new Date().getTime() + "|" + pvID + "|" + rv + "; " + expires, 3);
+}
+function attach_ezolpl(pvID, rv) {
+    if (document.readyState === "complete") {
+        create_ezolpl(pvID, rv);
+    }
+    if(window.attachEvent) {
+        window.attachEvent("onload", create_ezolpl, pvID, rv);
+    } else {
+        if(window.onload) {
+            var curronload = window.onload;
+            var newonload = function(evt) {
+                curronload(evt);
+                create_ezolpl(pvID, rv);
+            };
+            window.onload = newonload;
+        } else {
+            window.onload = create_ezolpl.bind(null, pvID, rv);
+        }
+    }
+}
+
+__ez.queue.addFunc("attach_ezolpl", "attach_ezolpl", ["636673fc-9e5f-47b4-7589-ce9799b26974", "false"], false, ['/detroitchicago/boise.js'], true, false, false, false);
+</script>
+<script type="text/javascript">var _audins_dom="pfaf_org",_audins_did=409096;__ez.queue.addFile('/detroitchicago/cmbv2.js', '/detroitchicago/cmbv2.js?gcb=195-0&cb=04-3y02-8y06-13y07-2y19-7y0b-6y0d-21y13-4y17-5y1c-4y21-3y2f-4y59-2&cmbcb=117&sj=x04x02x06x07x19x0bx0dx13x17x1cx21x2fx59', true, [], true, false, true, false);</script>
+<script type="text/javascript" defer>__ez.queue.addFile('/detroitchicago/cmbdv2.js', '/detroitchicago/cmbdv2.js?gcb=195-0&cb=03-8y0c-6y18-5&cmbcb=117&sj=x03x0cx18', true, ['/detroitchicago/cmbv2.js'], true, false, true, false);</script></head>
+<body>
+    <form method="post" action="./?latinname%5c=Arbutus+unedo" id="form2">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTU0Njc1MjUwMA9kFgJmD2QWAgIDD2QWAgIDD2QWBgJgDzwrABECARAWABYAFgAMFCsAAGQCYg88KwAJAGQCag88KwAJAGQYAQUjY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRndnJlc3VsdHMPZ2RCL9PzF1VQSnNTudNqNs/p+xzkz1to+IHEAia3u801Lw=="/>
+
+
+<script src="/ScriptResource.axd?d=WFgnb2xDBcpkrMvxjM9p-vERlB52_rOJ_dXUkItrxMulb_D--3Mi-DG9Fphv6NpKVV1NGgoaWGeTgi1hRzHV-xNmKZ1Ivn4bMrTU7QgDQLXDBNg_-WUyLFyJ2ufXvqrF0M7aTCyVZEwCkBwRlTAT8yuCQ0_GKjtQrYlLOYTDEtgNHJ0u5y-r58SjCtwBnEhh0&amp;t=49337fe8" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="C37B2AE4"/>
+        
+
+<div class="container-fluid" style="background-color: #9B46DB;">
+	<div class="container text-white p-2">
+          <p><strong>We need regular donations to enable us to keep going</strong>  – to maintain and further develop our free-to-use database of over 8000 edible and useful plants.  Donations have increased following recent appeals - thank you! - but we still need at least £1000 (or $1300/ €1200) every month.  If you value what we do please give what you can to support our work. <a href="/user/cmspage.aspx?pageid=313" title="Annual Appeal"><span class="btn btn-warning btn-sm">More &gt;&gt;&gt;</span></a></p>
+    </div>
+</div>
+		  
+
+        
+      
+ 
+    <div class="container">
+<div class="row">
+    <div class="col-sm-6 my-2 d-none d-lg-block">
+   <a href="Default.aspx">
+      <img src="/user/images/pfaf_logo_bg.jpg" width="289" height="120"/>
+      </a>
+    </div>
+    <div class="col-sm-6">
+    <!-- ******************* Google Search Area ******************* -->
+       
+							<gcse:search linktarget="_self"></gcse:search>
+    <!-- ******************* Google Search Area End ******************* -->
+    </div>
+  </div>
+ </div>
+<div class="container-fluid" style="background-color: #a9b923;">
+            <div class="container">
+                    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #a9b923;font-size: 1.4rem;">				
+              <a class="navbar-brand" href="Default.aspx">Plants For A Future</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <ul class="navbar-nav">
+                            <li class="nav-item"><a class="nav-link" href="../">Database</a> </li>
+                            <li class="nav-item"><a class="nav-link" href="AboutUs.aspx">About</a> </li>
+                            <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Plant Uses
+  </a>
+  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+    <a class="dropdown-item" href="edibleuses.aspx">Edible Uses</a>
+    <a class="dropdown-item" href="MedicinalUses.aspx">Medicinal Uses</a>
+    <a class="dropdown-item" href="OtherUses.aspx">Other Uses</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="cmspage.aspx?pageid=19">Food Forests</a>
+    <a class="dropdown-item" href="cmspage.aspx?pageid=324">Carbon Sequestration</a>
+    <a class="dropdown-item" href="CarbonFarmingSolution.html">Carbon Farming</a>
+    <a class="dropdown-item" href="Habitats.aspx">Habitats</a>
+    <a class="dropdown-item" href="cmspage.aspx?pageid=305">More</a>
+  </div>
+</li>
+                            <li class="nav-item"><a class="nav-link" href="shop.aspx">Shop</a> </li>
+                            <li class="nav-item"><a class="nav-link" href="/user/cmspage.aspx?pageid=120">Suppliers</a> </li>
+                            <li class="nav-item"><a class="nav-link" href="/plants/">Blog</a> </li>
+                            <li class="nav-item"><a class="nav-link" href="cmspage.aspx?pageid=313"><span class="btn btn-warning btn-sm">Donate</span></a> </li>
+                            
+                          </ul>
+                </ul>
+              </div>
+            </nav>
+            
+            </div>
+            
+</div>
+<div class="container d-flex justify-content-end">
+									<div style="font-size:1em;">Follow Us: 
+                                    <a href="https://www.facebook.com/plantsforafuture/" target="_blank"> <i class="fab fa-facebook-square" style="color:#e8910c;"></i></a>
+                                    <a href="https://twitter.com/PFAF_Tweets" target="_blank"> <i class="fab fa-twitter" style="color:#e8910c;"></i></a>
+                                    <a href="https://www.pinterest.com.au/plantsforafuture/pins/" target="_blank"> <i class="fab fa-pinterest" style="color:#e8910c;"></i></a>
+                                   
+                                    <a href="https://www.instagram.com/plantsforafuture/" target="_blank"> <i class="fab fa-instagram" style="color:#e8910c;"></i></a>
+                                    </div>
+ </div>
+
+
+
+
+<!-- ******************* End Addition The Navbar Area ******************* -->
+
+     
+        
+        
+
+        
+<style>
+
+.boots p a  {background-color: #ffc107;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-size: 10px;
+  border-radius: 16px;
+  }
+  .boots a:hover {
+  background-color: #f1f1f1;
+  
+}
+  .boots h3{
+    color:#212529;
+  }
+
+.boots2 a  {background-color: #dc3545;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-size: 10px;
+  border-radius: 16px;
+  }
+  .boots a:hover {
+  background-color: #f1f1f1;
+  
+}
+
+.boots3 a  {background-color: #28a745;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-size: 10px;
+  border-radius: 16px;
+  }
+  .boots a:hover {
+  background-color: #f1f1f1;
+  
+}
+
+.boots4 a  {background-color: #17a2b8;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-size: 10px;
+  border-radius: 16px;
+  }
+  .boots a:hover {
+  background-color: #f1f1f1;
+  
+}
+.boots4 h3{
+	color:#212529;
+}
+   
+</style> 
+
+	
+	<!--[if IE]>
+	<link rel="stylesheet" type="text/css" href="css/IEhack.css" />
+<![endif]-->
+	 <div class="container">
+	 <p> </p>
+		 <h1 align="left">  <span id="ContentPlaceHolder1_lbldisplatinname"></span></h1>
+	   
+								
+	  </div>
+											   
+								 
+							
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-1 col-md-7 col-lg-5">
+										<table class="table table-hover table-striped">
+										<tbody>
+											<tr>
+												 <td width="35%">
+													<b>Common Name</b>
+												</td>
+												<td>
+													<span id="ContentPlaceHolder1_lblCommanName" class="txtbox"><font face="Arial"></font></span>
+												</td>
+											</tr>
+											
+											<tr>
+												<td>
+													<b>Family</b>
+												</td>
+												<td>
+													<span id="ContentPlaceHolder1_lblFamily" class="txtbox"><font face="Arial"></font></span>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<b>USDA hardiness</b>
+												</td>
+												<td>
+													<span id="ContentPlaceHolder1_lblUSDAhardiness" class="txtbox"><font face="Arial"></font></span>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<b>Known Hazards</b>
+												</td>
+												<td>
+													
+													<span id="ContentPlaceHolder1_lblKnownHazards" class="txtbox"><font face="Arial"></font></span>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<b>Habitats</b>
+												</td>
+												<td>
+													<span id="ContentPlaceHolder1_txtHabitats" class="txtbox"><font face="Arial"></font></span>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<b>Range</b>
+												</td>
+												<td>
+													<span id="ContentPlaceHolder1_lblRange" class="txtbox" style="display:inline-block;"><font face="Arial"></font></span>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<b>Edibility Rating </b>
+												</td>
+												<td>
+													<img id="ContentPlaceHolder1_imgEdrating1" src=""/>
+													<img id="ContentPlaceHolder1_imgEdrating2" src=""/>
+													<img id="ContentPlaceHolder1_imgEdrating3" src=""/>
+													<img id="ContentPlaceHolder1_imgEdrating4" src=""/>
+													<img id="ContentPlaceHolder1_imgEdrating5" src=""/>
+													<span id="ContentPlaceHolder1_txtEdrating" class="txtbox"><font face="Arial"></font></span>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<b>Other Uses </b>
+												</td>
+												<td>
+													<img id="ContentPlaceHolder1_imgOtherUseRating1" src=""/>
+													<img id="ContentPlaceHolder1_imgOtherUseRating2" src=""/>
+													<img id="ContentPlaceHolder1_imgOtherUseRating3" src=""/>
+													<img id="ContentPlaceHolder1_imgOtherUseRating4" src=""/>
+													<img id="ContentPlaceHolder1_imgOtherUseRating5" src=""/>
+													<span id="ContentPlaceHolder1_txtOtherUseRating" class="txtbox"><font face="Arial"></font></span>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<b>Weed Potential </b>
+												</td>
+												<td>
+													<span id="ContentPlaceHolder1_lblWeedPotential" class="txtbox" style="display:inline-block;"><font face="Arial"></font></span>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<b>Medicinal Rating</b>
+												</td>
+												<td>
+													<img id="ContentPlaceHolder1_imgMedRating1" src=""/>
+													<img id="ContentPlaceHolder1_imgMedRating2" src=""/>
+													<img id="ContentPlaceHolder1_imgMedRating3" src=""/>
+													<img id="ContentPlaceHolder1_imgMedRating4" src=""/>
+													<img id="ContentPlaceHolder1_imgMedRating5" src=""/>
+													<span id="ContentPlaceHolder1_txtMedRating" class="txtbox"><font face="Arial"></font></span>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<b>Care </b><a href="popup.aspx" target="_blank"><small>(info)</small></a>
+												</td>
+												<td>
+													<table id="ContentPlaceHolder1_tblIcons">
+</table>
+
+												</td>
+											</tr>
+										</tbody>
+									</table>
+				</div>
+								  
+									
+				<div class="col-xs-1 col-md-5 col-lg-5">
+									<table>	
+									</table><table id="ContentPlaceHolder1_tblPlantImges">
+</table>
+   
+				</div>
+								
+				<div class="col-2 col-xs-0 col-sm-0 col-md-0">
+									<div class="d-none d-lg-block">
+											 <p> </p>
+									
+											<!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+									 Responsive Vertical
+									<ins class="adsbygoogle"
+										 style="display:block"
+										 data-ad-client="ca-pub-6398361560497540"
+										 data-ad-slot="7039035311"
+										 data-ad-format="auto"
+										 data-full-width-responsive="true"></ins>
+									<script>
+									(adsbygoogle = window.adsbygoogle || []).push({});
+									</script> -->
+									</div>
+					</div>
+			</div>
+		</div>
+							
+					   
+		<div class="container">
+						
+					  
+					  
+						
+						<h4>Translate this page:</h4> 
+
+								<div id="google_translate_element"></div>
+								
+														<script type="text/javascript">
+														function googleTranslateElementInit() {
+														  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+														}
+														</script>
+														
+														<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+								
+							   
+										
+						   <h2>Summary</h2>
+											  
+												   <p> <span id="ContentPlaceHolder1_txtSummary"></span></p>
+										   
+									<br/>
+
+						
+							
+									<h2>Physical Characteristics</h2>
+									
+									<div> <img id="ContentPlaceHolder1_imgphch1" src="" height="47"/><img id="ContentPlaceHolder1_imgphch2" src="" height="47"/><br/>
+										<span id="ContentPlaceHolder1_lblPhystatment" class="txtbox"></span>
+										<p><a href="https://pfaf.org/user/images/UK_zone_PFAF2.png" target="_blank" class="btn btn-outline-info text-info" role="button">UK Hardiness Map</a>
+<a href="https://pfaf.org/user/images/USDA_Hardiness_Map.jpg" target="_blank" class="btn btn-outline-info text-info" role="button">US Hardiness Map</a></p>
+										</div>
+											<script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+											<!-- New Responsive -->
+											<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6398361560497540" data-ad-slot="1668199306" data-ad-format="auto" data-full-width-responsive="true"></ins>
+											<script>
+											(adsbygoogle = window.adsbygoogle || []).push({});
+											</script>
+									
+										<h2>Synonyms</h2>
+										<p>
+										<span id="ContentPlaceHolder1_lblSynonyms" class="txtbox"><font face="Arial"></font></span>
+										</p>
+							   
+									<h2>Habitats</h2>
+										<p>
+										<span id="ContentPlaceHolder1_lblhabitats" class="txtbox"></span>
+										</p>
+								 
+						
+						
+									   <h2>Edible Uses</h2>
+												 <div class="boots3"> 
+												<p>
+													<span id="ContentPlaceHolder1_txtEdibleUses"></span>
+												</p>
+                                                
+												</div>
+                                                <p><small class="text-muted"><a href="cmspage.aspx?pageid=174">References</a>   <a href="edibleuses.aspx">More on Edible Uses</a></small></p>
+											
+								
+							
+									
+							   
+												   
+												<h2>Medicinal Uses</h2>
+											 <div class="boots2"> 
+												<p>
+													<span id="ContentPlaceHolder1_txtMediUses"></span>
+												</p>
+												</div>
+                                                <p><small class="text-muted"><a href="cmspage.aspx?pageid=174">References</a>   <a href="MedicinalUses.aspx">More on Medicinal Uses</a></small></p>
+											
+<section class="bg-light text-dark pt-3 pb-3">
+		<div class="container">
+		  <div class="row">
+			
+			  
+		   
+			<div class="col-12 col-md-10 text-left align-self-center ">
+			  <h3 class="mb-4"><span class="text-dark">Now available:</span> <strong>PLANTS FOR YOUR FOOD FOREST:</strong> 500 Plants for Temperate Food Forests and Permaculture Gardens. </h3>
+			  <p>An important new book from PFAF. It focuses on the attributes of plants suitable for food forests, what each can contribute to a food forest ecosystem, including carbon sequestration, and the kinds of foods they yield. The book suggests that community and small-scale food forests can provide a real alternative to intensive industrialised agriculture, and help to combat the many inter-related environmental crises that threaten the very future of life on Earth.</p>
+			  <p class="text-h3 mt-4">
+				<a class="btn btn-outline-secondary" href="/user/shop.aspx">Read More</a>
+			  </p>
+			</div>
+			<div class="col-12  col-md-2 ">
+			  
+				
+				  
+				 
+				 
+				<img src="images/bookcover228x178.png" width="178" height="228" alt="FOOD FOREST PLANTS"/></div>
+		  </div>
+	</div>  
+</section>                        
+									
+								
+							
+							
+					<h2>Other Uses</h2>
+					<div class="boots4"> 
+					<p><span id="ContentPlaceHolder1_txtOtherUses"></span></p>
+					<h3>Special Uses</h3>
+					<p><span id="ContentPlaceHolder1_txtSpecialUses"></span></p>
+					</div>
+                    <p><small class="text-muted"><a href="cmspage.aspx?pageid=174">References</a>   <a href="OtherUses.aspx">More on Other Uses</a></small></p>
+											   
+													
+												
+								
+							
+							
+							
+						 
+												<h2>Cultivation details</h2>
+											   <div class="boots">   
+												   <p> <span id="ContentPlaceHolder1_txtCultivationDetails"></span></p>
+                                                   <h3><span id="ContentPlaceHolder1_lblCarbFarm"></span></h3>
+                                                    <ul>
+                                                         
+                                                    </ul>    
+                                               </div>
+                                               <p><small class="text-muted"><a href="cmspage.aspx?pageid=174">References</a>   <a href="CarbonFarmingSolution.html">Carbon Farming Information</a> and <a href="cmspage.aspx?pageid=324">Carbon Sequestration Information</a></small></p>
+												   <h4>Temperature Converter</h4>
+<p>Type a value in the Celsius field to convert the value to Fahrenheit:</p>
+
+<p>
+  <label>Celsius</label>
+  <input id="inputCelsius" type="number" placeholder="Celsius" oninput="temperatureConverter(this.value)" onchange="temperatureConverter(this.value)"/>
+
+Fahrenheit: <span id="outputFahrenheit"></span></p>
+												   
+												   
+												   
+						  <section class="pt-5 pb-5">
+		<div class="container">
+		
+		  <div class="row align-items-center justify-content-between">
+			<div class="col-12 col-md-6   mt-4 mt-md-0"> <a href="shop.aspx"><img alt="image" class="img-fluid" src="images/Boot4Advert.jpg"/></a>
+			</div>
+			<div class="col-12 col-md-6   ">
+			  <h1>The PFAF Bookshop</h1>
+			  <p class="lead">Plants For A Future have a number of books available in paperback and digital form. Book titles include <em>Edible Plants</em>, <em>Edible Perennials</em>, <em>Edible Trees</em>, and <em>Woodland Gardening</em>.  Our new book to be released soon is <em>Edible Shrubs</em>.</p>
+			  <p>
+				<a class="btn btn-light mt-3 mb-3 btn-lg" href="shop.aspx">Shop Now</a>
+			  </p>
+			</div>
+		  
+		  </div>
+		</div>
+	  </section>
+												
+									
+									
+									<h2>Propagation</h2>
+												
+												  <p>  <span id="ContentPlaceHolder1_txtPropagation"></span></p>
+												
+									
+
+									 <h2>Other Names</h2>
+												<p>If available other names are mentioned here</p>
+												
+													
+												  <p>  <span id="ContentPlaceHolder1_lblOtherNameText"></span></p>
+											   
+									
+									
+									
+									
+									
+									<h2>Found In</h2>
+									<p>Countries where the plant has been found are listed here if the information is available</p>
+											   
+									<p><span id="ContentPlaceHolder1_lblFoundInText"></span></p>
+											   
+
+									<h2>Weed Potential</h2>
+												
+													<p>
+														Right plant wrong place. We are currently updating this section. 
+														Please note that a plant may be invasive in one area but may not in your area so it’s worth checking.
+													</p>
+													<p><span id="ContentPlaceHolder1_lblWeedPotentialText"></span></p>
+												
+									<h2>Conservation Status</h2>
+											   
+												   <p> <span id="ContentPlaceHolder1_lblConservationStatus"></span></p>
+												<p>
+													<img src="images/PFAF_searchV1b/Weed_Info_with_Information.png" align="left"/>
+												</p>
+
+
+<div class="d-none d-xl-block">
+									<table class="table-sm" width="95%" border="0">
+										<tbody>
+											<tr>
+												<td colspan="2" class="h2" align="left">Related Plants
+												</td>
+
+											</tr>
+											<tr>
+												<td colspan="2">
+													<div>
+
+</div>
+												</td>
+											</tr>
+                                            
+
+										</tbody>
+									</table> 
+									
+									<p><strong>Growth:</strong> S = slow M = medium F = fast. <strong>Soil:</strong> L = light (sandy) M = medium H = heavy (clay).<strong> pH:</strong> A = acid N = neutral B = basic (alkaline).<strong> Shade: </strong>F = full shade S = semi-shade N = no shade.<strong> Moisture:</strong> D = dry M = Moist We = wet Wa = water.</p>
+																		
+										<p> </p>
+									   <script>var pfHeaderImgUrl = '';var pfHeaderTagline = '';var pfdisableClickToDel = 0;var pfHideImages = 0;var pfImageDisplayStyle = 'right';var pfDisablePDF = 0;var pfDisableEmail = 0;var pfDisablePrint = 0;var pfCustomCSS = 'http://www.pfaf.org/user/css/printfriendly.css';var pfBtVersion='1';(function(){var js,pf;pf=document.createElement('script');pf.type='text/javascript';pf.src='//cdn.printfriendly.com/printfriendly.js';document.getElementsByTagName('head')[0].appendChild(pf)})();</script><a href="https://www.printfriendly.com" style="color:#6D9F00;text-decoration:none;" class="printfriendly" onclick="window.print();return false;" title="Printer Friendly and PDF"><img style="border:none;-webkit-box-shadow:none;box-shadow:none;" src="//cdn.printfriendly.com/buttons/printfriendly-pdf-email-button-md.png" alt="Print Friendly and PDF"/></a>
+							  
+		</div>
+						   <h2>Expert comment</h2>
+											   
+
+											
+											
+												<div>
+													<p>
+												</p></div>
+											
+							   
+												<h2>Author</h2>
+												
+													<p><span id="ContentPlaceHolder1_txtAuthor"></span></p>
+												
+												<h2>Botanical References</h2>
+												<p>
+													<span id="ContentPlaceHolder1_lblbiorefer" class="txtbox"></span>
+												</p>
+										   
+							<!--<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+							 New Responsive 2
+							<ins class="adsbygoogle"
+								 style="display:block"
+								 data-ad-client="ca-pub-6398361560497540"
+								 data-ad-slot="1818288838"
+								 data-ad-format="auto"></ins>
+							<script>
+							(adsbygoogle = window.adsbygoogle || []).push({});
+							</script> -->
+									
+							   
+												<h2>Links / References</h2>
+												
+												
+												<p>
+													For a list of references used on this page please <a href="cmspage.aspx?pageid=174">go here</a>
+													<br/>
+													
+													</p>
+											   
+												<h2>Readers comment</h2>
+												<p>
+													
+												</p>
+								<!--<div class="d-none d-lg-block">
+											<h2>QR Code</h2>
+											
+										   <p>
+												<input type="hidden" name="ctl00$ContentPlaceHolder1$hurl" id="ContentPlaceHolder1_hurl" value="https://pfaf.org/user/plant.aspx/?latinname\=Arbutus+unedo" />
+
+												<script type="text/javascript" language="javascript">
+													var s = '<img src="https://chart.googleapis.com/chart?chs=200x200&cht=qr&chld=l&chl=' + document.getElementById("ctl00_ContentPlaceHolder1_hurl").value + '">'
+													document.write(s);
+												</script>
+
+											
+															<p>
+																<strong>What's this?</strong>
+															</p>
+													   
+															<p>
+																This is a QR code (short for Quick Response) which gives fast-track access to our website pages. QR Codes are barcodes that can be read by mobile phone (smartphone) cameras. This QR Code is unique to this page. All plant pages have their own unique code. For more information about QR Codes <a href='cmspage.aspx?pageid=180'>click here.</a>
+															</p>
+														
+														<p>1. Copy and print the QR code to a plant label, poster, book, website, magazines, newspaper etc and even t-shirts.
+														</p>
+												   
+												   
+														<p>2. Smartphone users scan the QR Code which automatically takes them to the webpage the QR Code came from.
+														</p>
+													
+														<p>3. Smartphone users quickly have information on a plant directly for the <a href='http://www.pfaf.org'>pfaf.org</a> website on their phone.
+														</p>
+										   </div>-->
+													
+							 
+								
+									<table style="display:none">
+										<tbody>
+											<tr>
+												<td colspan="2" class="h2" align="left">Add a comment</td>
+
+											</tr>
+											<tr>
+												<td colspan="2">
+													<p>
+														If you have important information about this plant that may help other users please add a comment or link below. Only comments or links that are felt to be directly relevant to a plant will be included. If you think a comment/link or information contained on this page is inaccurate or misleading we would welcome your feedback at <a href="mailto:admin@pfaf.org">admin@pfaf.org</a>. If you have questions about a plant please use the Forum on this website as we do not have the resources to answer questions ourselves.
+														<br/>
+														<br/>
+														* Please note: the comments by website users are not necessarily those held by PFAF and may give misleading or inaccurate information.
+														<br/><br/>
+														To leave a comment please Register or login <a href="Registration.aspx"> here </a> All comments need to be approved so will not appear immediately.
+													</p>
+													<table width="100%" cellpadding="0" cellspacing="0" border="0">
+														<tbody><tr>
+															<td width="20%">
+																<strong>
+																	<span id="ContentPlaceHolder1_lblSubject">Label</span></strong>
+															</td>
+															<td><textarea name="ctl00$ContentPlaceHolder1$txtComment" rows="2" cols="20" id="ContentPlaceHolder1_txtComment"></textarea>                                                               
+															</td>
+														</tr>
+													</tbody></table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								
+							 
+							
+							 
+
+						
+					
+				
+			
+		
+	</div>
+	
+	<script defer="" src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+	<script language="javascript" type="text/javascript">
+		function MM_openBrWindow(theURL, winName, features) { //v2.0
+			window.open(theURL, winName, features);
+		}
+
+	</script>
+	<script>
+function temperatureConverter(valNum) {
+  valNum = parseFloat(valNum);
+  document.getElementById("outputFahrenheit").innerHTML=(valNum*1.8)+32;
+}
+</script>
+
+
+
+ 
+<script defer="defer">alert('Please enter valid URL!');</script></form>
+
+    <div class="container-fluid" style="background-color: #a9b923;">   
+    <div class="container">
+    
+    <div class="wrapper" id="wrapper-footer">
+
+    
+    <div id="divfooter">
+  
+    <div class="row p-5">
+  <div class="col-sm-4"> <h2 class="text-white">Plant Uses</h2>
+                    <a href="/user/edibleuses.aspx">Edible Uses  </a>
+                    <br/>
+                    <a href="/user/MedicinalUses.aspx">Medicinal Uses  </a>
+                    <br/>
+                    <a href="/user/OtherUses.aspx">Other Plant uses </a>
+                    <br/>
+                    <a href="/user/PlantUses.aspx?id=19">Woodland Gardening</a><br/>
+                    <a href="/user/cmspage.aspx?pageid=75">Why Perennial Plants?</a><br/>
+                    <a href="/user/PlantUses.aspx?id=146">Top Edible Plants</a><br/>
+                    <a href="/user/PlantUses.aspx?id=152">Top Medicinal Plants</a><br/>
+                    <a href="/user/PlantUses.aspx?id=166">Garden Design</a><br/>
+                    <a href="/user/Habitats.aspx">Habitats</a><br/>
+                    <a href="/user/cmspage.aspx?pageid=124">Translations</a><br/><br/>
+                                <div style="font-size:2em;">
+                                    <a href="https://www.facebook.com/plantsforafuture/" target="_blank"> <i class="fab fa-facebook-square"></i></a>
+                                    <a href="https://twitter.com/PFAF_Tweets" target="_blank"> <i class="fab fa-twitter"></i></a>
+                                    <a href="https://www.pinterest.com.au/plantsforafuture/pins/" target="_blank"> <i class="fab fa-pinterest"></i></a>
+                                   
+                                    <a href="https://www.instagram.com/plantsforafuture/" target="_blank"> <i class="fab fa-instagram"></i></a>
+                                    </div>
+                    
+                    		</div>
+  <div class="col-sm-4"> <h2 class="text-white">Content</h2>
+                    <a href="/user/cmspage.aspx?pageid=10">Content Help</a><br/>
+                    <a href="/user/shop.aspx">Bookshop</a><br/>
+                    <a href="/user/cmspage.aspx?pageid=69">Support Us</a><br/>
+                    <a href="/plants/">Blog</a><br/>
+                    <a href="/user/links.aspx">Links </a><br/>
+                    <a href="/user/plantsearch.aspx">Old Database Search</a><br/>
+                    <a href="/user/cmspage.aspx?pageid=120">Suppliers</a><br/>
+                    <a href="/user/Contact.aspx">Contact</a><br/>
+                    <a href="/user/AboutUs.aspx">About Us</a><br/>
+                    
+                    
+                    </div>
+          <div class="col-sm-4"><h2 class="text-white">PFAF Newsletter</h2>
+          
+          <!-- Begin VR Signup Form -->
+        <form class="vr-signup-form" id="vr-signup-form-27487790698560">
+                <div class="vr-field">
+                    <span class="vr-required">*</span><label>Email Address</label>
+                    <input type="email" name="email_address" required=""/>
+                </div>
+                <div class="vr-submit">
+                    <div class="vr-notice">
+                    </div>
+                    <input name="ctl00$ctl00" type="submit" value="Sign Up"/>
+                </div>
+            </form>
+            <link media="all" rel="stylesheet" type="text/css" href="https://marketingsuite.verticalresponse.com/signup_forms/signup_forms.embedded-2.css"/>
+            <script type="text/javascript" src="https://marketingsuite.verticalresponse.com/signup_forms/signup_forms.embedded-2.js"></script>
+            <script type="text/javascript">
+                if (typeof VR !== "undefined" && typeof VR.SignupForm !== "undefined") {
+                    new VR.SignupForm({
+                        id: "27487790698560", element:
+                        "vr-signup-form-27487790698560", endpoint:
+                        "https://marketingsuite.verticalresponse.com/se/", submitLabel: "Submiting...",
+                        invalidEmailMessage: "Invalid email address", generalErrorMessage: "An error ocurred",
+                        notFoundMessage: "Signup form not found", successMessage: "Success!",
+                        nonMailableMessage: "Nonmailable address"
+                    });
+                }
+
+            </script>
+            
+            <p class="d-none d-lg-block">
+                Stay informed about PFAFs progress, challenges and hopes by signing up for our free email ePost. You will receive a range of benefits including:<br/>
+                * Important announcements and news<br/>
+                * Exclusive content not on the website<br/>
+                * Updates on new information &amp; functionality of the website &amp; database<br/>
+                <br/>
+                We will not sell or share your email address.<br/>
+                You can unsubscribe at anytime.
+                   
+            </p>
+        
+          </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        
+    </div>
+	
+	<div class="container text-center small">
+  © 2010<script>new Date().getFullYear()>1996&&document.write("-"+new Date().getFullYear());</script>, Plants For A Future. Plants For A Future is a charitable company limited by guarantee, registered in England and Wales. Charity No. 1057719, Company No. 3204567. <br/>
+                   <!--  This work is licensed under a Creative Commons License. Some information cannot be used for commercial reasons or be modified (but some can). Please view the <a href="cmspage.aspx?pageid=136">copyright</a> link for more information. <br /><a href="http://www.pembertoncreative.com/">Web Design & Management</a> -->
+      
+  </div>
+
+
+
+ <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+    <script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-4959843-17', 'auto');
+    ga('send', 'pageview');
+
+	</script>   
+<!-- Additional JavaScript -->
+	<script src="../jquery/jquery-1.2.6.js" type="text/javascript"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="../jquery/jquery-1.12.3.min.js"></script>
+	<script src="../jquery/jquery.alerts.js" type="text/javascript"></script>
+	<script src="js/UserValidation.js" type="text/javascript"></script>
+	<script type="text/javascript">
+			function toggleText() {
+				var tbox = document.getElementById("ctl00_txtSearch");
+				if (tbox.value == "Search For Plant")
+					tbox.value = "";
+				else
+					if (tbox.value == "")
+						tbox.value = "Search For Plant";
+			}
+	</script>
+<script>
+  (function() {
+    var cx = '017021803936806693514:9vbd2dpz5ku';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
+	
+	<script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5a2df8e28c8f3c0013a0212a&amp;product=sticky-share-buttons"></script>
+	<script defer="" src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+	<div id="amzn-assoc-ad-2f86d8f2-3bd6-41af-9e42-953a2dc54836"></div><script async="" src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&amp;adInstanceId=2f86d8f2-3bd6-41af-9e42-953a2dc54836"></script>
+
+
+
+
+<script type='text/javascript' style='display:none;' async>
+</script>
+
+<script type="text/javascript" data-cfasync="false"></script></body></html>

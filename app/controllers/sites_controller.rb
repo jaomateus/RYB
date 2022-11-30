@@ -19,6 +19,7 @@ class SitesController < ApplicationController
 
   def show
     @site = Site.find(params[:id])
+    
   end
 
   def edit
@@ -47,5 +48,4 @@ class SitesController < ApplicationController
   def site_params
     params.require(:site).permit(:project_name, :description, :address, :project_type, :project_area)
   end
-
 end
