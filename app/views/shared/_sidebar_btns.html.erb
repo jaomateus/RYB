@@ -11,16 +11,24 @@
     <%# MIDDLE BUTTONS %>
     <div class="action-btns">
       <div class="btn-side-bar">
-        <i class="fa-solid fa-seedling"></i>
+        <%= link_to site_plants_path(site) do %>
+          <i class="fa-solid fa-seedling"></i>
+        <% end %>
       </div>
       <div class="btn-side-bar">
-        <i class="fa-solid fa-leaf"></i>
+       <%= link_to site_nursury_path(site) do %>
+          <i class="fa-solid fa-leaf"></i>
+        <% end %>
       </div>
       <div class="btn-side-bar">
-        <i class="fa-solid fa-book"></i>
+        <%= link_to site_log_path(site, site.logs.last) do %>
+          <i class="fa-solid fa-book"></i>
+        <% end %>
       </div>
       <div class="btn-side-bar">
-        <i class="fa-solid fa-folder"></i>
+        <%= link_to site_path(site) do %>
+          <i class="fa-solid fa-folder"></i>
+        <% end %>
       </div>
     </div>
 

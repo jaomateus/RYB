@@ -16,10 +16,11 @@ class PlantsController < ApplicationController
 
   def index
     @plants = Plant.all
+    @site = Site.find(params[:site_id])
   end
 
   def show
-    @site = Plant.find(params[:id])
+    @plant = Plant.find(params[:id])
   end
 
   private

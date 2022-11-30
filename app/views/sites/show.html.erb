@@ -1,3 +1,8 @@
-<h1>My Site</h1>
-<%= @site.project_name %>
-<%= link_to "go back", sites_path %>
+<div class="d-flex">
+  <%= render "shared/sidebar_btns", site: @site %>
+  <div>
+    <h1>My Site</h1>
+    <%= @site.project_name %>
+    <%= link_to "go back", sites_path %>
+  </div>
+</div>
