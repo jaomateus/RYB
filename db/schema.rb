@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_28_160532) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_30_161201) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -25,9 +25,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_28_160532) do
   end
 
   create_table "plants", force: :cascade do |t|
-    t.string "name"
-    t.float "latitude"
-    t.float "longitude"
     t.string "latin_name"
     t.string "common_name"
     t.text "description"
@@ -45,10 +42,23 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_28_160532) do
     t.boolean "maritime_exposure"
     t.boolean "atmospheric_polution"
     t.integer "medicinal_rating"
-    t.bigint "site_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["site_id"], name: "index_plants_on_site_id"
+    t.string "type"
+    t.text "summary"
+    t.float "width"
+    t.float "height"
+    t.string "family"
+    t.integer "usa_hardiness_low"
+    t.integer "usa_hardiness_high"
+    t.text "habitats"
+    t.text "range"
+    t.boolean "weed_potential"
+    t.text "physical_characteristics"
+    t.text "edible_uses"
+    t.text "medicinal_uses"
+    t.text "cultivation_details"
+    t.text "propagation_details"
   end
 
   create_table "plants_logs", force: :cascade do |t|
@@ -76,9 +86,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_28_160532) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "fist_name"
-    t.string "last_name"
-    t.string "location"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
