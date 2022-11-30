@@ -1,10 +1,14 @@
-<h1>My Sites</h1>
-<% @sites.each do|site| %>
-  <%= site.project_name %>
-  <%= link_to "go to site", site_path(site) %>
-  <%= link_to "update", edit_site_path(site) %>
-<%= link_to "Delete",
-  site_path(site),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
-<% end %>
+<div class="d-flex">
+  <div>
+    <h1>My Sites</h1>
+    <% @sites.each do|site| %>
+      <%= site.project_name %>
+      <%= link_to "go to site", site_path(site) %>
+      <%= link_to "update", edit_site_path(site) %>
+    <%= link_to "Delete",
+      site_path(site),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+    %>
+    <% end %>
+  </div>
+</div>
