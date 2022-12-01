@@ -104,3 +104,50 @@
   padding-bottom: 6px;
   margin-bottom: 10px;
 }
+
+// this is for the list of logs for one plant
+// the outer div
+.log-list {
+  width: 150px;
+  height: 100vh;
+  background-color: $dark-grey;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+// the icon at the top to go back
+.card-list-navbar {
+  display: flex;
+  padding: 16px;
+
+}
+
+// the tiny card with the date and the main action
+.card-list-date {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+
+  h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    color: $white;
+    align-items: center;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.4;
+    opacity: .7;
+    margin-bottom: 0;
+    margin-top: 4px;
+    color: $white;
+  }
+
+  &:hover {
+    background: $medium-grey;
+  }
+
+}
