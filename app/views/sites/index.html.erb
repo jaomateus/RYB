@@ -10,6 +10,13 @@
       site_path(site),
       data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
     %>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css" rel="stylesheet">
+    <the-script src="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js"></the-script>
     <% end %>
   </div>
+  
+  <div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 </div>
