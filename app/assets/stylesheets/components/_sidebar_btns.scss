@@ -1,3 +1,5 @@
+// buttons from side bar
+
 .sidebar {
   display: flex;
   flex-direction: column;
@@ -7,6 +9,7 @@
   align-items: center;
   justify-content: space-between;
   padding-bottom: 30px;
+
   // border-right: solid $light-grey;
 
 }
@@ -49,4 +52,10 @@
   }
 }
 
-// Testing with the tabs from Le Wagon Kitt
+// Button + to add plants to database
+
+.plus-icon {
+  height: 56px;
+  width: 56px;
+  color: $green-medium;
+}

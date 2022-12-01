@@ -1,26 +1,96 @@
-<div class="container">
+<div class="container scroll-content" data-controller="modal">
 
-  <div class="grid-search-bar">
-    <div>
-      <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get">
-        <div class="search-form-control-phaf form-group">
-          <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-          <button name="button" type="submit" class="btn btn-flat">
-            <i class="fas fa-search"></i> Search
-          </button>
-        </div>
-      </form>
-    </div>
-
+  <div class=" simple_form search d-flex p-2 grid-search-bar sticky-top justify-content-center">
+    <%= form_with url: "#", method: :get, class: "search-form-control-phaf form-group" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a plant for your garden"
+      %>
+      <%= submit_tag "Search", class: "btn btn-flat" %>
+    <% end %>
   </div>
 
   <div class="grid-search-cards">
-    <div class="card-plant-grid">
+    <%# replace all these div for a sites.plants.each do |plant|
+    I have the code in Notion. Waiting for some plants to be created. %>
+    <div class="card-plant-grid flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="plant_example.jpg" alt="Plant">
+        </div>
+        <div class="flip-card-back">
+          <h2>Stawberry</h2>
+          <p>Some details</p>
+          <p>We love this plant!</p>
+          <i class="fa-solid fa-plus plus-icon" data-action="click->modal#open"></i>
+        </div>
+      </div>
     </div>
-    <div class="card-plant-grid">
+
+    <div class="card-plant-grid flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="plant_example.jpg" alt="Plant" style="width:300px;height:300px;">
+        </div>
+        <div class="flip-card-back">
+          <h2>Stawberry</h2>
+          <p>Some details</p>
+          <p>We love this plant!</p>
+          <%= link_to "#" do %>
+            <i class="fa-solid fa-plus plus-icon"></i>
+          <% end %>
+        </div>
+      </div>
     </div>
-    <div class="card-plant-grid">
+
+    <div class="card-plant-grid flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="plant_example.jpg" alt="Plant" style="width:300px;height:300px;">
+        </div>
+        <div class="flip-card-back">
+          <h2>Stawberry</h2>
+          <p>Some details</p>
+          <p>We love this plant!</p>
+          <%= link_to "#" do %>
+            <i class="fa-solid fa-plus plus-icon"></i>
+          <% end %>
+        </div>
+      </div>
     </div>
+
+    <div class="card-plant-grid flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="plant_example.jpg" alt="Plant" style="width:300px;height:300px;">
+        </div>
+        <div class="flip-card-back">
+          <h2>Stawberry</h2>
+          <p>Some details</p>
+          <p>We love this plant!</p>
+          <%= link_to "#" do %>
+            <i class="fa-solid fa-plus plus-icon"></i>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+
   </div>
 
+  <div id="form-modal" class="form-modal d-none" data-modal-target="form" >
+    <div>
+      <div class="p-3" data-action="click->modal#close">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <div class="form-modal-content">
+        <%= simple_form_for [@site] do |f| %>
+          <%= f.input :project_name %>
+          <%= f.input :description %>
+          <%= f.submit class: "btn btn-flat" %>
+        <% end %>
+      </div>
+    </div>
+  <div>
 </div>
