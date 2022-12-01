@@ -2,7 +2,7 @@
 <%= @site.project_name %>
 <%= link_to "go back", sites_path %>
 <div class="container">
-      <div class="row justify-content-center" data-controller="weather" data-action="load@window->weather#fetchWeather">
+      <div class="row justify-content-center" data-controller="weather">
        <span class= "d-none" data-weather-target="address" data-address-value='<%= "#{@site.address}" %>'></span>
         <div class="col-sm-8">
           <div class="card mt-4 mb-5">

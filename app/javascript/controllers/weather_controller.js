@@ -7,21 +7,12 @@ export default class extends Controller {
     this.apiKey = "ceac9ed2a1f27829a6487c172ea91beb"
   }
 
-  fetchWeather(event) {
+  connect() {
     const city = this.addressTarget.dataset.addressValue
     console.log(city)
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${this.apiKey}&units=metric`)
       .then(response => response.json())
       .then(data => this.#updateCard(data))
-  }
-
-  fetchWeatherByCoordinates(event) {
-    event.preventDefault()
-    navigator.geolocation.getCurrentPosition((data) => {
-      fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${data.coords.latitude}&lon=${data.coords.longitude}&appid=${this.apiKey}&units=metric`)
-        .then(response => response.json())
-        .then(data => console.log(data))
-    })
   }
 
   #updateCard(data) {
