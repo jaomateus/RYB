@@ -17,7 +17,7 @@ puts "Creating user......"
 user1 = User.create!(email: "patrizgonzalez@gmail.com", password: "123456")
 user2 = User.create!(email: "samuel.howard34@gmail.com", password: "123456")
 user3 = User.create!(email: "dariagort@gmail.com", password: "123456")
-user4 = User.create!(email: "joao@gmail.com", password: "123456")
+user4 = User.create!(email: "jaomateus@gmail.com", password: "123456")
 
 puts "Creating sites......"
 site1 = Site.create!(user: User.all.sample, project_name: "A Peace Of Green", description: "A garden with a lot of green plants, not so many flowers. I have a really small backyard.", address: "New York", project_type: "Green garden")
