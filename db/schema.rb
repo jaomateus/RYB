@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_30_161201) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_01_132607) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -59,16 +59,26 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_161201) do
     t.text "medicinal_uses"
     t.text "cultivation_details"
     t.text "propagation_details"
+    t.text "image_url"
   end
 
   create_table "plants_logs", force: :cascade do |t|
     t.bigint "log_id", null: false
-    t.bigint "plant_id", null: false
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["log_id"], name: "index_plants_logs_on_log_id"
-    t.index ["plant_id"], name: "index_plants_logs_on_plant_id"
+  end
+
+  create_table "site_plants", force: :cascade do |t|
+    t.bigint "plant_id", null: false
+    t.bigint "plants_log_id", null: false
+    t.bigint "site_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["plant_id"], name: "index_site_plants_on_plant_id"
+    t.index ["plants_log_id"], name: "index_site_plants_on_plants_log_id"
+    t.index ["site_id"], name: "index_site_plants_on_site_id"
   end
 
   create_table "sites", force: :cascade do |t|
@@ -98,5 +108,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_161201) do
   end
 
   add_foreign_key "plants_logs", "logs"
-  add_foreign_key "plants_logs", "plants"
+  add_foreign_key "site_plants", "plants"
+  add_foreign_key "site_plants", "plants_logs"
+  add_foreign_key "site_plants", "sites"
 end
