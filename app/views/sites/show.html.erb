@@ -1,6 +1,38 @@
-<h1 class="name-site" >My Site</h1>
-<%= @site.project_name %>
-<%= link_to "go back", sites_path %>
+<div class="proj-dasboard">
+  <%# SIDEBAR %>
+  <div class="sidebar">
+    <div class="logo">
+       <%= link_to sites_path do %>
+        <div class="btn-side-bar bckg-none">
+          <%= image_tag("RYB.png", :alt => "rss feed") %>
+        </div>
+       <% end %>
+    </div>
+    <%# MIDDLE BUTTONS %>
+    <div class="action-btns">
+      <div class="btn-side-bar tab-selected">
+        <%= link_to "#" do %>
+          <i class="fa-solid fa-magnifying-glass"></i>
+        <% end %>
+      </div>
+      <div class="btn-side-bar">
+       <%= link_to "#" do %>
+          <i class="fa-solid fa-leaf"></i>
+        <% end %>
+      </div>
+      <div class="btn-side-bar tab-selected">
+        <%= link_to "#" do %>
+          <i class="fa-solid fa-seedling"></i>
+        <% end %>
+      </div>
+    <%# if we want to add the index of logs I have the code in notion. %>
+      <div class="btn-side-bar">
+        <%= link_to "#" do %>
+          <i class="fa-solid fa-folder"></i>
+        <% end %>
+      </div>
+    </div>
+
 <div class="d-flex">
   <div class="plant-list-slide">
     <div class="top-bar-list sticky-top">
@@ -43,6 +75,9 @@
   </div>
 </div>
 <div class="scroll">
+<h1 class="name-site" >My Site</h1>
+<%= @site.project_name %>
+<%= link_to "go back", sites_path %>
 <div class="d-flex">
       <div class="row justify-content-center" data-controller="weather">
        <span class= "d-none" data-weather-target="address" data-address-value='<%= "#{@site.address}" %>'></span>

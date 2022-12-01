@@ -59,7 +59,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_132607) do
     t.text "medicinal_uses"
     t.text "cultivation_details"
     t.text "propagation_details"
-    t.text "image_url"
+    t.text "image"
   end
 
   create_table "plants_logs", force: :cascade do |t|
