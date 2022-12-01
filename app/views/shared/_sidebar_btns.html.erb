@@ -18,23 +18,21 @@
           <i class="fa-solid fa-magnifying-glass"></i>
         <% end %>
       </div>
-      <div class="btn-side-bar tab-selected">
-        <%= link_to site_plants_path(site) do %>
-          <i class="fa-solid fa-seedling"></i>
-        <% end %>
-      </div>
+
       <div class="btn-side-bar">
        <%= link_to site_nursury_path(site) do %>
           <i class="fa-solid fa-leaf"></i>
         <% end %>
       </div>
-      <div class="btn-side-bar">
-        <% if site.logs.present? %>
-          <%= link_to site_log_path(site, site.logs.last) do %>
-            <i class="fa-solid fa-book"></i>
-          <% end %>
+
+      <div class="btn-side-bar tab-selected">
+        <%= link_to site_plants_path(site) do %>
+          <i class="fa-solid fa-seedling"></i>
         <% end %>
       </div>
+
+    <%# if we want to add the index of logs I have the code in notion. %>
+
       <div class="btn-side-bar">
         <%= link_to site_path(site) do %>
           <i class="fa-solid fa-folder"></i>
