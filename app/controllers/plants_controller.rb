@@ -29,6 +29,10 @@ class PlantsController < ApplicationController
     @site = Site.find(params[:site_id])
   end
 
+  def edit
+    @site = Site.find(params[:id])
+  end
+
   def show
     @plant = Plant.find(params[:id])
     @site = Site.find(params[:site_id])
