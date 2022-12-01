@@ -30,7 +30,7 @@ require "csv"
 plant_list = CSV.parse(File.read("Plant_list.csv"))
 
 # Create plant
-url = "https://pfaf.org/user/plant.aspx?latinname=#{plant_list[0][0]}"
+# url = "https://pfaf.org/user/plant.aspx?latinname=#{plant_list[0][0]}"
 # url = "https://pfaf.org/user/plant.aspx?LatinName=Elaeagnus+x+ebbingei"
 # url = "https://pfaf.org/user/Plant.aspx?LatinName=Petiveria+alliacea"
 # url = "https://pfaf.org/user/Plant.aspx?LatinName=Equisetum+telmateia"
@@ -89,7 +89,6 @@ if doc.css('span#ContentPlaceHolder1_lbldisplatinname').text != ""
   # Check for plant type
   plant_types = ['shrub', 'tree', 'climber', 'perennial']
   matches = physical_characteristics.scan(/\w*[A-Z]\w*[A-Za-z]\w*/)
-  p matches
 
   matches.each do |word|
     word = word.downcase
@@ -101,8 +100,8 @@ if doc.css('span#ContentPlaceHolder1_lbldisplatinname').text != ""
   end
 
   # Check for plant sizes
-  matches = physical_characteristics.split(" ")
-  p matches
+  # matches = physical_characteristics.split(" ")
+  # p matches
 
   # Check if it is a NFixer
   n_fixer = physical_characteristics.match(/It can fix Nitrogen./) ? true : false
@@ -114,32 +113,32 @@ if doc.css('span#ContentPlaceHolder1_lbldisplatinname').text != ""
   atmospheric_polution = physical_characteristics.match(/It can tolerate atmospheric pollution./) ? true : false
 
   # Create Plant instance
-  # Plant.create({ latin_name: latin_name,
-  #                summary: summary,
-  #                family: plant_family,
-  #                common_name: common_name,
-  #                physical_characteristics: physical_characteristics,
-  #                usa_hardiness_low: usa_hardiness_low,
-  #                usa_hardiness_high: usa_hardiness_high,
-  #                habitats: habitats,
-  #                range: range,
-  #                edibility_rate: edibility_rate,
-  #                weed_potential: weed_potential,
-  #                edible_uses: edible_uses,
-  #                medicinal_uses: medicinal_uses,
-  #                cultivation_details: cultivation_details,
-  #                propagation_details: propagation_details,
-  #                hardiness: hardiness,
-  #                well_drained: well_drained,
-  #                moist_soil: moist_soil,
-  #                wet_soil: wet_soil,
-  #                water_plant: water_plant,
-  #                full_sun: full_sun,
-  #                part_shade: part_shade,
-  #                full_shade: full_shade,
-  #                n_fixer: n_fixer,
-  #                maritime_exposure: maritime_exposure,
-  #                atmospheric_polution: atmospheric_polution,
-  #                type: type
-  # })
+  Plant.create!({ latin_name: latin_name,
+                  summary: summary,
+                  family: plant_family,
+                  common_name: common_name,
+                  physical_characteristics: physical_characteristics,
+                  usa_hardiness_low: usa_hardiness_low,
+                  usa_hardiness_high: usa_hardiness_high,
+                  habitats: habitats,
+                  range: range,
+                  edibility_rate: edibility_rate,
+                  weed_potential: weed_potential,
+                  edible_uses: edible_uses,
+                  medicinal_uses: medicinal_uses,
+                  cultivation_details: cultivation_details,
+                  propagation_details: propagation_details,
+                  hardiness: hardiness,
+                  well_drained: well_drained,
+                  moist_soil: moist_soil,
+                  wet_soil: wet_soil,
+                  water_plant: water_plant,
+                  full_sun: full_sun,
+                  part_shade: part_shade,
+                  full_shade: full_shade,
+                  n_fixer: n_fixer,
+                  maritime_exposure: maritime_exposure,
+                  atmospheric_polution: atmospheric_polution,
+                  type: type
+  })
 end
