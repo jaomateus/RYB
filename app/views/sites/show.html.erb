@@ -1,7 +1,49 @@
-<h1>My Site</h1>
+<h1 class="name-site" >My Site</h1>
 <%= @site.project_name %>
 <%= link_to "go back", sites_path %>
-<div class="container">
+<div class="d-flex">
+  <div class="plant-list-slide">
+    <div class="top-bar-list sticky-top">
+      <i data-feather="filter"></i>
+      <div class="search-bar">
+      </div>
+  </div>
+
+<div class="">
+  </div>
+
+  <div class="plant-list-slide plant-list-grid">
+    <div class="card-plant-list">
+      <%= image_tag("plant_example.jpg", :alt => "rss feed") %>
+      <div class="card-plant-list-infos">
+        <h2>Title of log</h2>
+        <p>22 of november, 2022</p>
+      </div>
+    </div>
+
+    <div class="card-plant-list">
+      <%= image_tag("plant_example.jpg", :alt => "rss feed") %>
+      <div class="card-plant-list-infos">
+        <h2>Title of Log</h2>
+        <p>22 of November, 2022</p>
+      </div>
+    </div>
+
+    <div class="card-plant-list">
+      <%= image_tag("plant_example.jpg", :alt => "rss feed") %>
+      <div class="card-plant-list-infos">
+        <h2>Title of log</h2>
+        <p>21 of November, 2022</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="button-side-bar sticky-bottom">
+    <a class="btn btn-ghost light" href="#">New log</a>
+  </div>
+</div>
+<div class="scroll">
+<div class="d-flex">
       <div class="row justify-content-center" data-controller="weather">
        <span class= "d-none" data-weather-target="address" data-address-value='<%= "#{@site.address}" %>'></span>
         <div class="col-sm-8">
@@ -20,4 +62,19 @@
           </div>
         </div>
    </div>
+</div>
+<br>
+<br>
+<div>
+<div class="card-text">
+  <h2>Cards</h2>
+</div>
+
+<div class="grid-search-cards">
+  <div class="card-plant-grid"></div>
+  <div class="card-plant-grid"></div>
+  <div class="card-plant-grid"></div>
+</div>
+</div>
+</div>
 </div>
