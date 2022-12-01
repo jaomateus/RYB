@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_01_132607) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_01_143811) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -29,7 +29,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_132607) do
     t.string "common_name"
     t.text "description"
     t.integer "hardiness"
-    t.boolean "planted"
     t.integer "edibility_rate"
     t.boolean "well_drained"
     t.boolean "moist_soil"
@@ -44,7 +43,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_132607) do
     t.integer "medicinal_rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "type"
+    t.string "plant_type"
     t.text "summary"
     t.float "width"
     t.float "height"
@@ -96,9 +95,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_132607) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "fist_name"
-    t.string "last_name"
-    t.string "location"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
