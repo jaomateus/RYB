@@ -13,4 +13,8 @@ class PagesController < ApplicationController
   def nursury
     @site = Site.find(params[:site_id])
   end
+
+  def search
+    @site = Site.find(params[:site_id])
+  end
 end
