@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_01_160123) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_01_161012) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -43,7 +43,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_160123) do
     t.integer "medicinal_rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "plant_type"
     t.text "summary"
     t.float "width"
     t.float "height"
@@ -59,6 +58,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_160123) do
     t.text "cultivation_details"
     t.text "propagation_details"
     t.string "image_url"
+    t.string "plant_type"
   end
 
   create_table "plants_logs", force: :cascade do |t|
