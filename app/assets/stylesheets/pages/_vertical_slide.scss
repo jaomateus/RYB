@@ -7,7 +7,16 @@
   overflow-y: scroll;
   overflow-x: hidden;
 }
-
+.plant-list-slide::-webkit-scrollbar {
+  width: 6px;
+}
+.plant-list-slide::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+.plant-list-slide::-webkit-scrollbar-thumb {
+background-color: $light-grey;
+outline: 3px solid  $light-grey;
+}
 // grid for list of plants
 
 .plant-list-grid {
@@ -108,7 +117,7 @@
 // this is for the list of logs for one plant
 // the outer div
 .log-list {
-  width: 150px;
+  width: 100%;
   height: 100vh;
   background-color: $dark-grey;
   overflow-y: scroll;
@@ -124,21 +133,19 @@
 
 // the tiny card with the date and the main action
 .card-list-date {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 16px;
+  border-bottom: 0.5 solid $light-grey;
+
 
   h2 {
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 14px;
     margin: 0;
     color: $white;
     align-items: center;
   }
 
   p {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.4;
     opacity: .7;
     margin-bottom: 0;
