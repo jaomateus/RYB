@@ -7,9 +7,14 @@ import { application } from "./application"
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
-
 import MapController from "./map_controller"
 application.register("map", MapController)
+
+import ModalController from "./modal_controller"
+application.register("modal", ModalController)
+
+import TogglePlantsController from "./toggle_plants_controller"
+application.register("toggle-plants", TogglePlantsController)
 
 import WeatherController from "./weather_controller"
 application.register("weather", WeatherController)

@@ -15,12 +15,23 @@ class PlantsController < ApplicationController
   end
 
   def index
-    @plants = Plant.all
+    if params[:query].present?
+      sql_query = <<~SQL
+        plant.latin_name ILIKE :query
+        OR plant.common_name ILIKE :query
+        OR plant.description ILIKE :query
+        OR directors.last_name ILIKE :query
+      SQL
+      @plants = Plant.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @plants = Plant.all
+    end
     @site = Site.find(params[:site_id])
   end
 
   def show
     @plant = Plant.find(params[:id])
+    @site = Site.find(params[:site_id])
   end
 
   private

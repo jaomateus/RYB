@@ -1,1 +1,7 @@
 // Specific CSS for your home-page
+.scroll-content {
+  max-height: 100vh;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
