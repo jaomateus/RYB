@@ -1,6 +1,7 @@
 <div class="d-flex">
   <div class="containter">
     <%= simple_form_for [@site, @log] do |f| %>
+      <%= f.input :photo, as: :file %>
       <%= f.input :date %>
       <%= f.input :title %>
       <%= f.input :description %>
