@@ -12,7 +12,7 @@
   </div>
 
 <%# this grid shows all the plants from our database PLANTS %>
-  <div class="grid-search-cards">
+  <div class=" container grid-search-cards">
     <% @plants.each do |plant| %>
       <div class="card-plant-grid flip-card">
         <p><%= plant.image_url %></p>
@@ -23,9 +23,9 @@
           </div>
           <div class="flip-card-back">
             <p><%= plant.physical_characteristics %></p>
-            <%#= link_to site_log_path(site, log) do %>
+            <%=  link_to site_site_plants_path(@site, plant_id: plant.id), data: { turbo_method: :post, turbo_confirm: "Add this plant to yout site?" } do %>
               <i class="fa-solid fa-plus plus-icon" data-action="click->modal#open"></i>
-            <%# end %>
+            <% end %>
           </div>
         </div>
       </div>
