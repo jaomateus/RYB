@@ -28,6 +28,33 @@ site5 = Site.create(user: User.all.sample, project_name: "The Free", description
 site6 = Site.create(user: User.all.sample, project_name: "A Garden By The Sea", description: "My area for my project is really small, a balcony. I live near the sea and I'am curious which plants I can place.", address: "Santorini", project_type: "Balcony garden")
 site7 = Site.create(user: User.all.sample, project_name: "Horto dos Barros", description: "Joao's really lovely project, but he knows what he is doing with this project.", address: "Praia da Areia Branca", project_type: "Food Forest")
 
+file = File.open("app/assets/images/sites/timthumb.jpeg")
+site1.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+site1.save
+
+file = File.open("app/assets/images/sites/20210725_072409.jpeg")
+site2.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+site2.save
+
+file = File.open("app/assets/images/sites/behang-met-een-groen-bos-in-de-mist_9.jpeg")
+site3.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+site3.save
+
+file = File.open("app/assets/images/sites/DSC_4233-scaled-2048x1367.jpeg")
+site4.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+site4.save
+
+file = File.open("app/assets/images/sites/forest garden RESIZED_0.jpeg")
+site5.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+site5.save
+
+file = File.open("app/assets/images/sites/knepp1.jpeg")
+site6.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+site6.save
+
+file = File.open("app/assets/images/sites/IMG_0376.jpeg")
+site7.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+site7.save
 # PARSING
 plant_list = CSV.parse(File.read("db/Plant_list.csv"))
 
