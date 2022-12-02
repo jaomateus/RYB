@@ -86,6 +86,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_02_104132) do
     t.text "medicinal_uses"
     t.text "cultivation_details"
     t.text "propagation_details"
+    t.text "image"
     t.string "image_url"
     t.string "plant_type"
   end
