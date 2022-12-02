@@ -4,8 +4,10 @@ Rails.application.routes.draw do
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
+  resources :plants, only: [:new, :create, :show, :index]
+
   resources :sites do
-    resources :plants, only: [:new, :create, :show, :index]
+    resources :sites_plant, only: [:new, :create, :show, :index]
     resources :logs, only: [:new, :create, :show, :index]
     get "nursury", to: "pages#nursury"
     get "dashboard", to: "pages#dashboard"

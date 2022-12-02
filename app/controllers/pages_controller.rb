@@ -15,6 +15,7 @@ class PagesController < ApplicationController
   end
 
   def search
+    @plants = Plant.all
     @site = Site.find(params[:site_id])
   end
 end
