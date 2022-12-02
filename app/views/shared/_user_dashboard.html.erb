@@ -4,9 +4,11 @@
         <% if site.photo.attached? %>
           <div class="card-plant-grid" style="background-image: url(<%= cl_image_path site.photo.key %>)">
         <% else %>
-          <div class="card-plant-grid" style="background-image: url(app/assets/images/lady_bug.jpeg)">
+          <div class="card-plant-grid" style="background-image: asset-url('plant_example.jpg');">
         <% end %>
-            <%= site.project_name %>
+            <div class="card-plant-title">
+              <p><%= site.project_name %></p>
+            </div>
             <div>
               <%= link_to "go to site", site_path(site), class: "btn-flat" %>
               <%= link_to "update", edit_site_path(site), class: "btn-flat" %>
