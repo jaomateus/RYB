@@ -71,6 +71,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_223830) do
     t.integer "medicinal_rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "type"
     t.text "summary"
     t.float "width"
     t.float "height"
@@ -85,6 +86,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_223830) do
     t.text "medicinal_uses"
     t.text "cultivation_details"
     t.text "propagation_details"
+    t.text "image"
     t.string "image_url"
     t.string "plant_type"
   end

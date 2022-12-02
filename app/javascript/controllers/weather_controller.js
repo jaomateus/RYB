@@ -20,11 +20,17 @@ export default class extends Controller {
     this.temperatureTarget.innerText = `${Math.round(data.main.temp)} °C`
     this.descriptionTarget.innerText = data.weather[0].description
     this.cityTarget.innerText = data.name
+    this.lat = data.coord.lat
+    this.lon = data.coord.lon
     const today = new Date();
     const localOffset = data.timezone + today.getTimezoneOffset() * 60
     const localDate = new Date(today.setUTCSeconds(localOffset))
     const options = { weekday: 'long', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' }
     const formattedDate = localDate.toLocaleDateString("en-US", options)
     this.dateTarget.innerText = formattedDate
+  }
+
+  getforecast() {
+    url = `https://api.openweathermap.org/data/2.5/forecast?lat=${this.lat}&lon=${this.lon}&appid=${this.apiKey}`
   }
 }
