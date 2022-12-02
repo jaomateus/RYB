@@ -1,16 +1,20 @@
   <div class="d-flex container">
     <div class="grid-search-cards">
       <% @sites.each do|site| %>
-        <div class="card-plant-grid">
-          <%= site.project_name %>
-          <div>
-          <%= link_to "go to site", site_path(site), class: "btn-flat" %>
-          <%= link_to "update", edit_site_path(site), class: "btn-flat" %>
-          <%= link_to "Delete",
-          site_path(site),
-          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn-flat" %>
+        <% if site.photo.attached? %>
+          <div class="card-plant-grid" style="background-image: url(<%= cl_image_path site.photo.key %>)">
+        <% else %>
+          <div class="card-plant-grid" style="background-image: url(app/assets/images/lady_bug.jpeg)">
+        <% end %>
+            <%= site.project_name %>
+            <div>
+              <%= link_to "go to site", site_path(site), class: "btn-flat" %>
+              <%= link_to "update", edit_site_path(site), class: "btn-flat" %>
+              <%= link_to "Delete",
+              site_path(site),
+              data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn-flat" %>
+            </div>
           </div>
-        </div>
       <% end %>
     </div>
   </div>

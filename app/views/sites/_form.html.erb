@@ -1,0 +1,11 @@
+<div class="container">
+  <%= simple_form_for(@site) do |f| %>
+    <%= f.input :photo, as: :file %>
+    <%= f.input :project_name %>
+    <%= f.input :description %>
+    <%= f.input :address %>
+    <%= f.input :project_type %>
+    <%= f.input :project_area %>
+    <%= f.submit %>
+  <% end %>
+</div>
