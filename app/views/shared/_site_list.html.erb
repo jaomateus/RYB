@@ -1,0 +1,25 @@
+ <%# ALL MY SITES %>
+<div class="grid-search-cards">
+  <% @sites.each do |site| %>
+    <% if site.photo.attached? %>
+      <div class="site-grid" style="background-image: url(<%= cl_image_path site.photo.key %>)">
+
+    <% else %>
+      <div class="site-grid" style="background-image: asset-url('plant_example.jpg');">
+    <% end %>
+
+    <div class="card-plant-title">
+      <p><%= site.project_name %></p>
+    </div>
+
+    <%# CARD BUTTONS %>
+    <div>
+      <%= link_to "go to site", site_path(site), class: "btn-flat" %>
+      <%= link_to "update", edit_site_path(site), class: "btn-flat-1" %>
+      <%= link_to "Delete",
+                  site_path(site),
+                  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn-flat-1" %>
+    </div>
+      </div>
+  <% end %>
+</div>
