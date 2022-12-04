@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_04_192441) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_04_215117) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -112,6 +112,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_04_192441) do
     t.datetime "updated_at", null: false
     t.date "project_start_date"
     t.string "goals"
+    t.string "atmospheric_polution"
+    t.boolean "maritime_exposure"
+    t.string "soil_type"
+    t.string "soil_ph"
+    t.integer "usa_hardiness_zone"
     t.index ["user_id"], name: "index_sites_on_user_id"
   end
 

@@ -1,3 +1,20 @@
 .container {
   width: 80%;
 }
+
+.container_simple_form {
+  margin: 0 auto;
+  width: 60%;
+  background-color: $green-dark;
+  padding: 20px;
+  border-radius: 25px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  .simpl_form_brd {
+    display: flex;
+    
+  }
+
+  // height: 80vh;
+}
