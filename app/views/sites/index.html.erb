@@ -61,8 +61,19 @@
       <%# PROJECT INFO CONTAINER %>
       <div class="project-info-container">
         <div class="text-header">
-          <p>Welcome&nbsp<%= current_user.name %>&nbsp!</p>
-          <h3><strong>Email:&nbsp&nbsp&nbsp</strong><%= current_user.email %></h3>
+          <div class="div">
+            <p>Welcome&nbsp<%= current_user.first_name + " " + current_user.last_name %>&nbsp!</p>
+          </div>
+          <div>
+            <%# <a class="btn-small" href="#">Edit user </a> %>
+            <%= link_to "Edit user", edit_user_registration_path, class: "btn-small" %>
+          </div>
+        </div>
+        <div class="user-info">
+        <div>
+          <h3><strong>Email: </strong><%= current_user.email %></h3>
+          <h3><strong>Profession:&nbsp&nbsp&nbsp</strong><%= current_user.profession %></h3>
+        </div>
         </div>
       </div>
     </div>
