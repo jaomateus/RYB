@@ -26,6 +26,17 @@
   }
 }
 
+.rewild-anim {
+  position: fixed; /* or absolute */
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+  color: $white;
+  font-size: larger
+
+}
+
 .ryb-footer {
   display: flex;
   background-color: $black;
@@ -54,17 +65,6 @@
   width: 100%;
   height: 5rem;            /* Footer height */
 }
-
-// .ryb-footer {
-//   display: flex;
-//   background-color: $green-dark;
-//   height: 6rem;
-//   align-items: center;
-//   // justify-content: space-between;
-//   border-top: 1px solid $light-grey;
-//   height: 6rem;
-
-// }
 
 .scroll-content {
   background-color: $black;

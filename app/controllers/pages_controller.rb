@@ -10,6 +10,10 @@ class PagesController < ApplicationController
   def projDashboard
   end
 
+  def my_sites_map
+    @sites = Site.all
+  end
+
   def nursury
     @site = Site.find(params[:site_id])
   end

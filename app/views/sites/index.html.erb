@@ -1,43 +1,21 @@
-<%# NAVBAR %>
-<%# <%= image_tag "app/assets/images/Logo.png" %>
 <div id="page-container">
   <div id="content-wrap">
-    <div class="ryb-navbar sticky">
-      <div class="navbar-links px-2">
-        <div class="logo">
-        </div>
-        <div class="px-3">
-          <%= link_to "All sites", sites_path, class: "nav-link" %>
-        </div>
-        <div class="px-3">
-          <%= link_to "Community", sites_path, class: "nav-link" %>
-        </div>
-      </div>
 
-        <div class="navbar-links px-2">
-          <div class="px-3">
-            <%= link_to "My RYB", sites_path, class: "nav-link" %>
-          </div>
-          <div class="px-3">
-            <%= link_to "Login", sites_path, class: "nav-link" %>
-          </div>
-        </div>
-    </div>
+    <%# NAVBAR %>
+    <%= render "shared/navbar_horiz" %>
 
     <%# CENTRAL CONTAINER %>
-
     <div class="page-container">
-
       <%# PROJECTS %>
       <div class="projects-container">
-
         <div class="my-projs card">
           <div class="text-header">
             <div>
               <p>My sites</p>
             </div>
             <div>
-              <a class="btn-small" href="#">See on map</a>
+              <%# <a class="btn-small" href="#">See on map</a> %>
+              <%= link_to "See on map", my_sites_map_path, class: "btn-small" %>
             </div>
           </div>
           <%# Project cards %>
@@ -46,58 +24,55 @@
           </div>
         </div>
 
+        <%# Community Projects %>
         <div class="community-projs card">
           <div class="text-header">
             <div>
               <p>Projects in your community</p>
             </div>
             <div>
-              <a class="btn-small" href="#">See on map</a>
+              <%= link_to "See on map", my_sites_map_path, class: "btn-small" %>
             </div>
           </div>
         </div>
       </div>
 
-      <%# PROJECT INFO CONTAINER %>
-      <div class="project-info-container">
-        <div class="text-header">
-          <div class="div">
-            <p>Welcome&nbsp<%= current_user.first_name + " " + current_user.last_name %>&nbsp!</p>
+      <div class="right-containers">
+        <%# PROJECT INFO CONTAINER %>
+        <div class="cont project-info-container">
+          <div class="text-header">
+            <div class="div">
+              <p>Welcome&nbsp<%= current_user.first_name + " " + current_user.last_name %>&nbsp!</p>
+            </div>
+            <div>
+              <%= link_to "Edit user", edit_user_registration_path, class: "btn-small" %>
+            </div>
           </div>
-          <div>
-            <%# <a class="btn-small" href="#">Edit user </a> %>
-            <%= link_to "Edit user", edit_user_registration_path, class: "btn-small" %>
+          <div class="user-info">
+            <div>
+              <h3><strong>Email: </strong><%= current_user.email %></h3>
+              <h3><strong>Profession:&nbsp&nbsp&nbsp</strong><%= current_user.profession %></h3>
+            </div>
           </div>
         </div>
-        <div class="user-info">
-        <div>
-          <h3><strong>Email: </strong><%= current_user.email %></h3>
-          <h3><strong>Profession:&nbsp&nbsp&nbsp</strong><%= current_user.profession %></h3>
-        </div>
-        </div>
-      </div>
-    </div>
-
-    <%# FOOTTER %>
-    <div class="ryb-footer" id="footer">
-      <div class="footer-links icons">
-        <a href="#"><i class="fab fa-instagram px-2 nav-link"></i></a>
-        <a href="#"><i class="fab fa-facebook px-2 nav-link"></i></a>
-        <a href="#"><i class="fab fa-twitter px-2 nav-link"></i></a>
-      </div>
-      <div class="footer-links px-2">
-        <div class="px-3">
-          <%= link_to "About RYB", sites_path, class: "nav-link" %>
-        </div>
-        <div class="px-3">
-          <%= link_to "Contact Us", sites_path, class: "nav-link" %>
-        </div>
-        <div class="px-3">
-          <%= link_to "The team", sites_path, class: "nav-link" %>
+        <div class="cont weather-container">
+          <div class="text-header">
+            <div class="div">
+              <p>Weather forecast for this week.</p>
+            </div>
+          </div>
+          <div class="user-info">
+            <div>
+              <%= render "shared/weather_forecast" %>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
+
+  <%# FOOTTER %>
+  <%= render "shared/footer" %>
 
   <%# Map  %>
   <%# <%= render "shared/map_all_sites" %>
