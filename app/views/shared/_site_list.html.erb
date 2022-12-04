@@ -1,25 +1,22 @@
- <%# ALL MY SITES %>
-<div class="grid-search-cards">
+<div class="project-cards">
   <% @sites.each do |site| %>
     <% if site.photo.attached? %>
-      <div class="site-grid" style="background-image: url(<%= cl_image_path site.photo.key %>)">
-
+      <div class="site-card">
+        <div class="site-img">
+          <%= cl_image_tag site.photo.key %>
+        </div>
     <% else %>
-      <div class="site-grid" style="background-image: asset-url('plant_example.jpg');">
+      <div class="site-card" style="background-image: asset-url('plant_example.jpg');"></div>
     <% end %>
-
-    <div class="card-plant-title">
-      <p><%= site.project_name %></p>
-    </div>
-
-    <%# CARD BUTTONS %>
-    <div>
-      <%= link_to "go to site", site_path(site), class: "btn-flat" %>
-      <%= link_to "update", edit_site_path(site), class: "btn-flat-1" %>
-      <%= link_to "Delete",
-                  site_path(site),
-                  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn-flat-1" %>
-    </div>
+        <div class="site-tags">
+          <div>
+            <h2><%= site.project_name %></h2>
+            <h3><strong>Location: </strong><%= site.address %></h3>
+            <h3><strong>Project type:&nbsp&nbsp&nbsp</strong><%= site.project_type %></h3>
+            <h3><strong>Project goals:&nbsp&nbsp&nbsp</strong><%= site.goals %></h3>
+            <h3><strong>Project start date:&nbsp&nbsp&nbsp</strong><%= site.project_start_date %></h3>
+          </div>
+        </div>
       </div>
   <% end %>
 </div>
