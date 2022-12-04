@@ -1,11 +1,8 @@
-<%#= render "shared/navbar", site: @site %>
-<%# <% <%= render "shared/navbar" %>
-
 <%# NAVBAR %>
 <%# <%= image_tag "app/assets/images/Logo.png" %>
 <div id="page-container">
   <div id="content-wrap">
-    <div class="ryb-navbar ">
+    <div class="ryb-navbar sticky">
       <div class="navbar-links px-2">
         <div class="logo">
         </div>
@@ -64,7 +61,8 @@
       <%# PROJECT INFO CONTAINER %>
       <div class="project-info-container">
         <div class="text-header">
-          <p>Project Owner</p>
+          <p>Welcome&nbsp<%= current_user.name %>&nbsp!</p>
+          <h3><strong>Email:&nbsp&nbsp&nbsp</strong><%= current_user.email %></h3>
         </div>
       </div>
     </div>
