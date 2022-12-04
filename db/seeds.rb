@@ -20,45 +20,45 @@ user3 = User.create!(email: "dariagort@gmail.com", password: "123456")
 user4 = User.create!(email: "jaomateus@gmail.com", password: "123456")
 
 puts "Creating sites......"
-site1 = Site.create!(user: User.all.sample, project_name: "A Peace Of Green", description: "A garden with a lot of green plants, not so many flowers. I have a really small backyard.", address: "New York", project_type: "Green garden")
-site2 = Site.create!(user: User.all.sample, project_name: "Root To Roses", description: "I have a small backyard with a path in the middle and on the sides a lot of green. I would really love it if the sides of the path are roses to have a romantic garden.", address: "Amsterdam", project_type: "Flower garden")
-site3 = Site.create(user: User.all.sample, project_name: "Crazy For Cacti", description: "My project is called Crazy For Cacti and thats because I have a sand area in my backyard. I really love cactus, so I would love to have them in my backyard.", address: "Berlin", project_type: "Special garden")
-site4 = Site.create(user: User.all.sample, project_name: "Goodgreen", description: "A garden, save for kids and dogs. But I also want it really green and have a lot of variety.", address: "Paris", project_type: "Green garden")
-site5 = Site.create(user: User.all.sample, project_name: "The Free", description: "To watch the squirrels play, to absorb the sweet birdsong as if it were nectar, these are the simple joys of the backyard that is rich in nature.", address: "Tallinn", project_type: "Forest garden")
-site6 = Site.create(user: User.all.sample, project_name: "A Garden By The Sea", description: "My area for my project is really small, a balcony. I live near the sea and I'am curious which plants I can place.", address: "Santorini", project_type: "Balcony garden")
-site7 = Site.create(user: User.all.sample, project_name: "Horto dos Barros", description: "Joao's really lovely project, but he knows what he is doing with this project.", address: "Praia da Areia Branca", project_type: "Food Forest")
-
+site1 = Site.create!(user: User.all.sample, project_name: "A Peace Of Green", description: "A garden with a lot of green plants, not so many flowers. I have a really small backyard.", address: "New York", project_type: "Green garden", goals: "Counteract climate change", project_start_date: "2020-09-08")
 file = File.open("app/assets/images/sites/timthumb.jpeg")
 site1.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 site1.save
 
+site2 = Site.create!(user: User.all.sample, project_name: "Root To Roses", description: "I have a small backyard with a path in the middle and on the sides a lot of green. I would really love it if the sides of the path are roses to have a romantic garden.", address: "Amsterdam", project_type: "Flower garden", goals: "Regenerate land", project_start_date: "2021-09-08")
 file = File.open("app/assets/images/sites/20210725_072409.jpeg")
 site2.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 site2.save
 
+site3 = Site.create(user: User.all.sample, project_name: "Crazy For Cacti", description: "My project is called Crazy For Cacti and thats because I have a sand area in my backyard. I really love cactus, so I would love to have them in my backyard.", address: "Berlin", project_type: "Special garden", goals: "Conserve biodiversity", project_start_date: "2018-03-25")
 file = File.open("app/assets/images/sites/behang-met-een-groen-bos-in-de-mist_9.jpeg")
 site3.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 site3.save
 
+site4 = Site.create(user: User.all.sample, project_name: "Goodgreen", description: "A garden, save for kids and dogs. But I also want it really green and have a lot of variety.", address: "Paris", project_type: "Green garden", goals: "Produce my own food", project_start_date: "2022-05-18")
 file = File.open("app/assets/images/sites/DSC_4233-scaled-2048x1367.jpeg")
 site4.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 site4.save
 
+site5 = Site.create(user: User.all.sample, project_name: "The Free", description: "To watch the squirrels play, to absorb the sweet birdsong as if it were nectar, these are the simple joys of the backyard that is rich in nature.", address: "Tallinn", project_type: "Forest garden", goals: "Create a place for biodiversity", project_start_date: "2015-03-25")
 file = File.open("app/assets/images/sites/forest garden RESIZED_0.jpeg")
 site5.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 site5.save
 
+site6 = Site.create(user: User.all.sample, project_name: "A Garden By The Sea", description: "My area for my project is really small, a balcony. I live near the sea and I'am curious which plants I can place.", address: "Santorini", project_type: "Balcony garden", goals: "Make my neighbouthood a greener place", project_start_date: "2015-03-20")
 file = File.open("app/assets/images/sites/knepp1.jpeg")
 site6.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 site6.save
 
+site7 = Site.create(user: User.all.sample, project_name: "Horto dos Barros", description: "Joao's really lovely project, but he knows what he is doing with this project.", address: "Praia da Areia Branca", project_type: "Food Forest", goals: "Reverse desertification", project_start_date: "2015-03-25")
 file = File.open("app/assets/images/sites/IMG_0376.jpeg")
 site7.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 site7.save
-# PARSING
-plant_list = CSV.parse(File.read("db/Plant_list.csv"))
 
-plant_list.first(20).each do |plant|
+# PARSING
+plant_list = CSV.parse(File.read("db/plant_database/Plant_list.csv"))
+
+plant_list.first(10).each do |plant|
   puts "Creating plant #{plant[0]}......"
 
   # url = "https://pfaf.org/user/plant.aspx?LatinName=Elaeagnus+x+ebbingei"
@@ -67,16 +67,16 @@ plant_list.first(20).each do |plant|
   # url = "https://pfaf.org/user/plant.aspx?latinname=Arbutus+unedo"
 
   # # Create plant
-  url = "https://pfaf.org/user/plant.aspx?latinname=#{plant}"
+  url = "https://pfaf.org/user/plant.aspx?latinname=#{plant[0]}"
   doc = Nokogiri::HTML(URI.open(url), nil, "utf-8")
 
   if doc.css('span#ContentPlaceHolder1_lbldisplatinname').text != ""
     latin_name = plant[0]
-    image_url = doc.css('table#ContentPlaceHolder1_tblPlantImges').children.children.children.children.attribute("src").value
-    image_url = "https://pfaf.org/#{image_url[2..-1]}"
+    image_url = doc.css('table#ContentPlaceHolder1_tblPlantImges').children.children.children.children.attribute("data-ezsrc").value
+    image_url = "https://pfaf.org#{image_url[2..-1]}"
     common_name = doc.css('span#ContentPlaceHolder1_lblCommanName').text.strip
     physical_characteristics = doc.css('span#ContentPlaceHolder1_lblPhystatment').text.strip
-    plant_family = doc.css('span#ContentPlaceHolder1_lblFamily').text.strip
+    family = doc.css('span#ContentPlaceHolder1_lblFamily').text.strip
     usa_hardiness = doc.css('span#ContentPlaceHolder1_lblUSDAhardiness').text.strip
     usa_hardiness_low = usa_hardiness[0].to_i
     usa_hardiness_high = usa_hardiness[2].to_i
@@ -149,7 +149,7 @@ plant_list.first(20).each do |plant|
     # Create Plant instance
     Plant.create!({ latin_name: latin_name,
                     summary: summary,
-                    family: plant_family,
+                    family: family,
                     common_name: common_name,
                     image_url: image_url,
                     physical_characteristics: physical_characteristics,

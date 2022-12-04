@@ -1,5 +1,67 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<div class="button-side-bar sticky-bottom">
-  <%= link_to "See my sites", sites_path(@user),:class=>"btn btn-ghost light" %>
+<%# NAVBAR %>
+<%# <%= image_tag "app/assets/images/Logo.png" %>
+<div id="page-container">
+  <div id="content-wrap">
+    <div class="ryb-navbar ">
+      <div class="navbar-links px-2">
+        <div class="logo">
+        </div>
+        <div class="px-3">
+          <%= link_to "All sites", sites_path, class: "nav-link" %>
+        </div>
+        <div class="px-3">
+          <%= link_to "Community", sites_path, class: "nav-link" %>
+        </div>
+      </div>
+
+        <div class="navbar-links px-2">
+          <div class="px-3">
+            <%= link_to "My RYB", sites_path, class: "nav-link" %>
+          </div>
+          <div class="px-3">
+            <%= link_to "Login", sites_path, class: "nav-link" %>
+          </div>
+        </div>
+    </div>
+
+    <%# CENTRAL CONTAINER %>
+
+    <div class="background">
+      <div class="container">
+      <div class="left-boxes">
+      </div>
+      <div class="right-boxes">
+      </div>
+    </div>
+    </div>
+
+    <%# FOOTTER %>
+    <div class="ryb-footer">
+      <div class="footer-links">
+      </div>
+    </div>
+
+
+    <div class="ryb-footer" id="footer">
+      <div class="footer-links icons">
+        <a href="#"><i class="fab fa-instagram px-2 nav-link"></i></a>
+        <a href="#"><i class="fab fa-facebook px-2 nav-link"></i></a>
+        <a href="#"><i class="fab fa-twitter px-2 nav-link"></i></a>
+      </div>
+      <div class="footer-links px-2">
+        <div class="px-3">
+          <%= link_to "About RYB", sites_path, class: "nav-link" %>
+        </div>
+        <div class="px-3">
+          <%= link_to "Contact Us", sites_path, class: "nav-link" %>
+        </div>
+        <div class="px-3">
+          <%= link_to "The team", sites_path, class: "nav-link" %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+<%# <div class="button-side-bar sticky-bottom">
+  <%= link_to "See my sites", sites_path(@user),:class=>"btn btn-ghost light" %>
+<%# </div> %>

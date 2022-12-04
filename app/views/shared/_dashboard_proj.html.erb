@@ -6,6 +6,7 @@
         <%= @site.project_name %>
         <%= link_to "go back", sites_path %>
       </div>
+      <%# WEATHER FORECAST %>
       <div class="row justify-content-center" data-controller="weather">
         <span class= "d-none" data-weather-target="address" data-address-value='<%= "#{@site.address}" %>'></span>
         <div class="col-sm-8">
@@ -28,6 +29,8 @@
     <br>
     <br>
   <div>
+
+  <%# CARDS %>
   <div class="card-text">
     <h2>Cards</h2>
   </div>

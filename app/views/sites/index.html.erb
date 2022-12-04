@@ -1,9 +1,35 @@
 <%#= render "shared/navbar", site: @site %>
-<%= render "shared/navbar" %>
+<%# <% <%= render "shared/navbar" %> %>
+
+
 <div class="d-flex">
-  <%= render "shared/user_dashboard" %>
-  <div style="width: 100%; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+<%# Project cards %>
+<div class="d-flex container">
+    <div class="grid-search-cards">
+      <% @sites.each do |site| %>
+        <% if site.photo.attached? %>
+          <div class="card-plant-grid" style="background-image: url(<%= cl_image_path site.photo.key %>)">
+
+        <% else %>
+          <div class="card-plant-grid" style="background-image: asset-url('plant_example.jpg');">
+        <% end %>
+            <div class="card-plant-title">
+              <p><%= site.project_name %></p>
+            </div>
+
+              <%# CARD BUTTONS %>
+            <div>
+              <%= link_to "go to site", site_path(site), class: "btn-flat" %>
+              <%= link_to "update", edit_site_path(site), class: "btn-flat-1" %>
+              <%= link_to "Delete",
+                          site_path(site),
+                          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn-flat-1" %>
+            </div>
+          </div>
+      <% end %>
+    </div>
+  </div>
+
+  <%# Map  %>
+  <%# <%= render "shared/map_all_sites" %>
 </div>
