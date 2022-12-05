@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     get "search", to: "pages#search"
   end
 
+  get "my_sites_map", to: "pages#my_sites_map"
   get "uikit", to: "pages#ui_kit"
   get "proj_dashboard", to: "pages#proj_dashboard"
 

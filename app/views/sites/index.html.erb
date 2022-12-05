@@ -1,9 +1,79 @@
-<%#= render "shared/navbar", site: @site %>
-<%= render "shared/navbar" %>
-<div class="d-flex">
-  <%= render "shared/user_dashboard" %>
-  <div style="width: 100%; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+<div id="page-container">
+  <div id="content-wrap">
+
+    <%# NAVBAR %>
+    <%= render "shared/navbar_horiz" %>
+
+    <%# CENTRAL CONTAINER %>
+    <div class="page-container">
+      <%# PROJECTS %>
+      <div class="projects-container">
+        <div class="my-projs card">
+          <div class="text-header">
+            <div>
+              <p>My sites</p>
+            </div>
+            <div>
+              <%# <a class="btn-small" href="#">See on map</a> %>
+              <%= link_to "See on map", my_sites_map_path, class: "btn-small" %>
+            </div>
+          </div>
+          <%# Project cards %>
+          <div class="proj-list">
+            <%= render "shared/site_list" %>
+          </div>
+        </div>
+
+        <%# Community Projects %>
+        <div class="community-projs card">
+          <div class="text-header">
+            <div>
+              <p>Projects in your community</p>
+            </div>
+            <div>
+              <%= link_to "See on map", my_sites_map_path, class: "btn-small" %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-containers">
+        <%# PROJECT INFO CONTAINER %>
+        <div class="cont project-info-container">
+          <div class="text-header">
+            <div class="div">
+              <p>Welcome&nbsp<%= current_user.first_name + " " + current_user.last_name %>&nbsp!</p>
+            </div>
+            <div>
+              <%= link_to "Edit user", edit_user_registration_path, class: "btn-small" %>
+            </div>
+          </div>
+          <div class="user-info">
+            <div>
+              <h3><strong>Email: </strong><%= current_user.email %></h3>
+              <h3><strong>Profession:&nbsp&nbsp&nbsp</strong><%= current_user.profession %></h3>
+            </div>
+          </div>
+        </div>
+        <div class="cont weather-container">
+          <div class="text-header">
+            <div class="div">
+              <p>Weather forecast for this week.</p>
+            </div>
+          </div>
+          <div class="user-info">
+            <div>
+              <%= render "shared/weather_forecast" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%# FOOTTER %>
+  <%= render "shared/footer" %>
+
+  <%# Map  %>
+  <%# <%= render "shared/map_all_sites" %>
 </div>

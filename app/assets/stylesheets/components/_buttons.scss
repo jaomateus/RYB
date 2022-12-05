@@ -15,6 +15,37 @@
   }
 }
 
+// .btn-small {
+//   background-color: $green-dark;
+//   border-radius: 0.8rem;
+//   font-family: 'Roboto';
+//   font-style: normal;
+//   font-weight: 600;
+//   color: white;
+//   padding: 0 1.2rem 0;
+//   text-decoration-line: none;
+//   border-width: 1px;
+//   justify-content: center;
+//   align-items: center;
+//   text-align: center;
+//   font-size: .8rem;
+//   border:  1px solid white;
+// }
+
+.btn-small {
+  color: white;
+  padding: 8px 18px;
+  border-radius: 0.8rem;
+  background: $green-dark;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  margin: auto;
+  margin-bottom: 16px;
+  text-align: center;
+  border:  0.5px solid white;
+  font-size: 12px;
+}
+
 .light {
   background: $green-light;
 

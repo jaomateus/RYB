@@ -1,0 +1,28 @@
+<div class="project-cards">
+  <% @sites.each do |site| %>
+    <% if site.photo.attached? %>
+      <div class="site-card">
+        <div class="site-img">
+          <%= cl_image_tag site.photo.key %>
+        </div>
+    <% else %>
+      <div class="site-card" style="background-image: asset-url('plant_example.jpg');"></div>
+    <% end %>
+
+      <%# SITE INFO %>
+      <div class="site-tags">
+        <div>
+          <h2><%= site.project_name %></h2>
+          <h3><strong>Location: </strong><%= site.address %></h3>
+          <h3><strong>Project type:&nbsp&nbsp&nbsp</strong><%= site.project_type %></h3>
+          <h3><strong>Project goals:&nbsp&nbsp&nbsp</strong><%= site.goals %></h3>
+          <h3><strong>Project start date:&nbsp&nbsp&nbsp</strong><%= site.project_start_date %></h3>
+        </div>
+        <div id="site-crud-btns">
+          <i class="fa-solid fa-pen"></i>
+          <i class="fa-solid fa-trash"></i>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

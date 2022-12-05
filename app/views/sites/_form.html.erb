@@ -1,11 +1,19 @@
-<div class="container">
+<div class="container_simple_form">
   <%= simple_form_for(@site) do |f| %>
-    <%= f.input :photo, as: :file %>
+    <%= f.input :photo, as: :file, :label => "Add an image to your site" %>
     <%= f.input :project_name %>
-    <%= f.input :description %>
-    <%= f.input :address %>
-    <%= f.input :project_type %>
-    <%= f.input :project_area %>
+    <%= f.input :address, input_html: {class: "d-none"} %>
+    <%= f.input :address,
+                      input_html: {data: {address_autocomplete_target: "address"}},
+                      wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}} %>
+    <%= f.input :description, :label => "Project description", as: :text %>
+    <%= f.input :project_start_date, :label => "Project starting date" %>
+    <%= f.input :project_type, :collection => %w[Regenerative\ agriculture Forest\ garden Rewilding Orchard Other] %>
+    <%= f.input :project_area, :label => "Project size (sq. meters)" %>
+    <%= f.input :goals, :label => "Project goals"%>
+    <%= f.input :atmospheric_polution, :collection => %w[No\ atmospheric\ polution Low Moderate High] %>
+    <%= f.input :soil_type, :collection => %w[Light\ (Sandy) Medium\ (Loam) Heavy Heavy\ Clay Poor\ Soil] %>
+    <%= f.input :soil_ph, :collection => %w[Very\ acir Acid Neutral Base/Alkaline Very\ alkaline Saline] %>
     <%= f.submit %>
   <% end %>
 </div>

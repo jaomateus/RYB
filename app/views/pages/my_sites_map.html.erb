@@ -1,0 +1,19 @@
+<div id="page-container">
+
+  <div id="content-wrap">
+    <%# NAVBAR %>
+    <%= render "shared/navbar_horiz" %>
+
+    <%# MAPS  %>
+    <div style="width: 100%; height: 600px;"
+          data-controller="map"
+          data-map-markers-value="<%= @markers.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  </div>
+
+  <%# FOOTTER %>
+  <%= render "shared/footer" %>
+
+  <%# Map  %>
+  <%# <%= render "shared/map_all_sites" %>
+</div>

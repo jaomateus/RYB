@@ -1,5 +1,73 @@
 // Specific CSS for your home-page
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 5rem;    /* Footer height */
+}
+
+.ryb-navbar {
+  display: flex;
+  background-color: $black;
+  height: 4rem;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  border-bottom: 1px solid $light-grey;
+
+
+  .navbar-links {
+    display: flex;
+    font-weight: 600;
+    color: $white;
+    font-size: 16px;
+  }
+}
+
+.rewild-anim {
+  position: fixed; /* or absolute */
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+  color: $white;
+  font-size: larger
+
+}
+
+.ryb-footer {
+  display: flex;
+  background-color: $black;
+  height: 4rem;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid $light-grey;
+
+
+  .footer-links {
+    display: flex;
+    font-weight: 300;
+    color: $white;
+    font-size: 15px;
+
+    .icons {
+      font-size: 20px;
+    }
+  }
+}
+
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 5rem;            /* Footer height */
+}
+
 .scroll-content {
+  background-color: $black;
   max-height: 100vh;
   height: 100vh;
   overflow-y: scroll;
@@ -8,5 +76,5 @@
 }
 
 .dark-background {
-  background-color: $medium-grey;
+  background-color: $black;
 }
