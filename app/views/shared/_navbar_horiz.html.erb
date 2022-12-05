@@ -1,21 +1,19 @@
-<div class="ryb-navbar sticky">
-  <div class="navbar-links px-2">
-    <div class="logo">
-    </div>
+<div class="navbar">
+  <div class="logo px-3">
+    <%= show_svg('logo/Ryb_50.svg') %>
+  </div>
+  <div class="links">
     <div class="px-3">
       <%= link_to "All sites", sites_path, class: "nav-link" %>
     </div>
     <div class="px-3">
       <%= link_to "Community", sites_path, class: "nav-link" %>
     </div>
-  </div>
-
-    <div class="navbar-links px-2">
-      <div class="px-3">
-        <%= link_to "My RYB", sites_path, class: "nav-link" %>
-      </div>
-      <div class="px-3">
-        <%= link_to "Login", sites_path, class: "nav-link" %>
-      </div>
+    <div class="px-3">
+      <%= link_to "My RYB", sites_path, class: "nav-link" %>
     </div>
+    <div class="px-3">
+      <%= link_to "Login", sites_path, class: "nav-link" %>
+    </div>
+  </div>
 </div>

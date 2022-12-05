@@ -15,7 +15,7 @@ class PlantsController < ApplicationController
   end
 
   def index
-    @site = Site.find(params[:site_id])
+    # @site = Site.find(params[:site_id])
 
     if params[:query].present?
       sql_query = <<~SQL
@@ -28,7 +28,6 @@ class PlantsController < ApplicationController
     else
       @plants = Plant.all
     end
-
   end
 
   def edit

@@ -45,14 +45,51 @@ puts "Creating sites......"
 site1 = Site.create!(user: User.all.sample,
                      project_name: "Creana Project",
                      description: "A garden with a lot of green plants, not so many flowers. I have a really small backyard.",
-                     address: "Amsterda, The netherlands",
+                     address: "Amsterdam, The netherlands",
                      project_type: "Green garden",
                      goals: "Counteract climate change",
-                     project_start_date: "2020-09-08")
-
+                     project_start_date: "2020-09-08",
+                     atmospheric_polution: "low",
+                     maritime_exposure: false,
+                     soil_type: "wet soil",
+                     soil_ph: "5.8",
+                     usa_hardiness_zone: 6)
 file = File.open("app/assets/images/sites/timthumb.jpeg")
 site1.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 site1.save
+
+site4 = Site.create(user: User.all.sample,
+                    project_name: "Goodgreen",
+                    description: "A garden, save for kids and dogs. But I also want it really green and have a lot of variety.",
+                    address: "Paris",
+                    project_type: "Green garden",
+                    goals: "Produce my own vegetables",
+                    project_start_date: "2020-05-21",
+                    atmospheric_polution: "moderate",
+                    maritime_exposure: false,
+                    soil_type: "loamy",
+                    soil_ph: "5.6",
+                    usa_hardiness_zone: 5)
+file = File.open("app/assets/images/sites/DSC_4233-scaled-2048x1367.jpeg")
+site4.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+site4.save
+
+site6 = Site.create(user: User.all.sample,
+                    project_name: "Horto dos Barros",
+                    description: "My area for my project is really small, a balcony. I live near the sea and I'am curious which plants I can place.",
+                    address: "Santorini",
+                    project_type: "Balcony garden",
+                    goals: "Make my neighbouthood a greener place",
+                    project_start_date: "2015-03-20",
+                    atmospheric_polution: "low",
+                    maritime_exposure: true,
+                    soil_type: "sandy",
+                    soil_ph: "5.8",
+                    usa_hardiness_zone: 6
+                  )
+file = File.open("app/assets/images/sites/knepp1.jpeg")
+site6.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+site6.save
 
 # site2 = Site.create!(user: User.all.sample, project_name: "Root To Roses", description: "I have a small backyard with a path in the middle and on the sides a lot of green. I would really love it if the sides of the path are roses to have a romantic garden.", address: "Amsterdam", project_type: "Flower garden", goals: "Regenerate land", project_start_date: "2021-09-08")
 # file = File.open("app/assets/images/sites/20210725_072409.jpeg")
@@ -64,20 +101,11 @@ site1.save
 # site3.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 # site3.save
 
-site4 = Site.create(user: User.all.sample, project_name: "Goodgreen", description: "A garden, save for kids and dogs. But I also want it really green and have a lot of variety.", address: "Paris", project_type: "Green garden", goals: "Produce my own food", project_start_date: "2022-05-18")
-file = File.open("app/assets/images/sites/DSC_4233-scaled-2048x1367.jpeg")
-site4.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-site4.save
-
 # site5 = Site.create(user: User.all.sample, project_name: "The Free", description: "To watch the squirrels play, to absorb the sweet birdsong as if it were nectar, these are the simple joys of the backyard that is rich in nature.", address: "Tallinn", project_type: "Forest garden", goals: "Create a place for biodiversity", project_start_date: "2015-03-25")
 # file = File.open("app/assets/images/sites/forest garden RESIZED_0.jpeg")
 # site5.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 # site5.save
 
-site6 = Site.create(user: User.all.sample, project_name: "A Garden By The Sea", description: "My area for my project is really small, a balcony. I live near the sea and I'am curious which plants I can place.", address: "Santorini", project_type: "Balcony garden", goals: "Make my neighbouthood a greener place", project_start_date: "2015-03-20")
-file = File.open("app/assets/images/sites/knepp1.jpeg")
-site6.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-site6.save
 
 # site7 = Site.create(user: User.all.sample, project_name: "Horto dos Barros", description: "Joao's really lovely project, but he knows what he is doing with this project.", address: "Praia da Areia Branca", project_type: "Food Forest", goals: "Reverse desertification", project_start_date: "2015-03-25")
 # file = File.open("app/assets/images/sites/IMG_0376.jpeg")
