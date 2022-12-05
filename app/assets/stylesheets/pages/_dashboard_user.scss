@@ -82,6 +82,15 @@
   justify-content: space-between;
   gap: 25px;
 
+  .site-card{
+    padding: 8px;
+    &:hover{
+      box-shadow: 4px 4px rgba(0,0,0,0.1);
+    }
+    a {
+      text-decoration: none;
+    }
+  }
 
   .site-card{
     display: flex;
