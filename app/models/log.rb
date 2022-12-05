@@ -1,5 +1,6 @@
 class Log < ApplicationRecord
   belongs_to :site
-  has_many :plant_logs
-  has_one_attached :photo
+  belongs_to :site_plant, optional: true
+  has_many :plants, through: :site_plant
+  has_many_attached :photos
 end

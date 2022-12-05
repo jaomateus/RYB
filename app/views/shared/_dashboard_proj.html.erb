@@ -1,42 +1,36 @@
-<div class="scroll-content dark-background">
+<div class="scroll-content light-background">
   <div class="scroll">
     <div class="d-flex">
+      <%# PROJECT INFO %>
       <div>
         <h1 class="name-site" >My Site</h1>
         <%= @site.project_name %>
         <%= link_to "go back", sites_path %>
       </div>
+
+
       <%# WEATHER FORECAST %>
-      <div class="row justify-content-center" data-controller="weather">
-        <span class= "d-none" data-weather-target="address" data-address-value='<%= "#{@site.address}" %>'></span>
-        <div class="col-sm-8">
-          <div class="card mt-4 mb-5">
-            <div class="card-body">
-              <h1>Weather in <span data-weather-target="city"> <%= @site.address %> </span></h1>
-              <h3 class="text-secondary" data-weather-target="date"><%= Date.today %></h3>
-              <div>
-                <p data-weather-target="description"><!-- TODO: DESCRIPTION --></p>
-                <div class="d-flex">
-                  <img src="" alt="Weather Icon" data-weather-target="icon">
-                  <h2 data-weather-target="temperature"><!-- TODO: TEMPERATURE --></h2>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <%= render "shared/weather_forecast"%>
     </div>
     <br>
     <br>
   <div>
 
-  <%# CARDS %>
-  <div class="card-text">
-    <h2>Cards</h2>
-  </div>
-  <div class="grid-search-cards">
-    <div class="card-plant-grid"></div>
-    <div class="card-plant-grid"></div>
-    <div class="card-plant-grid"></div>
-  </div>
-</div>
+  <%# LOGS %>
+  <% @site.logs.each do |log| %>
+    <div>
+      <%= log.created_at %>
+    </div>
+    <div>
+      <%= log.title %>
+    </div>
+    <div>
+      <%= log.description %>
+    </div>
+
+    <% if log.photos.attached? %>
+      <% log.photos.each do |photo| %>
+        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
+    <% end %>
+  <% end %>

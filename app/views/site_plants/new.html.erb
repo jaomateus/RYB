@@ -1,0 +1,7 @@
+<div class="container">
+  <%= simple_form_for [@site, @site_plant] do |f| %>
+    <%= f.association :plant %>
+    <%= f.input :planted %>
+    <%= f.submit %>
+  <% end %>
+</div>
