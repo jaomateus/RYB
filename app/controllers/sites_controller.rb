@@ -10,6 +10,7 @@ class SitesController < ApplicationController
     end
   end
 
+
   def new
     @site = Site.new
   end
