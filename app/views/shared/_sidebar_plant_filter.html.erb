@@ -1,25 +1,105 @@
 <div class="filter-list-container">
   <div class="filter-slide-container">
+    <form action="/sites/<%= @site.id %>/search">
+
+
+    <%# Functions %>
     <div class="filter-group">
       <div class="form-check filter-name">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-        <label class="form-check-label check-filter" for="flexCheckDefault">Ground layers</label>
+        <p>Type</p>
+        <input class="" type="checkbox" name="deciduous" value="" id="flexCheckDefault10">
+        <label class="form-check-label check-filter" for="flexCheckDefault">Deciduous</label>
       </div>
 
       <div class="form-check filter-name">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-        <label class="form-check-label check-filter" for="flexCheckDefault">Ground layers</label>
+        <input class="" type="checkbox" name="Edible" value="" id="flexCheckDefault11">
+        <label class="form-check-label check-filter" for="flexCheckDefault1">Evergreen</label>
+      </div>
+
+      <hr>
+
+      <div class="form-check filter-name">
+        <input class="" type="checkbox" name="tree" value="" id="flexCheckDefault12">
+        <label class="form-check-label check-filter" for="flexCheckDefault1">Tree</label>
+      </div>
+
+      <div class="form-check filter-name">
+        <input class="" type="checkbox" name="shrub" value="" id="flexCheckDefault13">
+        <label class="form-check-label check-filter" for="flexCheckDefault1">Climber</label>
+      </div>
+
+      <div class="form-check filter-name">
+        <input class="" type="checkbox" name="shrub" value="" id="flexCheckDefault13">
+        <label class="form-check-label check-filter" for="flexCheckDefault1">Shrub</label>
+      </div>
+
+      <div class="form-check filter-name">
+        <input class="" type="checkbox" name="shrub" value="" id="flexCheckDefault13">
+        <label class="form-check-label check-filter" for="flexCheckDefault1">Herbaceous perenneal</label>
+      </div>
+
+      <div class="form-check filter-name">
+        <input class="" type="checkbox" name="shrub" value="" id="flexCheckDefault13">
+        <label class="form-check-label check-filter" for="flexCheckDefault1">Ground cover</label>
+      </div>
+
+      <div class="form-check filter-name">
+        <input class="" type="checkbox" name="shrub" value="" id="flexCheckDefault13">
+        <label class="form-check-label check-filter" for="flexCheckDefault1">Bulb</label>
       </div>
     </div>
 
-    <div class="form-check filter-name">
-      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-      <label class="form-check-label check-filter" for="flexCheckDefault">Ground layers</label>
+    <%# SOIL TYPE %>
+    <div class="filter-group">
+      <div class="form-check filter-name">
+        <p>Soil Type</p>
+        <input class="" type="checkbox" name="well_drained" value="" id="flexCheckDefault">
+        <label class="form-check-label check-filter" for="flexCheckDefault">Well drained</label>
+      </div>
+
+      <div class="form-check filter-name">
+        <input class="" type="checkbox" name="moist" value="" id="flexCheckDefault1">
+        <label class="form-check-label check-filter" for="flexCheckDefault1">Moist</label>
+      </div>
+
+      <div class="form-check filter-name">
+        <input class="" type="checkbox" name="wet_soil" value="sexy plants" id="flexCheckDefault2">
+        <label class="form-check-label check-filter" for="flexCheckDefault1">Wet soil</label>
+      </div>
+
+      <div class="form-check filter-name">
+        <input class="" type="checkbox" name="water_plant" value="sexy plants" id="flexCheckDefault3">
+        <label class="form-check-label check-filter" for="flexCheckDefault1">Water plants</label>
+      </div>
     </div>
 
-    <div class="form-check filter-name">
-      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-      <label class="form-check-label check-filter" for="flexCheckDefault">Ground layers</label>
+    <%# SUN/SHADE %>
+    <div class="filter-group">
+      <div class="form-check filter-name">
+        <p>Sun / Shade</p>
+        <input class="" type="checkbox" name="full_sun" value="" id="flexCheckDefault4">
+        <label class="form-check-label check-filter" for="flexCheckDefault">Full sun</label>
+      </div>
+
+      <div class="form-check filter-name">
+        <input class="" type="checkbox" name="part_shade" value="" id="flexCheckDefault5">
+        <label class="form-check-label check-filter" for="flexCheckDefault1">Partial shade</label>
+      </div>
+
+      <div class="form-check filter-name">
+        <input class="" type="checkbox" name="full_shade" value="sexy plants" id="flexCheckDefault6">
+        <label class="form-check-label check-filter" for="flexCheckDefault1">Full shade</label>
+      </div>
     </div>
+
+      <%# Functions %>
+
+      <div class="form-check filter-name">
+        <input class="" type="checkbox" name="n_fixer" value="" id="flexCheckDefault9">
+        <label class="form-check-label check-filter" for="flexCheckDefault1">Nitrogen fixer</label>
+      </div>
+    </div>
+
+    <input type="submit">
+    </form>
   </div>
-</div>
