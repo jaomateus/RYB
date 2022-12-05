@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_05_094631) do
+
+ActiveRecord::Schema[7.0].define(version: 2022_12_05_123151) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -49,7 +50,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_094631) do
     t.bigint "site_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "site_plant_id"
     t.index ["site_id"], name: "index_logs_on_site_id"
+    t.index ["site_plant_id"], name: "index_logs_on_site_plant_id"
   end
 
   create_table "plants", force: :cascade do |t|
@@ -96,6 +99,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_094631) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "planted", default: false
+    t.string "plant_tag"
     t.index ["plant_id"], name: "index_site_plants_on_plant_id"
     t.index ["site_id"], name: "index_site_plants_on_site_id"
   end
@@ -139,6 +143,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_094631) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "logs", "site_plants"
   add_foreign_key "site_plants", "plants"
   add_foreign_key "site_plants", "sites"
 end
