@@ -4,23 +4,34 @@
   min-height: 100vh;
 }
 
+.navbar {
+  display: flex;
+}
+
+
 #content-wrap {
   padding-bottom: 5rem;    /* Footer height */
 }
 
-.ryb-navbar {
+
+.navbar {
   display: flex;
   background-color: $black;
-  height: 4rem;
+  height: 4.5rem;
   align-items: center;
-  justify-content: space-between;
   position: sticky;
+  justify-content: space-between;
+  width: 100%;
   border-bottom: 1px solid $light-grey;
 
+  .ryb-logo {
+    width: 5%;
+  }
 
-  .navbar-links {
+  .links {
     display: flex;
-    font-weight: 600;
+    justify-content: flex-end;
+    font-weight: 500;
     color: $white;
     font-size: 16px;
   }

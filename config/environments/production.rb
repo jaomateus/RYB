@@ -78,6 +78,11 @@ Rails.application.configure do
   # Don't log any deprecations.
   config.active_support.report_deprecations = false
 
+  config.assets.precompile += %w( '.svg' )
+
+  # Must include to get inline SVGs to work in deploy
+  config.assets.css_compressor = :sass
+
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
