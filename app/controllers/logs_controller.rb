@@ -11,7 +11,7 @@ class LogsController < ApplicationController
     @site = Site.find(params[:site_id])
     @log.site = @site
     if @log.save
-      redirect_to site_log_path(@log.site, @log)
+      redirect_to site_path(@site)
     else
       render :new, status: :unprocessable_entity
     end
