@@ -12,6 +12,13 @@ class PagesController < ApplicationController
 
   def my_sites_map
     @sites = Site.all
+    @markers = @sites.geocoded.map do |site|
+      {
+        lat: site.latitude,
+        lng: site.longitude,
+        info_window: render_to_string(partial: "sites/info_window", locals: {site: site})
+      }
+    end
   end
 
   def nursury
