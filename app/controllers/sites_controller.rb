@@ -46,7 +46,7 @@ class SitesController < ApplicationController
     @site = Site.find(params[:id])
     @site.destroy
 
-    redirect_to root_path
+    redirect_to sites_path
   end
 
   private
