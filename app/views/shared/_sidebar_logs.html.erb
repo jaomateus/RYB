@@ -1,3 +1,7 @@
+<%# LOGS %>
+
+
+
 <div>
   <div class="plant-list-slide">
     <div class="top-bar-list sticky-top">
@@ -6,33 +10,20 @@
     </div>
 
     <div class="plant-list-slide plant-list-grid">
-      <div class="card-plant-list">
-        <%= image_tag("plant_example.jpg", :alt => "rss feed") %>
-        <div class="card-plant-list-infos">
-          <h2>Title of log</h2>
-          <p>22 of november, 2022</p>
-        </div>
-      </div>
-
-      <div class="card-plant-list">
-        <%= image_tag("plant_example.jpg", :alt => "rss feed") %>
-        <div class="card-plant-list-infos">
-          <h2>Title of Log</h2>
-          <p>22 of November, 2022</p>
-        </div>
-      </div>
-
-      <div class="card-plant-list">
-        <%= image_tag("plant_example.jpg", :alt => "rss feed") %>
-        <div class="card-plant-list-infos">
-          <h2>Title of log</h2>
-          <p>21 of November, 2022</p>
-        </div>
+      <% @site.logs.each do |log| %>
+        <div class="card-plant-list">
+          <div class="card-plant-list-infos">
+            <h2> <%= log.title %> </h2>
+            <p><strong>Created on: <%= log.created_at %></strong></p>
+          <% if  log.photos.attached? %>
+            <%= cl_image_tag log.photos.first.key, height: 300, width: 400, crop: :fill %>
+          <% end %>
+        <% end %>
       </div>
     </div>
 
-    <div class="button-side-bar sticky-bottom">
-      <%= link_to "New log", new_site_log_path(site), class: "btn btn-ghost light"%>
-    </div>
+      <div class="button-side-bar sticky-bottom">
+        <%= link_to "New log", new_site_log_path(site), class: "btn btn-ghost light"%>
+      </div>
   </div>
 </div>

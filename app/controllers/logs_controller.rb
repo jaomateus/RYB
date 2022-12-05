@@ -10,7 +10,6 @@ class LogsController < ApplicationController
     @log = Log.new(log_params)
     @site = Site.find(params[:site_id])
     @log.site = @site
-
     if @log.save
       redirect_to site_log_path(@log.site, @log)
     else

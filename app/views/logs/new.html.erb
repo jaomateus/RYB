@@ -4,7 +4,7 @@
       <%= f.input :photos, as: :file, input_html: { multiple: true } %>
       <%= f.input :date %>
       <%= f.input :title %>
-      <%= f.input :site_plant_id, collection: @plants.pluck(&:name) %>
+      <%= f.input :site_plant_id, collection: @plants%>
       <%= f.input :description %>
       <%= f.submit %>
     <% end %>
