@@ -1,0 +1,62 @@
+
+// the main page with title and subtitle
+.info-show {
+  width: 100%;
+  padding-top: 40px;
+  padding-left: 80px;
+  padding-right: 80px;
+  background-color: $white;
+
+    h2 {
+      color: $dark-grey;
+
+    }
+
+    h3 {
+      color: $dark-grey;
+
+    }
+
+
+}
+
+// here I can edit the boxes with characteriscis.
+
+.info-char {
+
+}
+
+//simple card for displaying multiple info of each plant
+
+.simple-card {
+  border-radius: 20px;
+  border: 1px solid $light-grey;
+
+    p {
+      color: $dark-grey;
+      padding: 12px;
+
+    }
+}
+
+.sticky-button {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  z-index: 100;
+}
+
+.btn-big {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  background-color: $dark-grey !important;
+
+
+  color: $white;
+
+    :hover {
+      background-color: $white;
+    }
+
+}

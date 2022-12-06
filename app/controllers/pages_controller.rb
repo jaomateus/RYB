@@ -76,7 +76,6 @@ class PagesController < ApplicationController
     # @plants_query = @plants.uniq
 
     @site = Site.find(params[:site_id])
-    lng = @site.longitude
-    # raise
+    # lng = @site.longitude
   end
 end
