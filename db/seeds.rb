@@ -11,85 +11,85 @@ require "csv"
 
 Log.destroy_all
 SitePlant.destroy_all
-Site.destroy_all
-User.destroy_all
+# Site.destroy_all
+# User.destroy_all
 Plant.destroy_all
 
-puts "Creating user......"
-user1 = User.create!(email: "patrizgonzalez@gmail.com",
-                     password: "123456",
-                     first_name: "Patriz",
-                     last_name: "Gonzalez",
-                     profession: "Ping Pong master",
-                     location: "Amsterdam, The netherlands")
-user2 = User.create!(email: "samuel.howard34@gmail.com",
-                     password: "123456",
-                     first_name: "Samuel",
-                     last_name: "Howard",
-                     profession: "Ping Pong master",
-                     location: "Amsterdam, The netherlands")
-user3 = User.create!(email: "dariagort@gmail.com",
-                     password: "123456",
-                     first_name: "Daria",
-                     last_name: "Gort",
-                     profession: "Architect",
-                     location: "Buenos Aires, Argentina")
-user4 = User.create!(email: "jaomateus@gmail.com",
-                     password: "123456",
-                     first_name: "João",
-                     last_name: "Mateus",
-                     profession: "Landscape Architect",
-                     location: "Lourinhã, Portugal")
+# puts "Creating user......"
+# user1 = User.create!(email: "patrizgonzalez@gmail.com",
+#                      password: "123456",
+#                      first_name: "Patriz",
+#                      last_name: "Gonzalez",
+#                      profession: "Ping Pong master",
+#                      location: "Amsterdam, The netherlands")
+# user2 = User.create!(email: "samuel.howard34@gmail.com",
+#                      password: "123456",
+#                      first_name: "Samuel",
+#                      last_name: "Howard",
+#                      profession: "Ping Pong master",
+#                      location: "Amsterdam, The netherlands")
+# user3 = User.create!(email: "dariagort@gmail.com",
+#                      password: "123456",
+#                      first_name: "Daria",
+#                      last_name: "Gort",
+#                      profession: "Architect",
+#                      location: "Buenos Aires, Argentina")
+# user4 = User.create!(email: "jaomateus@gmail.com",
+#                      password: "123456",
+#                      first_name: "João",
+#                      last_name: "Mateus",
+#                      profession: "Landscape Architect",
+#                      location: "Lourinhã, Portugal")
 
-puts "Creating sites......"
-site1 = Site.create!(user: User.all.sample,
-                     project_name: "Creana Project",
-                     description: "A garden with a lot of green plants, not so many flowers. I have a really small backyard.",
-                     address: "Amsterdam, The netherlands",
-                     project_type: "Green garden",
-                     goals: "Counteract climate change",
-                     project_start_date: "2020-09-08",
-                     atmospheric_polution: "low",
-                     maritime_exposure: false,
-                     soil_type: "wet soil",
-                     soil_ph: "5.8",
-                     usa_hardiness_zone: 6)
-file = File.open("app/assets/images/sites/timthumb.jpeg")
-site1.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-site1.save
+# puts "Creating sites......"
+# site1 = Site.create!(user: User.all.sample,
+#                      project_name: "Creana Project",
+#                      description: "A garden with a lot of green plants, not so many flowers. I have a really small backyard.",
+#                      address: "Amsterdam, The netherlands",
+#                      project_type: "Green garden",
+#                      goals: "Counteract climate change",
+#                      project_start_date: "2020-09-08",
+#                      atmospheric_polution: "low",
+#                      maritime_exposure: false,
+#                      soil_type: "wet soil",
+#                      soil_ph: "5.8",
+#                      usa_hardiness_zone: 6)
+# file = File.open("app/assets/images/sites/timthumb.jpeg")
+# site1.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+# site1.save
 
-site4 = Site.create(user: User.all.sample,
-                    project_name: "Goodgreen",
-                    description: "A garden, save for kids and dogs. But I also want it really green and have a lot of variety.",
-                    address: "Paris",
-                    project_type: "Green garden",
-                    goals: "Produce my own vegetables",
-                    project_start_date: "2020-05-21",
-                    atmospheric_polution: "moderate",
-                    maritime_exposure: false,
-                    soil_type: "loamy",
-                    soil_ph: "5.6",
-                    usa_hardiness_zone: 5)
-file = File.open("app/assets/images/sites/DSC_4233-scaled-2048x1367.jpeg")
-site4.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-site4.save
+# site4 = Site.create(user: User.all.sample,
+#                     project_name: "Goodgreen",
+#                     description: "A garden, save for kids and dogs. But I also want it really green and have a lot of variety.",
+#                     address: "Paris",
+#                     project_type: "Green garden",
+#                     goals: "Produce my own vegetables",
+#                     project_start_date: "2020-05-21",
+#                     atmospheric_polution: "moderate",
+#                     maritime_exposure: false,
+#                     soil_type: "loamy",
+#                     soil_ph: "5.6",
+#                     usa_hardiness_zone: 5)
+# file = File.open("app/assets/images/sites/DSC_4233-scaled-2048x1367.jpeg")
+# site4.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+# site4.save
 
-site6 = Site.create(user: User.all.sample,
-                    project_name: "Horto dos Barros",
-                    description: "My area for my project is really small, a balcony. I live near the sea and I'am curious which plants I can place.",
-                    address: "Santorini",
-                    project_type: "Balcony garden",
-                    goals: "Make my neighbouthood a greener place",
-                    project_start_date: "2015-03-20",
-                    atmospheric_polution: "low",
-                    maritime_exposure: true,
-                    soil_type: "sandy",
-                    soil_ph: "5.8",
-                    usa_hardiness_zone: 6
-                  )
-file = File.open("app/assets/images/sites/knepp1.jpeg")
-site6.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-site6.save
+# site6 = Site.create(user: User.all.sample,
+#                     project_name: "Horto dos Barros",
+#                     description: "My area for my project is really small, a balcony. I live near the sea and I'am curious which plants I can place.",
+#                     address: "Santorini",
+#                     project_type: "Balcony garden",
+#                     goals: "Make my neighbouthood a greener place",
+#                     project_start_date: "2015-03-20",
+#                     atmospheric_polution: "low",
+#                     maritime_exposure: true,
+#                     soil_type: "sandy",
+#                     soil_ph: "5.8",
+#                     usa_hardiness_zone: 6
+#                   )
+# file = File.open("app/assets/images/sites/knepp1.jpeg")
+# site6.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+# site6.save
 
 # site2 = Site.create!(user: User.all.sample, project_name: "Root To Roses", description: "I have a small backyard with a path in the middle and on the sides a lot of green. I would really love it if the sides of the path are roses to have a romantic garden.", address: "Amsterdam", project_type: "Flower garden", goals: "Regenerate land", project_start_date: "2021-09-08")
 # file = File.open("app/assets/images/sites/20210725_072409.jpeg")
@@ -113,10 +113,10 @@ site6.save
 # site7.save
 
 # PARSING
-plant_list = CSV.parse(File.read("db/plant_database/Plant_list.csv"))
+plant_list = CSV.parse(File.read("db/plant_database/Plant_list_copy.csv"))
 
-plant_list.first(30).each do |plant|
-  puts "Creating plant #{plant[0]}......"
+plant_list.first(14).each do |plant|
+  puts "Creating plant #{plant[0]}......#{plant[1]}"
 
   # # Create plant
   url = "https://pfaf.org/user/plant.aspx?latinname=#{plant[0]}"
@@ -124,8 +124,9 @@ plant_list.first(30).each do |plant|
 
   if doc.css('span#ContentPlaceHolder1_lbldisplatinname').text != ""
     latin_name = plant[0]
-    image_url = doc.css('table#ContentPlaceHolder1_tblPlantImges').children.children.children.children.attribute("data-ezsrc").value
-    image_url = "https://pfaf.org#{image_url[2..-1]}"
+    # image_url = doc.css('table#ContentPlaceHolder1_tblPlantImges').children.children.children.children.attribute("data-ezsrc").value
+    # image_url = "https://pfaf.org#{image_url[2..-1]}"
+    image_url = plant[1]
     common_name = doc.css('span#ContentPlaceHolder1_lblCommanName').text.strip
     physical_characteristics = doc.css('span#ContentPlaceHolder1_lblPhystatment').text.strip
     family = doc.css('span#ContentPlaceHolder1_lblFamily').text.strip

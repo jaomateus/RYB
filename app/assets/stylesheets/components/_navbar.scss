@@ -11,3 +11,25 @@
   width: 40px;
 }
 
+.navbar {
+  display: flex;
+  background-color: $black;
+  height: 4.5rem;
+  align-items: center;
+  position: sticky;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 1px solid $light-grey;
+
+  .ryb-logo {
+    width: 5%;
+  }
+
+  .links {
+    display: flex;
+    justify-content: flex-end;
+    font-weight: 500;
+    color: $white;
+    font-size: 16px;
+  }
+}

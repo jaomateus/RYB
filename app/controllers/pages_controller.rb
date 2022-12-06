@@ -27,25 +27,39 @@ class PagesController < ApplicationController
   end
 
   def search
+    # Filter
 
+  if params == 1
+    if params[:n_fixer]
+      @plants_n_fixer = Plant.where(n_fixer: true)
+    end
+    @plants = @plants_n_fixer
+  else
     @plants = Plant.all
-    # raise
-    # if params[:n_fixer]
+  end
+
+    # if params[:deciduous]
+    #   @plants_deciduous = Plant.where(type: "deciduous").downcase
+    # end
+
+    # if params[:edible]
+    #   # @plants_n = Plant.where(edibility_rate: true)
+    # end
+
+    # if params[:tree]
     #   @plants_n = Plant.where(n_fixer: true)
     # end
 
-    # if params[:n_fixer]
-    #   @plants_b = Plant.where(n_fixer: true)
+    # if params[:climber]
+    #   @plants_n = Plant.where(n_fixer: true)
     # end
 
     # @plants = @plants_b + @plants_n
 
-    # @plants = @plants.uniq
+    # @plants_query = @plants.uniq
 
 
     @site = Site.find(params[:site_id])
     lng = @site.longitude
-
-
   end
 end
