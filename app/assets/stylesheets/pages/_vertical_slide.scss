@@ -166,3 +166,24 @@ outline: 3px solid  $light-grey;
   }
 
 }
+
+
+// filter list slide
+
+.filter-list-slide {
+  width: 250px;
+  height: 100vh;
+  background-color: $dark-grey;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.filter-list-slide::-webkit-scrollbar {
+  width: 6px;
+}
+.filter-list-slide::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+.filter-list-slide::-webkit-scrollbar-thumb {
+background-color: $light-grey;
+outline: 3px solid  $light-grey;
+}
