@@ -2,7 +2,6 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
 
   def home
-
   end
 
   def ui
@@ -28,20 +27,37 @@ class PagesController < ApplicationController
 
   def search
     # Filter
-
-  if params == 1
-    if params[:n_fixer]
-      @plants_n_fixer = Plant.where(n_fixer: true)
-    end
-    @plants = @plants_n_fixer
-  else
     @plants = Plant.all
-    # @Plants = Plant.where()
-  end
 
-    # if params[:deciduous]
-    #   @plants_deciduous = Plant.where(type: "deciduous").downcase
-    # end
+    if params.keys.count > 3
+
+      @plants = []
+
+      if params[:n_fixer]
+        @plants += Plant.where(n_fixer: true)
+      end
+
+      if params[:tree]
+        @plants += Plant.where(plant_type: "tree")
+      end
+
+      if params[:shrub]
+        @plants += Plant.where(plant_type: "shrub")
+      end
+      # raise
+      if params[:climber]
+        @plants += Plant.where(plant_type: "climber")
+      end
+
+      if params[:perennial]
+        @plants += Plant.where(plant_type: "perennial")
+      end
+
+
+      @plants = @plants.uniq
+    end
+
+
 
     # if params[:edible]
     #   # @plants_n = Plant.where(edibility_rate: true)
@@ -59,8 +75,8 @@ class PagesController < ApplicationController
 
     # @plants_query = @plants.uniq
 
-
     @site = Site.find(params[:site_id])
     lng = @site.longitude
+    # raise
   end
 end
