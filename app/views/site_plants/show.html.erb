@@ -1,9 +1,7 @@
 <div class="d-flex">
   <%= render "shared/sidebar_btns", site: @site %>
-  <%= render "site_plants/index", site:@site, site_plants: @site.site_plants %>
-</div>
-
-<div class="scroll-content">
+  <%= render "site_plants/index", site:@site, site_plants: @site_plants %>
+  <div class="scroll-content">
   <% if @site_plant %>
     <div class="info-show">
       <h2><%= @site_plant.plant.latin_name %></h2>
@@ -13,8 +11,7 @@
       <p><%=  @site_plant.plant.plant_type %></p>
       <p><%=  @site_plant.plant.family %></p>
 
-      <div> <%= @site_plant.plant.image_url %> <%= "image_url" %>
-      </div>
+      <div><%= @site_plant.plant.image_url %> <%= "image_url" %></div>
 
       <div class="simple-card">
         <p>Width: <%=  @site_plant.plant.width %></p>
@@ -51,27 +48,32 @@
 
       <div>
         <p><%= @site_plant.plant.cultivation_details %></p>
-         <p><%= @site_plant.plant.propagation_details %></p>
+        <p><%= @site_plant.plant.propagation_details %></p>
       </div>
-    </div>
 
-    <div>
-      <%= @logs = Log.where(site_id: @site.id, site_plant_id: @site_plant.id) %>
-      <%= @logs.each do |log| %>
-        <div>
-        </div>
-      <% end %>
-    </div>
+      <div>
+        <%= @logs = Log.where(site_id: @site.id, site_plant_id: @site_plant.id) %>
+        <%= @logs.each do |log| %>
+          <div>
+          </div>
+        <% end %>
+      </div>
 
+      <div class="sticky-button d-flex justify-content-center">
+        <%= link_to "New log", new_site_log_path(site_id: @site.id, site_plant_id: @site_plant.id), class: "btn-big" %>
+      </div>
+
+    </div>
 
   <% else %>
     <div>
       <h2>Hi! You haven't planted anything yet.</h2>
-      </div>
-        <div class="button-side-bar sticky-bottom">
-        <%= link_to "Search plants for your backyard!", site_search_path(site), class: "btn btn-ghost light"%>
+      <div class="button-side-bar sticky-bottom">
+        <%= link_to "Search plants for your backyard!", site_search_path(site), class: "btn btn-ghost light" %>
       </div>
     </div>
   <% end %>
+
+</div>
 
 </div>

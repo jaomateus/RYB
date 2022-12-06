@@ -4,6 +4,15 @@ class SitePlantsController < ApplicationController
   def show
     @site = Site.find(params[:site_id])
     @site_plant = SitePlant.find(params[:id]) unless params[:id] == "empty"
+    if params[:query].present?
+      sql_query = <<~SQL
+        plants.latin_name ILIKE :query
+        OR plants.common_name ILIKE :query
+      SQL
+      @site_plants = SitePlant.joins(:plant).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @site_plants = SitePlant.where(site_id: @site.id)
+    end
   end
 
   def new
@@ -33,6 +42,16 @@ class SitePlantsController < ApplicationController
   def index
     @site = Site.find(params[:site_id])
     @site_plants = SitePlant.where(site_id: @site.id)
+
+    if params[:query].present?
+      sql_query = <<~SQL
+        plant.latin_name ILIKE :query
+        OR plant.common_name ILIKE :query
+      SQL
+      @site_plants = SitePlant.joins(:plant).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @site_plants
+    end
   end
 
   private

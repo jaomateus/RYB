@@ -38,3 +38,25 @@
 
     }
 }
+
+.sticky-button {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  z-index: 100;
+}
+
+.btn-big {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  background-color: $dark-grey !important;
+
+
+  color: $white;
+
+    :hover {
+      background-color: $white;
+    }
+
+}
