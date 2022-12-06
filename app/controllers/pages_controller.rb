@@ -61,6 +61,6 @@ class PagesController < ApplicationController
 
 
     @site = Site.find(params[:site_id])
-    lng = @site.longitude
+    # lng = @site.longitude
   end
 end

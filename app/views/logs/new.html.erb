@@ -4,7 +4,7 @@
       <%= f.input :photos, as: :file, input_html: { multiple: true } %>
       <%= f.input :date %>
       <%= f.input :title %>
-      <%= f.input :site_plant_id, collection: @plants%>
+      <%= f.input :site_plant_id, collection: @site.site_plants.map { |sp| sp.plant.common_name}%>
       <%= f.input :description %>
       <%= f.submit %>
     <% end %>

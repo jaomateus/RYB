@@ -1,0 +1,31 @@
+<div>
+  <div class="plant-list-slide">
+    <div class="sticky-top">
+      <div class=" simple_form search d-flex p-2 grid-search-bar sticky-top justify-content-center">
+        <%= form_with url: "#", method: :get, class: "search-form-control-phaf form-group" do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Find a plant in your garden"
+          %>
+          <%= submit_tag "Search", class: "btn btn-search" %>
+        <% end %>
+      </div>
+      <%# <%= render "shared/searchbar_side" %>
+    </div>
+    <div class="plant-list-slide plant-list-grid">
+      <% site_plants.each do |site_plant| %>
+        <%= link_to site_site_plant_path(site, site_plant) do %>
+          <div class="card-plant-list">
+            <%= image_tag("sites/IMG_0376.jpg", :alt => "rss feed") %>
+            <div class="card-plant-list-infos">
+              <h2><%= site_plant.plant.latin_name %></h2>
+              <p><%= site_plant.plant.common_name %></p>
+              <p><%= site_plant.created_at %></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+<%# </div> %>

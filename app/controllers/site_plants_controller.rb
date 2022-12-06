@@ -1,6 +1,10 @@
 require "open-uri"
 
 class SitePlantsController < ApplicationController
+  def show
+    @site = Site.find(params[:site_id])
+    @site_plant = SitePlant.find(params[:id]) unless params[:id] == "empty"
+  end
 
   def new
     @site = Site.find(params[:site_id])
@@ -24,6 +28,11 @@ class SitePlantsController < ApplicationController
     else
       raise
     end
+  end
+
+  def index
+    @site = Site.find(params[:site_id])
+    @site_plants = SitePlant.where(site_id: @site.id)
   end
 
   private
