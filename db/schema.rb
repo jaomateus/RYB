@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_05_123151) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_06_115919) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -97,7 +97,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_123151) do
     t.bigint "site_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "planted", default: false
+    t.boolean "planted", default: true
     t.string "plant_tag"
     t.index ["plant_id"], name: "index_site_plants_on_plant_id"
     t.index ["site_id"], name: "index_site_plants_on_site_id"
