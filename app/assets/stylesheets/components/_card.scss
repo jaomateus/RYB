@@ -46,20 +46,16 @@
 
 .card-plant-grid {
   overflow: hidden;
-  height: 370px;
-  width: 500px;
-  background: $white;
+  height: 250px;
+  width: 100%;
   display: flex;
+  object-fit: cover;
   justify-content: space-between;
-  padding: 20px;
   flex-direction: column;
   align-items: center;
   border-radius: 20px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  margin: 5px;
-  background-image: asset-url("plant_example.jpg");
-  background-position: center ;
-  background-size: cover;
+  background-position: center;
 
     .card-plant-title{
       display: flex;
@@ -115,13 +111,27 @@
 /* Style the front side (fallback if image is missing) */
 .flip-card-front {
   background-color: $medium-grey;
-  color: black;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
 }
 
 /* Style the back side */
 .flip-card-back {
-  padding-top: 30px;
+  padding: 12px;
   background-color: $white;
   color: $dark-grey;
   transform: rotateY(180deg);
+
+    p {
+      padding: 12px;
+      font-size: 12px;
+      color: $dark-grey;
+      height: 70%;
+      overflow-y: scroll;
+    }
 }

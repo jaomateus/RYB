@@ -5,11 +5,29 @@
   justify-content: center;
 }
 
+.form-control {
+  background-color: $black !important;
+  color: $white !important;
+  border: 2px solid $medium-grey !important;
+}
+
 .search-form-control-phaf .btn {
   position: absolute;
   top: 8px;
   bottom: 8px;
   right: 8px;
+  color: $white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: $green-medium;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+}
+
+.search-form-control-phaf .btn:hover {
+  background: $green-dark;
+  color: white;
 }
 
 .search-form-control-phaf .form-control {

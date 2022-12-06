@@ -79,8 +79,6 @@
   background: $green-dark;
   transition: background 0.3s ease;
   text-decoration: none;
-  margin: auto;
-  margin-bottom: 16px;
   text-align: center;
 }
 
@@ -98,6 +96,23 @@
 }
 
 .btn-flat:hover {
+  background: $green-medium;
+  color: white;
+}
+
+// a button final model
+
+.btn-flat-card {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: $green-dark;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn-flat-card:hover {
   background: $green-medium;
   color: white;
 }
