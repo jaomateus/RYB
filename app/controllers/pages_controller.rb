@@ -35,7 +35,8 @@ class PagesController < ApplicationController
     end
     @plants = @plants_n_fixer
   else
-    @plants = Plant.all
+    # @plants = Plant.all
+    @Plants = Plant.where()
   end
 
     # if params[:deciduous]
