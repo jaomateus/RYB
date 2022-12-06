@@ -14,11 +14,12 @@ class SitePlantsController < ApplicationController
     @site_plant.plant = @plant
     @site_plant.site = @site
     @site_plant.save
+
     log = Log.new(date: Date.new, description: "Planted", title: @site_plant.plant.latin_name)
     log.site = @site
     log.site_plant = @site_plant
-    file = URI.open(@plant.image_url)
-    log.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
+    # file = URI.open(@plant.image_url)
+    # log.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
     if log.save
       redirect_to site_search_path(@site)
     else
@@ -29,6 +30,6 @@ class SitePlantsController < ApplicationController
   private
 
   def site_plant_params
-    params.require(:site_plant).permit(:plant_id)
+    params.require(:site_plant).permit(:plant_id, :photo)
   end
 end
