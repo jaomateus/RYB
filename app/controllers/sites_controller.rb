@@ -1,6 +1,6 @@
 class SitesController < ApplicationController
   def index
-    @sites = Site.all
+    @sites = current_user.sites
     @markers = @sites.geocoded.map do |site|
       {
         lat: site.latitude,
@@ -9,7 +9,6 @@ class SitesController < ApplicationController
       }
     end
   end
-
 
   def new
     @site = Site.new
