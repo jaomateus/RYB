@@ -115,7 +115,7 @@ site7.save
 # PARSING
 plant_list = CSV.parse(File.read("db/plant_database/Plant_list_copy.csv"))
 
-plant_list.first(15).each do |plant|
+plant_list.first(5).each do |plant|
   puts "Creating plant #{plant[0]}......#{plant[1]}"
 
   # # Create plant
