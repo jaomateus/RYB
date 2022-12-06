@@ -2,11 +2,11 @@
   <%# SIDEBAR %>
   <div class="sidebar">
     <div class="logo">
-       <%= link_to sites_path do %>
+      <%= link_to sites_path do %>
         <div class="btn-side-bar bckg-none">
-          <%= image_tag("RYB.png", :alt => "rss feed") %>
+          <%= show_svg('logo/Ryb_50.svg') %>
         </div>
-       <% end %>
+      <% end %>
     </div>
 
     <%# MIDDLE BUTTONS %>
@@ -18,7 +18,7 @@
       </div>
 
       <div class="btn-side-bar">
-       <%= link_to site_nursury_path(site) do %>
+      <%= link_to site_nursury_path(site) do %>
           <i class="fa-solid fa-leaf"></i>
         <% end %>
       </div>
