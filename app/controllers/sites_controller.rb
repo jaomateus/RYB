@@ -36,7 +36,7 @@ class SitesController < ApplicationController
     @site = Site.find(params[:id])
 
     if @site.update(site_params)
-      redirect_to site_path(@site)
+      redirect_to sites_path(@site)
     else
       render :edit, status: :unprocessable_entity
     end
