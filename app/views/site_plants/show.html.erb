@@ -4,7 +4,7 @@
   <div class="scroll-content background-white">
 
 
-<%# this is the information to display in the site %>
+  <%# this is the information to display in the site %>
 
 
   <% if @site_plant %>
@@ -15,7 +15,7 @@
       <div><%= @site_plant.plant.image_url %></div>
 
       <button class="btn btn-chip" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
-          ABOUT
+          About
       </button>
       <div class="collapse" id="collapseExample1">
         <div class="card card-body">
@@ -24,7 +24,7 @@
       </div>
 
       <button class="btn btn-chip" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
-          DETAILS
+          Details
       </button>
       <div class="collapse" id="collapseExample2">
         <div class="card card-body">
@@ -39,7 +39,7 @@
       </div>
 
       <button class="btn btn-chip" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
-          THIS PLANT NEEDS...
+          Plant's need
       </button>
       <div class="collapse" id="collapseExample3">
         <div class="card card-body">
@@ -57,7 +57,7 @@
       </div>
 
       <button class="btn btn-chip" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample">
-          MEDICINAL USES
+          Medicinal uses
       </button>
       <div class="collapse" id="collapseExample4">
         <div class="card card-body">
@@ -66,7 +66,7 @@
       </div>
 
       <button class="btn btn-chip" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample5" aria-expanded="false" aria-controls="collapseExample">
-          EDIBLE USES
+          Edible uses
       </button>
       <div class="collapse" id="collapseExample5">
         <div class="card card-body">
@@ -76,7 +76,7 @@
 
 
       <button class="btn btn-chip" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample6" aria-expanded="false" aria-controls="collapseExample">
-          CULTIVATION DETAILS
+          Cultivation Details
       </button>
       <div class="collapse" id="collapseExample6">
         <div class="card card-body">
@@ -85,7 +85,7 @@
       </div>
 
       <button class="btn btn-chip" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample7" aria-expanded="false" aria-controls="collapseExample">
-        CULTIVATION DETAILS
+        Propagation Details
       </button>
       <div class="collapse" id="collapseExample7">
         <div class="card card-body">
@@ -95,12 +95,12 @@
 
       <div class="sticky-button d-flex justify-content-center btn-round">
         <%= link_to new_site_log_path(site_id: @site.id, site_plant_id: @site_plant.id) do %>
-          <i class="fas fa-pen"></i>
+          <p>LOG</p>
         <% end %>
       </div>
 
     </div>
-   
+
 
   <% else %>
     <div>
@@ -122,7 +122,7 @@
           <div style="border-right: 2px solid black; height: 60%; margin: 5px 0 5px 5px;"></div>
         </div>
         <div class="log-card col-8" >
-          <div class="real-logg-card" style="position: relative; top: 18px;">
+          <div class="real-logg-card real-logg-card-1" style="position: relative; top: 18px;">
             <%#= cl_image_tag @log.photo.key, height: 300, width: 400, crop: :fill %>
             <%= log.title %>
             <%= log.description %>

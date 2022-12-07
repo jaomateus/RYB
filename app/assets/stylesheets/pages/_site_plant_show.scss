@@ -7,8 +7,10 @@
   padding-left: 80px;
   padding-right: 80px;
   background-color: $white;
-  padding-top: 80px;
+  padding-top: 50px;
   padding-bottom: 50px;
+  // border-bottom: 1px solid $light-grey;
+
 
     h2 {
       color: $dark-grey;
@@ -70,4 +72,12 @@
 .background-logs {
   background-color: $white !important;
   // height: 100px;
+}
+
+
+// the card display of the logs in the site_plant show page
+.real-logg-card-1 {
+  width: 500px;
+  color: $black;
+
 }

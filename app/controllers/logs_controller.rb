@@ -9,9 +9,14 @@ class LogsController < ApplicationController
   def create
     @log = Log.new(log_params)
     @site = Site.find(params[:site_id])
+    @site_plant = params[:log][:site_plant_id]
     @log.site = @site
     if @log.save
-      redirect_to site_path(@site)
+      if @site_plant != ""
+        redirect_to site_site_plant_path(@site, @site_plant)
+      else
+        redirect_to site_path(@site)
+      end
     else
       render :new, status: :unprocessable_entity
     end
