@@ -1,5 +1,5 @@
-<div class="scroll-content light-background">
 
+<div class="scroll-content background-color">
   <div class="scroll">
     <div>
       <%# PROJECT INFO %>
@@ -18,27 +18,46 @@
     <br>
     <br>
   <div>
-<div class="">
-   <div class="btn-goback-newlog">
-    <%= link_to "New log", new_site_log_path(site) %>
-    <%= link_to "go back", sites_path %>
+<div class="d-flex pb-4">
+   <div class="btn-goback-newlog mx-4">
+    <%= link_to "New log", new_site_log_path(site), class:"" %>
+    <%#= link_to "go back", sites_path, class:"ml-3" %>
+  </div>
+
+  <div class="btn-goback-newlog">
+    <%#= link_to "New log", new_site_log_path(site), class:"mr-3" %>
+    <%= link_to "go back", sites_path, class:"" %>
   </div>
 </div>
   <%# LOGS %>
 
-  <div class="row">
+<div class="container" style="">
+    <div class="row">
     <% site.logs.each do |log| %>
-      <div class="col-2">
+      <div class="col-3">
         <div style="border-right: 2px solid black; height: 60%; margin: 5px 0 5px 5px;"></div>
         <div style="text-align: right; position: relative; left: 7px;"><%= log.created_at.strftime("%d / %m / %Y") %> <i class="fa-solid fa-circle"></i></div>
         <div style="border-right: 2px solid black; height: 60%; margin: 5px 0 5px 5px;"></div>
       </div>
-      <div class="log-card col-10" >
-        <div class="real-logg-card" style="position: relative; top: 18px;">
-          <%#= cl_image_tag @log.photo.key, height: 300, width: 400, crop: :fill %>
-          <%= log.title %>
-          <%= log.description %>
+      <div class="log-card col-9" >
+        <div class=" d-flex real-logg-card" style="position: relative; top: 18px;">
+        <% if log.photos.attached? %>
+            <%= cl_image_tag log.photos.first.key, height: 150, width: 200, crop: :fill %>
+        <% end  %>
+        <div class="p-3">
+          <h3><%= log.title %></h3>
+            <p><%= log.description %></p>
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target=<%= log.title %> aria-expanded="false" aria-controls="collapseExample">
+              Button with data-target
+            </button>
+            <div class="collapse" id=<%= log.title %>>
+              <div class="card card-body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+              </div>
+            </div>
+        </div>
         </div>
       </div>
     <% end %>
   </div>
+</div>
