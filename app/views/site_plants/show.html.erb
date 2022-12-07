@@ -1,79 +1,138 @@
 <div class="d-flex">
   <%= render "shared/sidebar_btns", site: @site %>
   <%= render "site_plants/index", site:@site, site_plants: @site_plants %>
-  <div class="scroll-content">
+  <div class="scroll-content background-white">
+
+
+<%# this is the information to display in the site %>
+
+
   <% if @site_plant %>
     <div class="info-show">
       <h2><%= @site_plant.plant.latin_name %></h2>
-      <h2><%= @site_plant.plant.common_name %></h2>
-      <p><%=  @site_plant.plant.summary %></p>
-      <p><%=  @site_plant.plant.type %></p>
-      <p><%=  @site_plant.plant.plant_type %></p>
-      <p><%=  @site_plant.plant.family %></p>
+      <h3><%= @site_plant.plant.common_name %></h3>
 
-      <div><%= @site_plant.plant.image_url %> <%= "image_url" %></div>
+      <div><%= @site_plant.plant.image_url %></div>
 
-      <div class="simple-card">
-        <p>Width: <%=  @site_plant.plant.width %></p>
-        <p>Height: <%=  @site_plant.plant.height %></p>
-        <p>Hadiness Low: <%=  @site_plant.plant.usa_hardiness_low %></p>
-        <p>Hadiness Hight: <%=  @site_plant.plant.usa_hardiness_high %></p>
+      <button class="btn btn-chip" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
+          ABOUT
+      </button>
+      <div class="collapse" id="collapseExample1">
+        <div class="card card-body">
+          <p><%=  @site_plant.plant.summary %></p>
+        </div>
+      </div>
+
+      <button class="btn btn-chip" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
+          DETAILS
+      </button>
+      <div class="collapse" id="collapseExample2">
+        <div class="card card-body">
+          <p>Type: <%=  @site_plant.plant.type %></p>
+          <p>Plant type: <%=  @site_plant.plant.plant_type %></p>
+          <p>Family:<%=  @site_plant.plant.family %></p>
+          <p>Width: <%=  @site_plant.plant.width %></p>
+          <p>Height: <%=  @site_plant.plant.height %></p>
+          <p>Hadiness Low: <%=  @site_plant.plant.usa_hardiness_low %></p>
+          <p>Hadiness Hight: <%=  @site_plant.plant.usa_hardiness_high %></p>
+        </div>
+      </div>
+
+      <button class="btn btn-chip" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
+          THIS PLANT NEEDS...
+      </button>
+      <div class="collapse" id="collapseExample3">
+        <div class="card card-body">
+          <div class="info-char"><%= "This plant can fix nitrogen" if @site_plant.plant.n_fixer %></div>
+          <div class="info-char"><%= "Needs good drainage" if @site_plant.plant.well_drained %></div>
+          <div class="info-char"><%= "I need moist soil. Not too wet" if @site_plant.plant.moist_soil %></div>
+          <div class="info-char"><%= "I need wet soil!" if @site_plant.plant.wet_soil %></div>
+          <div class="info-char"><%= "Water it often!" if @site_plant.plant.water_plant %></div>
+          <div class="info-char"><%= "Full sun" if @site_plant.plant.full_sun %></div>
+          <div class="info-char"><%= "Part Shade" if @site_plant.plant.part_shade %></div>
+          <div class="info-char"><%= "Full shade" if @site_plant.plant.full_shade %></div>
+          <div class="info-char"><%= "Good to bed close to the sea" if @site_plant.plant.maritime_exposure %></div>
+          <div class="info-char"><%= "Helps with atmospheric polution" if @site_plant.plant.atmospheric_polution %></div>
+        </div>
+      </div>
+
+      <button class="btn btn-chip" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample">
+          MEDICINAL USES
+      </button>
+      <div class="collapse" id="collapseExample4">
+        <div class="card card-body">
+          <div><%= @site_plant.plant.medicinal_uses if @site_plant.plant.medicinal_rating %></div>
+        </div>
+      </div>
+
+      <button class="btn btn-chip" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample5" aria-expanded="false" aria-controls="collapseExample">
+          EDIBLE USES
+      </button>
+      <div class="collapse" id="collapseExample5">
+        <div class="card card-body">
+           <div><%= @site_plant.plant.edible_uses if @site_plant.plant.edible_uses %></div>
+        </div>
       </div>
 
 
-      <div>
-        <div class="info-char"><%= "This plant can fix nitrogen" if @site_plant.plant.n_fixer %></div>
-        <div class="info-char"><%= "Needs good drainage" if @site_plant.plant.well_drained %></div>
-        <div class="info-char"><%= "I need moist soil. Not too wet" if @site_plant.plant.moist_soil %></div>
-        <div class="info-char"><%= "I need wet soil!" if @site_plant.plant.wet_soil %></div>
-        <div class="info-char"><%= "Water it often!" if @site_plant.plant.water_plant %></div>
-        <div class="info-char"><%= "Full sun" if @site_plant.plant.full_sun %></div>
-        <div class="info-char"><%= "Part Shade" if @site_plant.plant.part_shade %></div>
-        <div class="info-char"><%= "Full shade" if @site_plant.plant.full_shade %></div>
-        <div class="info-char"><%= "Good to bed close to the sea" if @site_plant.plant.maritime_exposure %></div>
-        <div class="info-char"><%= "Helps with atmospheric polution" if @site_plant.plant.atmospheric_polution %></div>
+      <button class="btn btn-chip" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample6" aria-expanded="false" aria-controls="collapseExample">
+          CULTIVATION DETAILS
+      </button>
+      <div class="collapse" id="collapseExample6">
+        <div class="card card-body">
+           <div><p><%= @site_plant.plant.cultivation_details %></p></div>
+        </div>
       </div>
 
-      <div>
-        <div><%= @site_plant.plant.medicinal_uses if @site_plant.plant.medicinal_rating %></div>
+      <button class="btn btn-chip" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample7" aria-expanded="false" aria-controls="collapseExample">
+        CULTIVATION DETAILS
+      </button>
+      <div class="collapse" id="collapseExample7">
+        <div class="card card-body">
+          <p><%= @site_plant.plant.propagation_details %></p>
+        </div>
       </div>
 
-      <div>
-        <div><%= @site_plant.plant.edible_uses if @site_plant.plant.edible_uses %></div>
-      </div>
-
-      <div>
-        <div><%= "Helps with atmospheric polution" if @site_plant.plant.edible_uses %></div>
-      </div>
-
-      <div>
-        <p><%= @site_plant.plant.cultivation_details %></p>
-        <p><%= @site_plant.plant.propagation_details %></p>
-      </div>
-
-      <div>
-        <%= @logs = Log.where(site_id: @site.id, site_plant_id: @site_plant.id) %>
-        <%= @logs.each do |log| %>
-          <div>
-          </div>
+      <div class="sticky-button d-flex justify-content-center btn-round">
+        <%= link_to new_site_log_path(site_id: @site.id, site_plant_id: @site_plant.id) do %>
+          <i class="fas fa-pen"></i>
         <% end %>
       </div>
 
-      <div class="sticky-button d-flex justify-content-center">
-        <%= link_to "New log", new_site_log_path(site_id: @site.id, site_plant_id: @site_plant.id), class: "btn-big" %>
-      </div>
-
     </div>
+   
 
   <% else %>
     <div>
       <h2>Hi! You haven't planted anything yet.</h2>
       <div class="button-side-bar sticky-bottom">
-        <%= link_to "Search plants for your backyard!", site_search_path(site), class: "btn btn-ghost light" %>
+        <%= link_to "Search plants for your backyard!", site_search_path(@site), class: "btn btn-ghost light" %>
       </div>
     </div>
   <% end %>
 
+  <%# these are the logs %>
+
+  <div class="background-logs">
+    <div class="row">
+      <% @logs.each do |log| %>
+        <div class="col-3">
+          <div style="border-right: 2px solid black; height: 60%; margin: 5px 0 5px 5px;"></div>
+          <div style="text-align: right; position: relative; left: 7px;"><%= log.created_at.strftime("%d / %m / %Y") %> <i class="fa-solid fa-circle"></i></div>
+          <div style="border-right: 2px solid black; height: 60%; margin: 5px 0 5px 5px;"></div>
+        </div>
+        <div class="log-card col-8" >
+          <div class="real-logg-card" style="position: relative; top: 18px;">
+            <%#= cl_image_tag @log.photo.key, height: 300, width: 400, crop: :fill %>
+            <%= log.title %>
+            <%= log.description %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div>
+    </div>
+  </div>
 </div>
 
 </div>

@@ -13,6 +13,7 @@ class SitePlantsController < ApplicationController
     else
       @site_plants = SitePlant.where(site_id: @site.id)
     end
+    @logs = Log.where(site_id: @site.id, site_plant_id: @site_plant.id).order(date: :desc)
   end
 
   def new
