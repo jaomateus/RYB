@@ -40,10 +40,14 @@ html {
 
     .cont  {
       background-color: $green-dark;
-      height: 170px;
+      height: 100px;
       margin: 15px;
       border-radius: 15px;
       padding: 20px;
+    }
+
+    .community-projs {
+      height: 330px !important;
     }
   }
 }
