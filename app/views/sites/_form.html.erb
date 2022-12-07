@@ -2,7 +2,7 @@
   <%= simple_form_for(@site) do |f| %>
     <%= f.input :photo, as: :file, :label => "Add an image to your site" %>
     <%= f.input :project_name %>
-    <%= f.input :address, input_html: {class: "d-none"} %>
+    <%= f.input :address, label: false,  input_html: {class: "d-none"} %>
     <%= f.input :address,
                       input_html: {data: {address_autocomplete_target: "address"}},
                       wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}} %>

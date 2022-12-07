@@ -1,10 +1,10 @@
 <div class="d-flex">
 
-  <div class="container_simple_form">
+  <div class="container_simple_form dark-blackground">
     <% if params[:site_plant_id]   %>
-      <h2>New log for: <%= SitePlant.find(params[:site_plant_id]).plant.latin_name %></h2>
+      <h2><strong>New log for:&nbsp&nbsp&nbsp</strong> <%= SitePlant.find(params[:site_plant_id]).plant.latin_name %></h2>
     <% else %>
-       <h2>New log for: <%= @site.project_name %></h2>
+       <h2><strong>New log for:&nbsp&nbsp&nbsp</strong> <%= @site.project_name %></h2>
     <% end %>
 
     <%= simple_form_for [@site, @log] do |f| %>
