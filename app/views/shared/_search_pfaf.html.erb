@@ -1,5 +1,5 @@
-<div class="container scroll-content dark-background" data-controller="modal">
 
+<div class="container scroll-content" data-controller="modal">
   <div class=" simple_form search d-flex p-2 grid-search-bar sticky-top justify-content-center">
     <%= form_with url: "#", method: :get, class: "search-form-control-phaf form-group" do %>
       <%= text_field_tag :query,
@@ -7,7 +7,7 @@
         class: "form-control",
         placeholder: "Find a plant for your garden"
       %>
-      <%= submit_tag "Search", class: "btn btn-flat" %>
+      <%= submit_tag "Search", class: "btn btn-search" %>
     <% end %>
   </div>
 
@@ -15,17 +15,16 @@
   <div class=" container grid-search-cards">
     <% @plants.each do |plant| %>
       <div class="card-plant-grid flip-card">
-        <p><%= plant.image_url %></p>
         <div class="flip-card-inner">
-          <div class="flip-card-front" style="background-image: url(<%= plant.image_url %>)">
-            <h2><%= plant.latin_name %></h2>
-            <p><%= plant.common_name %><p>
+          
+            <h2><strong><%= plant.latin_name %></strong></h2>
+            <p><strong><%= plant.common_name %></strong><p>
           </div>
           <div class="flip-card-back">
             <p><%= plant.physical_characteristics %></p>
-            <%=  link_to site_site_plants_path(@site, plant_id: plant.id), data: { turbo_method: :post, turbo_confirm: "Add this plant to yout site?" } do %>
-              <i class="fa-solid fa-plus plus-icon" data-action="click->modal#open"></i>
-            <% end %>
+            <div>
+              <%= link_to "Plant it!", site_site_plants_path(@site, plant_id: plant.id), class: "btn-flat-card", data: { turbo_method: :post, turbo_confirm: "Add this plant to yout site?" } %>
+            </div>
           </div>
         </div>
       </div>

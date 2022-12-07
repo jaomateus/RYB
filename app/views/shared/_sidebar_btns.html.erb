@@ -18,14 +18,12 @@
       </div>
 
       <div class="btn-side-bar">
-      <%= link_to site_nursury_path(site) do %>
-          <i class="fa-solid fa-leaf"></i>
-        <% end %>
-      </div>
-
-      <div class="btn-side-bar tab-selected">
-        <%= link_to plants_path do %>
-          <i class="fa-solid fa-seedling"></i>
+        <% if site.site_plants %>
+          <%= link_to site_site_plant_path(site, site.site_plants.last || "empty") do %>
+            <i class="fa-solid fa-leaf"></i>
+          <% end %>
+        <% else %>
+          <i class="fa-solid fa-leaf inactive"></i>
         <% end %>
       </div>
 
@@ -38,7 +36,7 @@
     </div>
 
     <%# SETTINGS BUTTONS %>
-      <div class="settings-btns">
+    <div class="settings-btns">
       <%# <div class="btn-side-bar bckg-none">
         <i class="fa-solid fa-gear"></i>
       </div> %>
