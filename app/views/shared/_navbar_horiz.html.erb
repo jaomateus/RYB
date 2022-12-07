@@ -1,14 +1,21 @@
 <div class="navbar">
   <div class="logo px-3">
-    <%= show_svg('logo/Ryb_50.svg') %>
+    <%= link_to root_path do %>
+      <div>
+        <%= show_svg('logo/Ryb_50.svg') %>
+      </div>
+    <% end %>
   </div>
+
+
+
   <div class="links">
-    <div class="px-3">
-      <%= link_to "All sites", sites_path, class: "nav-link" %>
-    </div>
-    <div class="px-3">
-      <%= link_to "Community", sites_path, class: "nav-link" %>
-    </div>
+    <%# <div class="px-3"> %>
+      <%# <%= link_to "All sites", sites_path, class: "nav-link" %>
+    <%# </div> %>
+    <%# <div class="px-3"> %>
+      <%#= link_to "Community", sites_path, class: "nav-link" %>
+    <%# </div> %>
     <div class="px-3">
       <%= link_to "My RYB", sites_path, class: "nav-link" %>
     </div>
