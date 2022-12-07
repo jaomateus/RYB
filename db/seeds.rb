@@ -103,7 +103,7 @@ plant_list.first(20).each do |orig_plant|
     # Check if tolerates atmospheric polution
     atmospheric_polution = physical_characteristics.match(/It can tolerate atmospheric pollution./) ? true : false
 
-    Create Plant instance
+    # Create Plant instance
     plant = Plant.create!({ latin_name: latin_name,
                     summary: summary,
                     family: family,
