@@ -3,11 +3,12 @@
 .card-plant-list {
   overflow: hidden;
   height: 70px;
-  width: 300px;
+  width: 380px;
   background: $dark-grey;
   display: flex;
   align-items: center;
-  border-radius: 5px;
+  // border-radius: 5px;
+  margin: 0;
 
     &:hover {
       background: $medium-grey;
@@ -19,6 +20,8 @@
   width: 70px;
   object-fit: cover;
   border-radius: 5px;
+  margin-left: 24px;
+
 }
 
 .card-plant-list h2 {
