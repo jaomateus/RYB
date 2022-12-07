@@ -14,7 +14,7 @@ Log.destroy_all
 SitePlant.destroy_all
 Site.destroy_all
 User.destroy_all
-# Plant.destroy_all
+Plant.destroy_all
 
 plant_ids = []
 
