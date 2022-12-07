@@ -15,7 +15,7 @@
             </div>
             <div>
               <%# <a class="btn-small" href="#">See on map</a> %>
-              <%= link_to "See on map", my_sites_map_path, class: "btn-small" %>
+              <%#= link_to "See on map", my_sites_map_path, class: "btn-small" %>
               <%= link_to "Add a new site", new_site_path, class: "btn-small" %>
             </div>
           </div>
@@ -26,16 +26,7 @@
         </div>
 
         <%# Community Projects %>
-        <div class="community-projs card">
-          <div class="text-header">
-            <div>
-              <p>Projects in your community</p>
-            </div>
-            <div>
-              <%= link_to "See on map", my_sites_map_path, class: "btn-small" %>
-            </div>
-          </div>
-        </div>
+
       </div>
 
       <div class="right-containers">
@@ -56,6 +47,16 @@
             </div>
           </div>
         </div>
+          <div class="cont community-projs card">
+            <div class="text-header">
+              <div>
+                <p>Projects nearby</p>
+              </div>
+              <div>
+                <%= link_to "Open map", my_sites_map_path, class: "btn-small" %>
+              </div>
+            </div>
+          </div>
         <%# WEATHER%>
         <%# <div class="cont weather-container">
           <div class="text-header">
