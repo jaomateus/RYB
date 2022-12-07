@@ -1,19 +1,25 @@
-
+.background-white {
+  background-color: $white;
+}
 // the main page with title and subtitle
 .info-show {
   width: 100%;
-  padding-top: 40px;
   padding-left: 80px;
   padding-right: 80px;
   background-color: $white;
+  padding-top: 80px;
+  padding-bottom: 50px;
 
     h2 {
       color: $dark-grey;
+      font-size: 54px;
 
     }
 
     h3 {
       color: $dark-grey;
+      font-size: 22px;
+      padding-bottom: 30px;
 
     }
 
@@ -59,4 +65,9 @@
       background-color: $white;
     }
 
+}
+
+.background-logs {
+  background-color: $white !important;
+  // height: 100px;
 }

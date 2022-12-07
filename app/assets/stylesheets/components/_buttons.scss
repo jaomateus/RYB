@@ -116,3 +116,45 @@
   background: $green-medium;
   color: white;
 }
+
+.btn-round {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $white;
+  height: 80px;
+  width: 80px;
+  border-radius: 40px;
+  background-color: $dark-grey !important;
+  color: $white !important;
+
+    a {
+      text-decoration: none;
+      color: $white;
+
+
+    }
+
+}
+
+.btn-chip {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-size: 14px impora !important;
+  font-weight: 500;
+  color: white !important;
+  // border: 1px sol
+  height: 50px;
+  padding: 16px 24px;
+  border-radius: 25px !important;
+  margin: 8px;
+  // opacity: 0.8;
+  transition: opacity 0.3s ease;
+  background-color: $green-medium !important;
+
+  &:hover {
+  background: $green-light !important;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  }
+
+}
