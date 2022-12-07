@@ -1,4 +1,13 @@
 // Specific CSS for your home-page
+a, a:hover{
+  text-decoration: none !important;
+
+}
+
+html {
+  background-color: $black;
+}
+
 #page-container {
   position: relative;
   min-height: 100vh;
@@ -8,21 +17,50 @@
   display: flex;
 }
 
-
 #content-wrap {
+  background-color: $black;
   padding-bottom: 5rem;    /* Footer height */
+}
+
+.backgr-home {
+  background-color: $black;
+
+}
+
+.full-scr {
+  width: 100vw;
+  height: 100vh;
 }
 
 
 .rewild-anim {
-  position: fixed; /* or absolute */
-  top: 50%;
-  left: 50%;
-  /* bring your own prefixes */
-  transform: translate(-50%, -50%);
   color: $white;
-  font-size: larger
+  font-size: larger;
 
+  .arrow {
+    margin-top: 90px;
+  }
+}
+
+.start-here-bxs {
+  // background-color: bisque;
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+
+
+  .start-here {
+    // background-color: $green-dark;
+    display: flex;
+    border-radius: 15px;
+    color: $white;
+    width: 200px;
+    height: 200px;
+    outline: 5px solid  $green-medium;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .ryb-footer {
@@ -32,7 +70,6 @@
   align-items: center;
   justify-content: space-between;
   border-top: 1px solid $light-grey;
-
 
   .footer-links {
     display: flex;
