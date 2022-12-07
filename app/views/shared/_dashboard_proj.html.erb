@@ -26,7 +26,7 @@
 
   <div class="btn-goback-newlog">
     <%#= link_to "New log", new_site_log_path(site), class:"mr-3" %>
-    <%= link_to "go back", sites_path, class:"" %>
+    <%= link_to "Go back", sites_path, class:"" %>
   </div>
 </div>
   <%# LOGS %>
@@ -40,24 +40,37 @@
         <div style="border-right: 2px solid black; height: 60%; margin: 5px 0 5px 5px;"></div>
       </div>
       <div class="log-card col-9" >
-        <div class=" d-flex real-logg-card" style="position: relative; top: 18px;">
-        <% if log.photos.attached? %>
-            <%= cl_image_tag log.photos.first.key, height: 150, width: 200, crop: :fill %>
-        <% end  %>
-        <div class="p-3">
-          <h3><%= log.title %></h3>
-            <p><%= log.description %></p>
-            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target=<%= log.title %> aria-expanded="false" aria-controls="collapseExample">
-              Button with data-target
-            </button>
-            <div class="collapse" id=<%= log.title %>>
-              <div class="card card-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+        <div class="real-logg-card" style="position: relative; top: 18px;">
+
+          <div class="p-3">
+            <div class="d-flex">
+
+              <div>
+                <h3><%= log.title %></h3>
               </div>
+
             </div>
-        </div>
+            <p>
+            <div class="seemore">
+              <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#<%= log.title %>" aria-expanded="false" aria-controls="collapseExample">
+                See more
+              </button>
+            </div>
+              <div class="collapse" id="<%= log.title %>">
+                <div class="card card-body">
+                  <% if log.photos.attached? %>
+                    <% log.photos.each do |photo| %>
+                      <%= cl_image_tag photo.key, height: 150, width: 200, crop: :fill %>
+                    <% end %>
+                  <% end  %>
+                  <%= log.description %>
+                </div>
+              </div>
+            </p>
+          </div>
         </div>
       </div>
     <% end %>
   </div>
 </div>
+<
