@@ -10,10 +10,10 @@ require "open-uri"
 require "csv"
 require 'faker'
 
-Log.destroy_all
-SitePlant.destroy_all
-Site.destroy_all
-User.destroy_all
+# Log.destroy_all
+# SitePlant.destroy_all
+# Site.destroy_all
+# User.destroy_all
 # # Plant.destroy_all
 
 # plant_ids = []
@@ -21,7 +21,7 @@ User.destroy_all
 # # PARSING
 # plant_list = CSV.parse(File.read("db/plant_database/Plant_list_copy.csv"))
 
-# plant_list.each do |orig_plant|
+# plant_list.first(10).each do |orig_plant|
 #   puts "Creating plant #{orig_plant[0]}....."
 
 #   # # Create plant
