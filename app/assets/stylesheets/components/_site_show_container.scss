@@ -21,18 +21,27 @@
   color: black;
   font-size: 24;
   padding: 20px;
-  margin: 22px 22px 0 22px;
+  margin: 22px 0 0 22px;
   border-radius: 15px;
+  width: 50vw;
 }
 
-.btn-goback-newlog {
-  color: #9AB89A;
+.btn-goback-newlog a,.btn-goback-newlog a:hover {
+  color: white !important;
   padding: 8px 24px;
   border-radius: 4px;
-  background: $green-dark;
+  background: #2A2A2A;
   transition: background 0.3s ease;
   text-decoration: none;
-  margin: auto;
-  margin-bottom: 16px;
+  // margin-left: 200px;
+  margin-bottom: 20px;
   text-align: center;
+}
+
+.background-color {
+  background-color: white !important;
+}
+
+.scroll-content {
+  background-color: white
 }
