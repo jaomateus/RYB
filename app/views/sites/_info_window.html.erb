@@ -1,2 +1,13 @@
-<h2><%= site.project_name %></h2>
-<p><%= site.address %></p>
+<div class="info-window">
+  <div class="map-popup-img">
+    <% if site.photo.attached? %>
+      <%= cl_image_tag site.photo.key, height: 150, width: 200, crop: :fill %>
+    <% end %>
+  </div>
+  <div class="info-window-text">
+    <p class="site-title"><strong><%= site.project_name %></strong></p>
+    <p> <%= site.project_type %></p>
+    <p class="site-description"> <%= site.description %></p>
+    <%= link_to "Contact us", site_path(site), class: "btn-map" %>
+  </div>
+</div>

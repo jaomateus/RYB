@@ -1,11 +1,13 @@
 class SitesController < ApplicationController
+
   def index
     @sites = current_user.sites
     @markers = @sites.geocoded.map do |site|
       {
         lat: site.latitude,
         lng: site.longitude,
-        info_window: render_to_string(partial: "info_window", locals: {site: site})
+        info_window: render_to_string(partial: "info_window", locals: {site: site}),
+        # image_url: helpers.asset_url('logo.png')
       }
     end
   end
@@ -36,7 +38,7 @@ class SitesController < ApplicationController
     @site = Site.find(params[:id])
 
     if @site.update(site_params)
-      redirect_to sites_path(@site)
+      redirect_to site_path(@site)
     else
       render :edit, status: :unprocessable_entity
     end
