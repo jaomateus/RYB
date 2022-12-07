@@ -79,5 +79,29 @@
 .real-logg-card-1 {
   width: 500px;
   color: $black;
+    &:hover {
+      i {
+        color: $dark-grey;
+      }
+
+    }
+
+}
+
+.empty {
+  align-content: center;
+  justify-content: center;
+    h2 {
+      color: $white;
+      font-size: 48px;
+      padding-top: 50px;
+    }
+}
+
+.log-crud-btns {
+    i {
+      color: $green-light;
+      padding-left: 14px;
+    }
 
 }

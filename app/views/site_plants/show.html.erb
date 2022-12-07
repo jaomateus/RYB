@@ -103,11 +103,10 @@
 
 
   <% else %>
-    <div>
-      <h2>Hi! You haven't planted anything yet.</h2>
-      <div class="button-side-bar sticky-bottom">
-        <%= link_to "Search plants for your backyard!", site_search_path(@site), class: "btn btn-ghost light" %>
-      </div>
+    <div class="empty">
+      <%= link_to site_search_path(@site) do %>
+        <h2>Hi! You haven't planted anything yet.</h2>
+      <% end %>
     </div>
   <% end %>
 
@@ -122,10 +121,18 @@
           <div style="border-right: 2px solid black; height: 60%; margin: 5px 0 5px 5px;"></div>
         </div>
         <div class="log-card col-8" >
-          <div class="real-logg-card real-logg-card-1" style="position: relative; top: 18px;">
+          <div class="real-logg-card real-logg-card-1 d-flex justify-content-between" style="position: relative; top: 18px;">
             <%#= cl_image_tag @log.photo.key, height: 300, width: 400, crop: :fill %>
             <%= log.title %>
             <%= log.description %>
+            <div class="log-crud-btns">
+              <%= link_to "#" do %>
+                <i class="fa-solid fa-pen"></i>
+              <% end %>
+              <%= link_to "#" ,data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                <i class="fa-solid fa-trash"></i>
+              <% end %>
+            </div>
           </div>
         </div>
       <% end %>

@@ -32,6 +32,13 @@ class LogsController < ApplicationController
     @site = Site.find(params[:site_id])
   end
 
+  def destroy
+    @log = Log.find(params[:id])
+    @site = Site.find(params[:site_id])
+    @log.destroy
+    redirect_to site_site_plant_path
+  end
+
   private
 
   def log_params
