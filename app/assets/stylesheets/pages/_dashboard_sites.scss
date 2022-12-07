@@ -147,6 +147,12 @@ html {
         font-size: 17px;
         margin-right: 14px;
         margin-top: 8px;
+        transition: all 0.5s ease;
+
+        &:hover{
+          // box-shadow: 4px 4px rgba(0,0,0,0.1);
+          color: $green-medium;
+        }
     }
 
       .site-img {
