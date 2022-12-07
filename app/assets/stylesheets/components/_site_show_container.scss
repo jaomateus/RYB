@@ -1,0 +1,38 @@
+.site-show-container {
+  margin: 22px;
+  padding: 20px;
+  height: 160px;
+  border-radius: 15px;
+  background-color: #9AB89A;
+}
+
+.card-body {
+  background-color: #9AB89A;
+  border-radius: 25;
+}
+
+.text-secondary-black {
+  color: black;
+  font-size: 24px;
+}
+
+.real-logg-card {
+  background-color: #9AB89A;
+  color: black;
+  font-size: 24;
+  padding: 20px;
+  margin: 22px 22px 0 22px;
+  border-radius: 15px;
+}
+
+.btn-goback-newlog {
+  color: #9AB89A;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: $green-dark;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  margin: auto;
+  margin-bottom: 16px;
+  text-align: center;
+}
