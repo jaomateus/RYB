@@ -4,20 +4,20 @@
     <div class="logo">
       <%= link_to sites_path do %>
         <div class="btn-side-bar bckg-none">
-          <%= show_svg('logo/Ryb_50.svg') %>
+          <%= show_svg('logo/Ryb_45.svg') %>
         </div>
       <% end %>
     </div>
 
     <%# MIDDLE BUTTONS %>
     <div class="action-btns">
-      <div class="btn-side-bar tab-selected">
+      <div class="btn-side-bar middle-buttons tab-selected">
         <%= link_to site_search_path(site) do %>
           <i class="fa-solid fa-magnifying-glass"></i>
         <% end %>
       </div>
 
-      <div class="btn-side-bar">
+      <div class="btn-side-bar middle-buttons">
         <% if site.site_plants %>
           <%= link_to site_site_plant_path(site, site.site_plants.last || "empty") do %>
             <i class="fa-solid fa-leaf"></i>
@@ -28,10 +28,10 @@
       </div>
 
     <%# if we want to add the index of logs I have the code in notion. %>
-      <div class="btn-side-bar">
+      <div class="btn-side-bar middle-buttons">
         <%= link_to site_path(site) do %>
           <%# <i class="fa-solid fa-folder"></i> %>
-          <i class="fa-regular fa-book"></i>
+          <i class="fas fa-book"></i>
         <% end %>
       </div>
     </div>

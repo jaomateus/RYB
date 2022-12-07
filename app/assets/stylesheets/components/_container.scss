@@ -10,11 +10,19 @@
   border-radius: 25px;
   margin-top: 50px;
   margin-bottom: 50px;
+  color: $white;
 
   .simpl_form_brd {
     display: flex;
-    
-  }
 
+  }
   // height: 80vh;
+  h2 {
+    margin-bottom: 30px;
+    font-weight: 400;
+  }
+}
+
+.dark-blackground {
+  background-color: $black;
 }

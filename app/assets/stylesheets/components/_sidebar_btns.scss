@@ -4,11 +4,11 @@
   display: flex;
   flex-direction: column;
   background-color: $black;
-  width: 55px;
+  width: 60px;
   height: 100vh;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 30px;
+  padding-bottom: 15px;
 
   // border-right: solid $light-grey;
 
@@ -20,12 +20,9 @@
   width: 55px;
   height: 50px;
   font-size: 25px;
-  // border-radius: 10px 0px 0px 10px;
   text-align: center;
   align-items: center;
   padding: 5px;
-  // margin-top: 10px;
-  // margin-bottom: 10px;
 
     i {
       color: $green-light;
@@ -40,6 +37,14 @@
         }
     }
 }
+
+.middle-buttons {
+  margin-bottom: 20px;
+}
+
+// .logo {
+//   margin-top: 10px;
+// }
 
 
 .bckg-none {
