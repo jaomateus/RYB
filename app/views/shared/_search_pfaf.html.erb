@@ -5,7 +5,7 @@
       <%= text_field_tag :query,
         params[:query],
         class: "form-control",
-        placeholder: "Find a plant for your garden"
+        placeholder: "Search a plant for your garden"
       %>
       <%= submit_tag "Search", class: "btn btn-search" %>
     <% end %>
@@ -23,7 +23,7 @@
           <div class="flip-card-back">
             <p><%= plant.physical_characteristics %></p>
             <div>
-              <%= link_to "Plant it!", site_site_plants_path(@site, plant_id: plant.id), class: "btn-flat-card", data: { turbo_method: :post, turbo_confirm: "Add this plant to yout site?" } %>
+              <%= link_to "Plant it!", site_site_plants_path(@site, plant_id: plant.id), class: "btn-flat-card medium", data: { turbo_method: :post, turbo_confirm: "Add this plant to yout site?" } %>
             </div>
           </div>
         </div>
