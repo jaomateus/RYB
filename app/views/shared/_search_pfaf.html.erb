@@ -16,7 +16,7 @@
     <% @plants.each do |plant| %>
       <div class="card-plant-grid flip-card">
         <div class="flip-card-inner">
-          
+          <div class="flip-card-front" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(<%= plant.image_url %>)">
             <h2><strong><%= plant.latin_name %></strong></h2>
             <p><strong><%= plant.common_name %></strong><p>
           </div>
