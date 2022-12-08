@@ -14,130 +14,130 @@ Log.destroy_all
 SitePlant.destroy_all
 Site.destroy_all
 User.destroy_all
-# Plant.destroy_all
+Plant.destroy_all
 
-# # PARSING
-# plant_list = CSV.parse(File.read("db/plant_database/Plant_list_copy.csv"))
+# PARSING
+plant_list = CSV.parse(File.read("db/plant_database/Plant_list_copy.csv"))
 
-# plant_list.each do |orig_plant|
-#   puts "Creating plant #{orig_plant[0]}....."
+plant_list.each do |orig_plant|
+  puts "Creating plant #{orig_plant[0]}....."
 
-#   # # Create plant
-#   url = "https://pfaf.org/user/plant.aspx?latinname=#{orig_plant[0]}"
-#   doc = Nokogiri::HTML(URI.open(url), nil, "utf-8")
+  # # Create plant
+  url = "https://pfaf.org/user/plant.aspx?latinname=#{orig_plant[0]}"
+  doc = Nokogiri::HTML(URI.open(url), nil, "utf-8")
 
-#   if doc.css('span#ContentPlaceHolder1_lbldisplatinname').text != ""
-#     latin_name = orig_plant[0]
-#     # image_url = plant[1]
-#     common_name = doc.css('span#ContentPlaceHolder1_lblCommanName').text.strip
-#     physical_characteristics = doc.css('span#ContentPlaceHolder1_lblPhystatment').text.strip
-#     family = doc.css('span#ContentPlaceHolder1_lblFamily').text.strip
-#     usa_hardiness = doc.css('span#ContentPlaceHolder1_lblUSDAhardiness').text.strip
-#     usa_hardiness_low = usa_hardiness[0].to_i
-#     usa_hardiness_high = usa_hardiness[2].to_i
-#     habitats = doc.css('span#ContentPlaceHolder1_txtHabitats').text.strip
-#     range = doc.css('span#ContentPlaceHolder1_lblRange').text.strip
-#     edibility_rate = doc.css('span#ContentPlaceHolder1_txtEdrating').text.match(/\d/)[0].to_i
-#     weed_potential = doc.css('span#ContentPlaceHolder1_lblWeedPotential').text.downcase == "yes"
-#     summary = doc.css('span#ContentPlaceHolder1_txtSummary').text
-#     physical_characteristics = doc.css('span#ContentPlaceHolder1_lblPhystatment').text
-#     edible_uses = doc.css('span#ContentPlaceHolder1_txtEdibleUses').text
-#     medicinal_uses = doc.css('span#ContentPlaceHolder1_txtMediUses').text
-#     cultivation_details = doc.css('span#ContentPlaceHolder1_txtCultivationDetails').text
-#     propagation_details = doc.css('span#ContentPlaceHolder1_txtPropagation').text
+  if doc.css('span#ContentPlaceHolder1_lbldisplatinname').text != ""
+    latin_name = orig_plant[0]
+    # image_url = plant[1]
+    common_name = doc.css('span#ContentPlaceHolder1_lblCommanName').text.strip
+    physical_characteristics = doc.css('span#ContentPlaceHolder1_lblPhystatment').text.strip
+    family = doc.css('span#ContentPlaceHolder1_lblFamily').text.strip
+    usa_hardiness = doc.css('span#ContentPlaceHolder1_lblUSDAhardiness').text.strip
+    usa_hardiness_low = usa_hardiness[0].to_i
+    usa_hardiness_high = usa_hardiness[2].to_i
+    habitats = doc.css('span#ContentPlaceHolder1_txtHabitats').text.strip
+    range = doc.css('span#ContentPlaceHolder1_lblRange').text.strip
+    edibility_rate = doc.css('span#ContentPlaceHolder1_txtEdrating').text.match(/\d/)[0].to_i
+    weed_potential = doc.css('span#ContentPlaceHolder1_lblWeedPotential').text.downcase == "yes"
+    summary = doc.css('span#ContentPlaceHolder1_txtSummary').text
+    physical_characteristics = doc.css('span#ContentPlaceHolder1_lblPhystatment').text
+    edible_uses = doc.css('span#ContentPlaceHolder1_txtEdibleUses').text
+    medicinal_uses = doc.css('span#ContentPlaceHolder1_txtMediUses').text
+    cultivation_details = doc.css('span#ContentPlaceHolder1_txtCultivationDetails').text
+    propagation_details = doc.css('span#ContentPlaceHolder1_txtPropagation').text
 
-#     # Set soil, humidity and sun values
-#     values = []
-#     doc.css('table#ContentPlaceHolder1_tblIcons').children.children.children.children.each do |el|
-#       values << el.attribute('title').value.downcase
-#     end
+    # Set soil, humidity and sun values
+    values = []
+    doc.css('table#ContentPlaceHolder1_tblIcons').children.children.children.children.each do |el|
+      values << el.attribute('title').value.downcase
+    end
 
-#     # Set soil values
-#     well_drained = values.include?("well drained soil")
-#     moist_soil = values.include?("moist soil")
-#     wet_soil = values.include?("wet soil")
-#     water_plant = values.include?("water plants")
+    # Set soil values
+    well_drained = values.include?("well drained soil")
+    moist_soil = values.include?("moist soil")
+    wet_soil = values.include?("wet soil")
+    water_plant = values.include?("water plants")
 
-#     # Set sun/shade values
-#     full_sun = values.include?("full sun")
-#     part_shade = values.include?("part shade")
-#     full_shade = values.include?("full shade")
+    # Set sun/shade values
+    full_sun = values.include?("full sun")
+    part_shade = values.include?("part shade")
+    full_shade = values.include?("full shade")
 
-#     # Set hardiness
-#     if values.include?("tender")
-#       hardiness = 1
-#     elsif values.include?("half hardy")
-#       hardiness = 2
-#     elsif values.include?("frost hardy")
-#       hardiness = 3
-#     elsif values.include?("fully hardy")
-#       hardiness = 4
-#     else
-#       hardiness = nil
-#     end
+    # Set hardiness
+    if values.include?("tender")
+      hardiness = 1
+    elsif values.include?("half hardy")
+      hardiness = 2
+    elsif values.include?("frost hardy")
+      hardiness = 3
+    elsif values.include?("fully hardy")
+      hardiness = 4
+    else
+      hardiness = nil
+    end
 
-#     # Check for plant type
-#     plant_types = ['shrub', 'tree', 'climber', 'perennial']
-#     words = physical_characteristics.scan(/\w*[A-Z]\w*[A-Za-z]\w*/)
+    # Check for plant type
+    plant_types = ['shrub', 'tree', 'climber', 'perennial']
+    words = physical_characteristics.scan(/\w*[A-Z]\w*[A-Za-z]\w*/)
 
-#     plant_type = ""
-#     if words == ""
-#       plant_type = plant_types.sample
-#     else
-#       words.each do |word|
-#         word = word.downcase
-#         if plant_types.include?(word) == true
-#           plant_type = word
-#         end
-#       end
-#     end
+    plant_type = ""
+    if words == ""
+      plant_type = plant_types.sample
+    else
+      words.each do |word|
+        word = word.downcase
+        if plant_types.include?(word) == true
+          plant_type = word
+        end
+      end
+    end
 
-#     # Check if it is a NFixer
-#     n_fixer = physical_characteristics.match(/It can fix Nitrogen./) ? true : false
+    # Check if it is a NFixer
+    n_fixer = physical_characteristics.match(/It can fix Nitrogen./) ? true : false
 
-#     # Check if it tolerates maritime exposure
-#     maritime_exposure = physical_characteristics.match(/The plant can tolerate maritime exposure./) ? true : false
+    # Check if it tolerates maritime exposure
+    maritime_exposure = physical_characteristics.match(/The plant can tolerate maritime exposure./) ? true : false
 
-#     # Check if tolerates atmospheric polution
-#     atmospheric_polution = physical_characteristics.match(/It can tolerate atmospheric pollution./) ? true : false
+    # Check if tolerates atmospheric polution
+    atmospheric_polution = physical_characteristics.match(/It can tolerate atmospheric pollution./) ? true : false
 
-#     # Create Plant instance
-#     plant = Plant.create!({ latin_name: latin_name,
-#                     summary: summary,
-#                     family: family,
-#                     common_name: common_name,
-#                     physical_characteristics: physical_characteristics,
-#                     usa_hardiness_low: usa_hardiness_low,
-#                     usa_hardiness_high: usa_hardiness_high,
-#                     habitats: habitats,
-#                     range: range,
-#                     edibility_rate: edibility_rate,
-#                     weed_potential: weed_potential,
-#                     edible_uses: edible_uses,
-#                     medicinal_uses: medicinal_uses,
-#                     cultivation_details: cultivation_details,
-#                     propagation_details: propagation_details,
-#                     hardiness: hardiness,
-#                     well_drained: well_drained,
-#                     moist_soil: moist_soil,
-#                     wet_soil: wet_soil,
-#                     water_plant: water_plant,
-#                     full_sun: full_sun,
-#                     part_shade: part_shade,
-#                     full_shade: full_shade,
-#                     n_fixer: n_fixer,
-#                     maritime_exposure: maritime_exposure,
-#                     atmospheric_polution: atmospheric_polution,
-#                     plant_type: plant_type
-#     })
-#     # Add photos to plants from the csv file, store in cloudinary
-#     file = URI.open(orig_plant[1])
-#     if file
-#       plant.photo.attach(io: file, filename: "plant.jpg", content_type: "image/png")
-#       plant.save
-#     end
-#   end
-# end
+    # Create Plant instance
+    plant = Plant.create!({ latin_name: latin_name,
+                    summary: summary,
+                    family: family,
+                    common_name: common_name,
+                    physical_characteristics: physical_characteristics,
+                    usa_hardiness_low: usa_hardiness_low,
+                    usa_hardiness_high: usa_hardiness_high,
+                    habitats: habitats,
+                    range: range,
+                    edibility_rate: edibility_rate,
+                    weed_potential: weed_potential,
+                    edible_uses: edible_uses,
+                    medicinal_uses: medicinal_uses,
+                    cultivation_details: cultivation_details,
+                    propagation_details: propagation_details,
+                    hardiness: hardiness,
+                    well_drained: well_drained,
+                    moist_soil: moist_soil,
+                    wet_soil: wet_soil,
+                    water_plant: water_plant,
+                    full_sun: full_sun,
+                    part_shade: part_shade,
+                    full_shade: full_shade,
+                    n_fixer: n_fixer,
+                    maritime_exposure: maritime_exposure,
+                    atmospheric_polution: atmospheric_polution,
+                    plant_type: plant_type
+    })
+    # Add photos to plants from the csv file, store in cloudinary
+    file = URI.open(orig_plant[1])
+    if file
+      plant.photo.attach(io: file, filename: "plant.jpg", content_type: "image/png")
+      plant.save
+    end
+  end
+end
 
 puts "Creating user......"
 user1 = User.create!(email: "patrizgonzalez@gmail.com",

@@ -6,11 +6,15 @@ class SitePlant < ApplicationRecord
   has_one_attached :photo
 
   def set_plant_id
-  @plant_id = 1
-    initials = self.plant.latin_name.split()
-    initials = initials[0][0] + initials[1][0] + @plant_id.to_s
-    self.identifier = initials
+    if SitePlant.last.identifier
+      plant_id = SitePlant.last.identifier + 1
+    else
+      plant_id = 1
+    end
 
-    @plant_id += 1
+    initials = self.plant.latin_name.split()
+    initials = initials[0][0] + initials[1][0]
+    self.identifier = plant_id
+    self.plant_tag = initials
   end
 end
