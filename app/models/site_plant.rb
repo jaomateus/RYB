@@ -15,8 +15,4 @@ class SitePlant < ApplicationRecord
 
     @plant_id += 1
   end
-
-  # before_create do
-  #   self.name = login.capitalize if name.blank?
-  # end
 end
