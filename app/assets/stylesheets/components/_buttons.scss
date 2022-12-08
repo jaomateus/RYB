@@ -174,4 +174,8 @@
 .down-arrow {
   font-size: 4px !important;
   justify-content: left;
+
+   &:hover {
+    color: $white;
+   }
 }

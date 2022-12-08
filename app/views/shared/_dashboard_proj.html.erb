@@ -1,22 +1,21 @@
 
 <div class="scroll-content background-color">
-  <div class="scroll">
+  <div >
     <div>
       <%# PROJECT INFO %>
-      <div class="d-flex justify-content-between site-show-container">
-      <div>
-        <h1 class="name-site"><%= site.project_name %></h1>
-        <p><strong><%= site.project_type %></strong></p>
-    </div>
+      <div class="d-flex justify-content-between card-wide-top">
+        <div>
+          <h1><%= site.project_name %></h1>
+          <p><strong><%= site.project_type %></strong></p>
+        </div>
 
 
-      <%# WEATHER FORECAST %>
-        <div class="site-detail-info"></div>
-        <%= render "shared/weather_forecast", site: @site %>
+        <%# WEATHER FORECAST %>
+        <div>
+          <%= render "shared/weather_forecast", site: @site %>
+        </div>
       </div>
     </div>
-    <br>
-    <br>
   <div>
 <%# <div class="d-flex pb-4">
   <div class="btn-goback-newlog mx-4">
@@ -30,7 +29,7 @@
   <%# </div> %>
 <%# </div> %>
   <%# LOGS %>
-  
+
 <div class="sticky-button d-flex justify-content-center btn-goback-newlog">
   <%= link_to "New log", new_site_log_path(site) %>
 </div>
@@ -55,10 +54,8 @@
 
             </div>
             <p>
-              <div class="seemore">
-                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#<%= log.title %>" aria-expanded="false" aria-controls="collapseExample">
-                  See more
-                </button>
+              <div class="arrow text-center down-arrow d-flex align-items-start" data-bs-toggle="collapse" data-bs-target="#<%= log.title %>" aria-expanded="false" aria-controls="collapseExample">
+                <i class="fa-solid fa-chevron-down fa-5x"></i>
               </div>
               <div class="collapse" id="<%= log.title %>">
                 <div class="card card-body">
@@ -77,4 +74,3 @@
     <% end %>
   </div>
 </div>
-<
