@@ -14,20 +14,22 @@
 <%# this grid shows all the plants from our database PLANTS %>
   <div class=" container grid-search-cards">
     <% @plants.each do |plant| %>
-      <div class="card-plant-grid flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= cl_image_path plant.photo.key, height: 300, crop: :fill %>')">
-            <h2><strong><%= plant.latin_name %></strong></h2>
-            <p><strong><%= plant.common_name %></strong><p>
-          </div>
-          <div class="flip-card-back">
-            <p><%= plant.physical_characteristics %></p>
-            <div>
-              <%= link_to "Plant it!", site_site_plants_path(@site, plant_id: plant.id), class: "btn-flat-card medium", data: { turbo_method: :post, turbo_confirm: "Add this plant to yout site?" } %>
+      <% if plant.photo.attached? %>
+        <div class="card-plant-grid flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= cl_image_path plant.photo.key, height: 300, crop: :fill %>')">
+              <h2><strong><%= plant.latin_name %></strong></h2>
+              <p><strong><%= plant.common_name %></strong><p>
+            </div>
+            <div class="flip-card-back">
+              <p><%= plant.physical_characteristics %></p>
+              <div>
+                <%= link_to "Plant it!", site_site_plants_path(@site, plant_id: plant.id), class: "btn-flat-card medium", data: { turbo_method: :post, turbo_confirm: "Add this plant to your site?" } %>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
 </div>

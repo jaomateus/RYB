@@ -121,7 +121,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_085424) do
     t.boolean "maritime_exposure"
     t.string "soil_type"
     t.string "soil_ph"
-    t.integer "usa_hardiness_zone"
+    t.integer "usa_hardiness_zone", default: 8
     t.index ["user_id"], name: "index_sites_on_user_id"
   end
 

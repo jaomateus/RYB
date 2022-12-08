@@ -89,7 +89,7 @@ outline: 3px solid  $light-grey;
   width: 200px;
   height: 100vh;
   background-color: $dark-grey;
-  padding-top: 40px;
+  padding-top: 20px;
 
     label {
       font-size: 14px;
@@ -175,7 +175,7 @@ outline: 3px solid  $light-grey;
   width: 250px;
   height: 100vh;
   background-color: $dark-grey;
-  overflow-y: scroll;
+  overflow-y: hidden;
   overflow-x: hidden;
 }
 // .filter-list-slide::-webkit-scrollbar {
