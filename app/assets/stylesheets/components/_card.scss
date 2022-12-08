@@ -2,23 +2,32 @@
 
 .card-plant-list {
   overflow: hidden;
-  height: 70px;
-  width: 380px;
+  height: 120px;
+  width: 420px;
   background: $dark-grey;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   // border-radius: 5px;
   margin: 0;
-  margin-bottom: 15px;
+
+    i {
+      color: $dark-grey;
+      // margin-left: 12px;
+      padding-right: 24px;
+    }
 
     &:hover {
       background: $medium-grey;
+        i {
+          color: $green-medium;
+        }
     }
 }
 
-.card-plant-list img {
-  height: 100%;
-  width: 70px;
+.card-plant-list-img img {
+  height: 100px;
+  width: 100px;
   object-fit: cover;
   border-radius: 5px;
   margin-left: 24px;
