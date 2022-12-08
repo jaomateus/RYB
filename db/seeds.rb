@@ -16,12 +16,10 @@ Site.destroy_all
 User.destroy_all
 Plant.destroy_all
 
-plant_ids = []
-
 # PARSING
 plant_list = CSV.parse(File.read("db/plant_database/Plant_list_copy.csv"))
 
-plant_list.first(20).each do |orig_plant|
+plant_list.each do |orig_plant|
   puts "Creating plant #{orig_plant[0]}....."
 
   # # Create plant
@@ -83,16 +81,16 @@ plant_list.first(20).each do |orig_plant|
     words = physical_characteristics.scan(/\w*[A-Z]\w*[A-Za-z]\w*/)
 
     plant_type = ""
-    words.each do |word|
-      word = word.downcase
-      if plant_types.include?(word) == true
-        plant_type = word
+    if words == ""
+      plant_type = plant_types.sample
+    else
+      words.each do |word|
+        word = word.downcase
+        if plant_types.include?(word) == true
+          plant_type = word
+        end
       end
     end
-
-    # Check for plant sizes
-    # matches = physical_characteristics.split(" ")
-    # p matches
 
     # Check if it is a NFixer
     n_fixer = physical_characteristics.match(/It can fix Nitrogen./) ? true : false
@@ -108,7 +106,6 @@ plant_list.first(20).each do |orig_plant|
                     summary: summary,
                     family: family,
                     common_name: common_name,
-                    # image_url: image_url,
                     physical_characteristics: physical_characteristics,
                     usa_hardiness_low: usa_hardiness_low,
                     usa_hardiness_high: usa_hardiness_high,
@@ -169,69 +166,69 @@ user4 = User.create!(email: "jaomateus@gmail.com",
                      location: "Lourinhã, Portugal")
 
 
-puts "Creating sites......"
+# puts "Creating sites......"
 
-User.all.each do |user|
-  site1 = Site.create!(user: user,
-                      project_name: "Creana Project",
-                      description: "A garden with a lot of green plants, not so many flowers. I have a really small backyard.",
-                      address: "Amsterdam, The netherlands",
-                      project_type: "Green garden",
-                      goals: "Counteract climate change",
-                      project_start_date: "2020-09-08",
-                      atmospheric_polution: "low",
-                      maritime_exposure: false,
-                      soil_type: "wet soil",
-                      soil_ph: "5.8",
-                      usa_hardiness_zone: 8)
-  file = File.open("app/assets/images/sites/timthumb.jpeg")
-  site1.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-  site1.save
+# User.all.each do |user|
+#   site1 = Site.create!(user: user,
+#                       project_name: "Creana Project",
+#                       description: "A garden with a lot of green plants, not so many flowers. I have a really small backyard.",
+#                       address: "Amsterdam, The netherlands",
+#                       project_type: "Green garden",
+#                       goals: "Counteract climate change",
+#                       project_start_date: "2020-09-08",
+#                       atmospheric_polution: "low",
+#                       maritime_exposure: false,
+#                       soil_type: "wet soil",
+#                       soil_ph: "5.8",
+#                       usa_hardiness_zone: 8)
+#   file = File.open("app/assets/images/sites/timthumb.jpeg")
+#   site1.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+#   site1.save
 
-  site4 = Site.create(user: user,
-                      project_name: "Goodgreen",
-                      description: "A garden, save for kids and dogs. But I also want it really green and have a lot of variety.",
-                      address: "Évora",
-                      project_type: "Green garden",
-                      goals: "Produce my own vegetables",
-                      project_start_date: "2020-05-21",
-                      atmospheric_polution: "moderate",
-                      maritime_exposure: false,
-                      soil_type: "loamy",
-                      soil_ph: "5.6",
-                      usa_hardiness_zone: 8)
-  file = File.open("app/assets/images/sites/DSC_4233-scaled-2048x1367.jpeg")
-  site4.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-  site4.save
+#   site4 = Site.create(user: user,
+#                       project_name: "Goodgreen",
+#                       description: "A garden, save for kids and dogs. But I also want it really green and have a lot of variety.",
+#                       address: "Évora",
+#                       project_type: "Green garden",
+#                       goals: "Produce my own vegetables",
+#                       project_start_date: "2020-05-21",
+#                       atmospheric_polution: "moderate",
+#                       maritime_exposure: false,
+#                       soil_type: "loamy",
+#                       soil_ph: "5.6",
+#                       usa_hardiness_zone: 8)
+#   file = File.open("app/assets/images/sites/DSC_4233-scaled-2048x1367.jpeg")
+#   site4.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+#   site4.save
 
-  site6 = Site.create(user: user,
-                      project_name: "Horto dos Barros",
-                      description: "My area for my project is really small, a balcony. I live near the sea and I'am curious which plants I can place.",
-                      address: "Santorini",
-                      project_type: "Balcony garden",
-                      goals: "Make my neighbouthood a greener place",
-                      project_start_date: "2015-03-20",
-                      atmospheric_polution: "low",
-                      maritime_exposure: true,
-                      soil_type: "sandy",
-                      soil_ph: "5.8",
-                      usa_hardiness_zone: 10)
-  file = File.open("app/assets/images/sites/knepp1.jpeg")
-  site6.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-  site6.save
-end
+#   site6 = Site.create(user: user,
+#                       project_name: "Horto dos Barros",
+#                       description: "My area for my project is really small, a balcony. I live near the sea and I'am curious which plants I can place.",
+#                       address: "Santorini",
+#                       project_type: "Balcony garden",
+#                       goals: "Make my neighbouthood a greener place",
+#                       project_start_date: "2015-03-20",
+#                       atmospheric_polution: "low",
+#                       maritime_exposure: true,
+#                       soil_type: "sandy",
+#                       soil_ph: "5.8",
+#                       usa_hardiness_zone: 10)
+#   file = File.open("app/assets/images/sites/knepp1.jpeg")
+#   site6.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+#   site6.save
+# end
 
 # Create site plants and logs
-puts "Creating site-plants and logs"
+# puts "Creating site-plants and logs"
 
-Site.all.each do |site|
-  10.times do
-    title = Faker::Quotes::Shakespeare.hamlet_quote
-    description = Faker::Quotes::Chiquito.joke
-    site_plant = SitePlant.create(plant: Plant.all.sample, site: site)
-    Log.create(title: title, description: description)
-  end
-end
+# Site.all.each do |site|
+#   10.times do
+#     title = Faker::Quotes::Shakespeare.hamlet_quote
+#     description = Faker::Quotes::Chiquito.joke
+#     site_plant = SitePlant.create(plant: Plant.all.sample, site: site)
+#     Log.create(title: title, description: description)
+#   end
+# end
 
 # site2 = Site.create!(user: User.all.sample, project_name: "Root To Roses", description: "I have a small backyard with a path in the middle and on the sides a lot of green. I would really love it if the sides of the path are roses to have a romantic garden.", address: "Amsterdam", project_type: "Flower garden", goals: "Regenerate land", project_start_date: "2021-09-08")
 # file = File.open("app/assets/images/sites/20210725_072409.jpeg")
