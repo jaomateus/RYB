@@ -3,7 +3,9 @@ require "open-uri"
 class SitePlantsController < ApplicationController
   def show
     @site = Site.find(params[:site_id])
+    @site_plant = "danko"
     @site_plant = SitePlant.find(params[:id]) unless params[:id] == "empty"
+
     if params[:query].present?
       sql_query = <<~SQL
         plants.latin_name ILIKE :query
@@ -13,7 +15,9 @@ class SitePlantsController < ApplicationController
     else
       @site_plants = SitePlant.where(site_id: @site.id)
     end
-    @logs = Log.where(site_id: @site.id, site_plant_id: @site_plant.id).order(date: :desc)
+    if @site_plant != "danko"
+      @logs = Log.where(site_id: @site.id, site_plant_id: @site_plant.id).order(date: :desc)
+    end
   end
 
   def new

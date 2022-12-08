@@ -115,50 +115,51 @@
   <% end %>
 
   <%# these are the logs %>
-
-  <div class="background-logs">
-    <div class="row">
-      <% @logs.each do |log| %>
-        <div class="col-3">
-          <div style="border-right: 2px solid black; height: 60%; margin: 5px 0 5px 5px;"></div>
-          <div style="text-align: right; position: relative; left: 7px;"><%= log.created_at.strftime("%d / %m / %Y") %> <i class="fa-solid fa-circle"></i></div>
-          <div style="border-right: 2px solid black; height: 60%; margin: 5px 0 5px 5px;"></div>
-        </div>
-        <div class="log-card col-8" >
-          <div class="real-logg-card real-logg-card-1" style="position: relative; top: 18px;">
-            <div class="d-flex justify-content-between">
-              <div>
-                <h2><%= log.title %></h2>
-                <div class="arrow text-center down-arrow d-flex align-items-start" data-bs-toggle="collapse" data-bs-target="#<%= log.title %>" aria-expanded="false" aria-controls="collapseExample">
-                  <i class="fa-solid fa-chevron-down fa-5x"></i>
+  <%  if @site_plant != "danko" %>
+    <div class="background-logs">
+      <div class="row">
+        <% @logs.each do |log| %>
+          <div class="col-3">
+            <div style="border-right: 2px solid black; height: 60%; margin: 5px 0 5px 5px;"></div>
+            <div style="text-align: right; position: relative; left: 7px;"><%= log.created_at.strftime("%d / %m / %Y") %> <i class="fa-solid fa-circle"></i></div>
+            <div style="border-right: 2px solid black; height: 60%; margin: 5px 0 5px 5px;"></div>
+          </div>
+          <div class="log-card col-8" >
+            <div class="real-logg-card real-logg-card-1" style="position: relative; top: 18px;">
+              <div class="d-flex justify-content-between">
+                <div>
+                  <h2><%= log.title %></h2>
+                  <div class="arrow text-center down-arrow d-flex align-items-start" data-bs-toggle="collapse" data-bs-target="#<%= log.title %>" aria-expanded="false" aria-controls="collapseExample">
+                    <i class="fa-solid fa-chevron-down fa-5x"></i>
+                  </div>
+                </div>
+                <div class="log-crud-btns">
+                  <%= link_to "#" do %>
+                    <i class="fa-solid fa-pen"></i>
+                  <% end %>
+                  <%= link_to site_log_path(@site, log), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                    <i class="fa-solid fa-trash"></i>
+                  <% end %>
                 </div>
               </div>
-              <div class="log-crud-btns">
-                <%= link_to "#" do %>
-                  <i class="fa-solid fa-pen"></i>
-                <% end %>
-                <%= link_to site_log_path(@site, log), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-                  <i class="fa-solid fa-trash"></i>
-                <% end %>
-              </div>
-            </div>
-            <div class="collapse" id="<%= log.title %>">
-              <div class="card card-body">
-                <% if log.photos.attached? %>
-                  <% log.photos.each do |photo| %>
-                    <%= cl_image_tag photo.key, height: 150, width: 200, crop: :fill %>
-                  <% end %>
-                <% end  %>
-                <%= log.description %>
+              <div class="collapse" id="<%= log.title %>">
+                <div class="card card-body">
+                  <% if log.photos.attached? %>
+                    <% log.photos.each do |photo| %>
+                      <%= cl_image_tag photo.key, height: 150, width: 200, crop: :fill %>
+                    <% end %>
+                  <% end  %>
+                  <%= log.description %>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
+      <div>
+      </div>
     </div>
-    <div>
-    </div>
-  </div>
+  <% end %>
 </div>
 
 </div>
