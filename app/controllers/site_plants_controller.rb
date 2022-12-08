@@ -27,6 +27,11 @@ class SitePlantsController < ApplicationController
     @plant = Plant.find(params[:plant_id])
     @site_plant.plant = @plant
     @site_plant.site = @site
+
+    # get plant initials
+    # initials = @plant.latin_name.split
+    # initials = initials[0][0]+initials[1][0]
+
     @site_plant.save
 
     log = Log.new(date: Date.new, description: "Planted", title: @site_plant.plant.latin_name)
@@ -54,6 +59,13 @@ class SitePlantsController < ApplicationController
     else
       @site_plants
     end
+  end
+
+  def destroy
+    @site_plant = SitePlant.find(params[:id])
+    @site_plant.destroy
+
+    redirect_to sites_site_plants_path
   end
 
   private

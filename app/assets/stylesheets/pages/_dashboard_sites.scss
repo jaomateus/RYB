@@ -25,9 +25,11 @@ html {
 
     .card {
       background-color: $dark-grey;
-      border-radius: 25px;
-      padding: 20px;
+      border-radius: 15px;
+      padding: 15px;
+      padding: 20px 20px 40px 20px;
       margin: 15px;
+      margin-bottom: 70px;
     }
   }
 
@@ -38,10 +40,14 @@ html {
 
     .cont  {
       background-color: $green-dark;
-      height: 170px;
+      height: 100px;
       margin: 15px;
-      border-radius: 25px;
+      border-radius: 15px;
       padding: 20px;
+    }
+
+    .community-projs {
+      height: 330px !important;
     }
   }
 }
@@ -79,7 +85,7 @@ html {
   flex-direction: column;
   // width: 100%;
   justify-content: space-between;
-  gap: 25px;
+  gap: 15px;
 
   .site-card{
     padding: 8px;
@@ -130,12 +136,24 @@ html {
       }
     }
 
-      #site-btns {
-        i {
-          font-size: 20px;
-          color: green
+      // #site-btns {
+      //   i {
+      //     font-size: 20px;
+      //     color: green
+      //   }
+      // }
+
+      .site-crud-btns i {
+        font-size: 17px;
+        margin-right: 14px;
+        margin-top: 8px;
+        transition: all 0.5s ease;
+
+        &:hover{
+          // box-shadow: 4px 4px rgba(0,0,0,0.1);
+          color: $green-medium;
         }
-      }
+    }
 
       .site-img {
         overflow: hidden;

@@ -19,5 +19,8 @@ application.register("modal", ModalController)
 import TogglePlantsController from "./toggle_plants_controller"
 application.register("toggle-plants", TogglePlantsController)
 
+import TypedJsController from "./typed_js_controller"
+application.register("typed-js", TypedJsController)
+
 import WeatherController from "./weather_controller"
 application.register("weather", WeatherController)
