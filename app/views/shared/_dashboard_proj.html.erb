@@ -6,23 +6,15 @@
       <div class="d-flex justify-content-between card-wide-top">
         <div class="card-wide-top-info">
           <h1><%= site.project_name %></h1>
-        </div>
-        <div class="card-wide-top-info d-flex">
-          <p>My <%= site.project_type %>'s goal:</p>
-          <p><%= site.goals %></p>
+          <p class="card-wide-top-info">Goal: <%= site.goals %></p>
         </div>
         <div>
           <%= render "shared/weather_forecast", site: @site %>
         </div>
-
-
-      <%# WEATHER FORECAST %>
-        <div class=""></div>
-        <%= render "shared/weather_forecast", site: @site %>
       </div>
     </div>
   <div>
-<%# <div class="d-flex pb-4">
+  <%# <div class="d-flex pb-4">
   <div class="btn-goback-newlog mx-4">
     <%= link_to "New log", new_site_log_path(site), class:"" %>
     <%#= link_to "go back", sites_path, class:"ml-3" %>
