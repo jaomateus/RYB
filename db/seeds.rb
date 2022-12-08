@@ -17,7 +17,7 @@ User.destroy_all
 Plant.destroy_all
 
 # PARSING
-plant_list = CSV.parse(File.read("db/plant_database/Plant_list_copy.csv"))
+plant_list = CSV.parse(File.read("db/plant_database/Plant_list.csv"))
 
 plant_list.each do |orig_plant|
   puts "Creating plant #{orig_plant[0]}....."
