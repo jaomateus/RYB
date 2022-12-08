@@ -10,10 +10,10 @@ require "open-uri"
 require "csv"
 require 'faker'
 
-# Log.destroy_all
-# SitePlant.destroy_all
-# Site.destroy_all
-# User.destroy_all
+Log.destroy_all
+SitePlant.destroy_all
+Site.destroy_all
+User.destroy_all
 Plant.destroy_all
 
 # PARSING
@@ -139,31 +139,31 @@ plant_list.each do |orig_plant|
   end
 end
 
-# puts "Creating user......"
-# user1 = User.create!(email: "patrizgonzalez@gmail.com",
-#                      password: "123456",
-#                      first_name: "Patriz",
-#                      last_name: "Gonzalez",
-#                      profession: "Ping Pong master",
-#                      location: "Amsterdam, The netherlands")
-# user2 = User.create!(email: "samuel.howard34@gmail.com",
-#                      password: "123456",
-#                      first_name: "Samuel",
-#                      last_name: "Howard",
-#                      profession: "Ping Pong master",
-#                      location: "Amsterdam, The netherlands")
-# user3 = User.create!(email: "dariagort@gmail.com",
-#                      password: "123456",
-#                      first_name: "Daria",
-#                      last_name: "Gort",
-#                      profession: "Architect",
-#                      location: "Buenos Aires, Argentina")
-# user4 = User.create!(email: "jaomateus@gmail.com",
-#                      password: "123456",
-#                      first_name: "João",
-#                      last_name: "Mateus",
-#                      profession: "Landscape Architect",
-#                      location: "Lourinhã, Portugal")
+puts "Creating user......"
+user1 = User.create!(email: "patrizgonzalez@gmail.com",
+                     password: "123456",
+                     first_name: "Patriz",
+                     last_name: "Gonzalez",
+                     profession: "Ping Pong master",
+                     location: "Amsterdam, The netherlands")
+user2 = User.create!(email: "samuel.howard34@gmail.com",
+                     password: "123456",
+                     first_name: "Samuel",
+                     last_name: "Howard",
+                     profession: "Ping Pong master",
+                     location: "Amsterdam, The netherlands")
+user3 = User.create!(email: "dariagort@gmail.com",
+                     password: "123456",
+                     first_name: "Daria",
+                     last_name: "Gort",
+                     profession: "Architect",
+                     location: "Buenos Aires, Argentina")
+user4 = User.create!(email: "jaomateus@gmail.com",
+                     password: "123456",
+                     first_name: "João",
+                     last_name: "Mateus",
+                     profession: "Landscape Architect",
+                     location: "Lourinhã, Portugal")
 
 
 # puts "Creating sites......"
