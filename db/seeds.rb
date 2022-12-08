@@ -14,7 +14,7 @@ Log.destroy_all
 SitePlant.destroy_all
 Site.destroy_all
 User.destroy_all
-Plant.destroy_all
+# Plant.destroy_all
 
 # PARSING
 plant_list = CSV.parse(File.read("db/plant_database/Plant_list_copy.csv"))
