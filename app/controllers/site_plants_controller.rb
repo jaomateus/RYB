@@ -61,6 +61,13 @@ class SitePlantsController < ApplicationController
     end
   end
 
+  def destroy
+    @site_plant = SitePlant.find(params[:id])
+    @site_plant.destroy
+
+    redirect_to sites_site_plants_path
+  end
+
   private
 
   def site_plant_params
