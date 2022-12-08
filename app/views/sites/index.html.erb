@@ -29,7 +29,9 @@
         <div class="cont project-info-container">
           <div class="text-header">
             <div class="div">
-              <p>Welcome&nbsp<%= current_user.first_name + " " + current_user.last_name %>&nbsp!</p>
+              <% if current_user.first_name && current_user.last_name %>
+                <p>Welcome&nbsp<%= current_user.first_name + " " + current_user.last_name %>&nbsp!</p>
+              <% end %>
             </div>
             <div>
               <%= link_to "Edit user", edit_user_registration_path, class: "btn-small" %>
