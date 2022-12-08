@@ -99,10 +99,8 @@
         </div>
       </div>
 
-      <div class="sticky-button d-flex justify-content-center btn-round">
-        <%= link_to new_site_log_path(site_id: @site.id, site_plant_id: @site_plant.id) do %>
-          <p>LOG</p>
-        <% end %>
+      <div class="sticky-button d-flex justify-content-center btn-goback-newlog">
+        <%= link_to "New log", new_site_log_path(site_id: @site.id, site_plant_id: @site_plant.id) %>
       </div>
 
     </div>
@@ -131,13 +129,9 @@
             <div class="d-flex justify-content-between">
               <div>
                 <h2><%= log.title %></h2>
-                <p>
-                  <div class="seemore">
-                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#<%= log.title %>" aria-expanded="false" aria-controls="collapseExample">
-                      See more
-                    </button>
-                  </div>
-                </p>
+                <div class="arrow text-center down-arrow d-flex align-items-start" data-bs-toggle="collapse" data-bs-target="#<%= log.title %>" aria-expanded="false" aria-controls="collapseExample">
+                  <i class="fa-solid fa-chevron-down fa-5x"></i>
+                </div>
               </div>
               <div class="log-crud-btns">
                 <%= link_to "#" do %>
