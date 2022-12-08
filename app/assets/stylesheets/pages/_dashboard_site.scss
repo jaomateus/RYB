@@ -37,6 +37,35 @@
 
     p {
       padding-left: 24px;
-      font-size: 19px;
+      font-size: 20px;
     }
+}
+
+.card-wide-top-info {
+
+    p {
+      padding-left: 24px;
+      font-size: 20px;
+      font-weight: bolder;
+    }
+
+}
+
+.no-plants {
+   height: 400px;
+
+    h1 {
+      color: $light-grey;
+      font-weight: 48px;
+    }
+
+    a {
+      text-decoration: none;
+      color: $green-medium;
+
+       &:hover {
+        color: $dark-grey;
+       }
+    }
+
 }
