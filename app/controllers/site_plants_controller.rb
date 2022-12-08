@@ -30,10 +30,10 @@ class SitePlantsController < ApplicationController
 
     @site_plant.save
 
-    log = Log.new(date: Date.new, description: "Planted", title: @site_plant.plant.latin_name)
+    log = Log.new(date: Date.new, title: "Planted: #{@site_plant.plant.latin_name} ")
     log.site = @site
     log.site_plant = @site_plant
-    
+
     if log.save
       redirect_to site_search_path(@site)
     else
