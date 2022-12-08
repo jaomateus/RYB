@@ -86,18 +86,10 @@ outline: 3px solid  $light-grey;
 }
 
 .filter-slide-container {
-  width: 330px;
+  width: 200px;
   height: 100vh;
   background-color: $dark-grey;
-  // padding-left: 16px;
-  // padding-right: 16px;
   padding-top: 40px;
-  // position: fixed;
-  // z-index: 1; /* Stay on top */
-  // top: 0; /* Stay at the top */
-  // left: 50;
-  // overflow-x: hidden;
-
 
     label {
       font-size: 14px;
@@ -184,7 +176,7 @@ outline: 3px solid  $light-grey;
   height: 100vh;
   background-color: $dark-grey;
   overflow-y: scroll;
-  // overflow-x: hidden;
+  overflow-x: hidden;
 }
 // .filter-list-slide::-webkit-scrollbar {
 //   width: 6px;
