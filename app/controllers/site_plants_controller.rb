@@ -34,7 +34,7 @@ class SitePlantsController < ApplicationController
 
     @site_plant.save
 
-    log = Log.new(date: Date.new, title: "Planted: #{@site_plant.plant.latin_name} ")
+    log = Log.new(date: Date.today, title: "Planted: #{@site_plant.plant.latin_name} ")
     log.site = @site
     log.site_plant = @site_plant
 

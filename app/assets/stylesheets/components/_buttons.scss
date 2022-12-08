@@ -182,6 +182,10 @@
   justify-content: left;
   padding-bottom: 16px;
 
+    i {
+      color: $dark-grey
+    }
+
    &:hover {
     color: $white;
    }
