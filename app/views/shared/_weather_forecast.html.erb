@@ -3,13 +3,13 @@
 <div class="row justify-content-center pb-2" data-controller="weather">
   <span class= "d-none" data-weather-target="address" data-address-value='<%= "#{@site.address}" %>'></span>
   <div class="">
-    <div class="card-body" class="weather-box-style">
+    <div class="card-body-top" class ="weather-box-style">
       <div class="pb-0">
         <h1>Weather in <span data-weather-target="city"> <%= @site.address %> </span></h1>
         <div>
           <%# <p data-weather-target="description"><!-- TODO: DESCRIPTION --></p> %>
           <div class="d-flex justify-content-between">
-            <h3 class="text-secondary-black" data-weather-target="date"><%= Date.today %></h3>
+            <h3 class="text-secondary-white" data-weather-target="date"><%= Date.today %></h3>
             <div class="d-flex">
               <img src="" alt="Weather Icon" data-weather-target="icon">
               <h2 data-weather-target="temperature"><!-- TODO: TEMPERATURE --></h2>
