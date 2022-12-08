@@ -3,19 +3,16 @@
 <div class="row justify-content-center pb-2" data-controller="weather">
   <span class= "d-none" data-weather-target="address" data-address-value='<%= "#{@site.address}" %>'></span>
   <div class="">
-    <div class="card-body-top" class ="weather-box-style">
-      <div class="pb-0">
-        <h1>Weather in <span data-weather-target="city"> <%= @site.address %> </span></h1>
+    <div class="card-body-top text-end" class ="weather-box-style">
+      <h6 class="text-secondary-white pr-5" data-weather-target="date"><%= Date.today %>&nbsp &nbsp &nbsp &nbsp &nbsp</h6>
+      <div class="pb-0 pr-5 d-flex justify-content-between align-items-center">
+        <div class="d-flex justify-content-between align-items-center pr-5 ">
+          <img src="" alt="Weather Icon" data-weather-target="icon" class="pr-2">
+              <%# <h3 data-weather-target="temperature"><!-- TODO: TEMPERATURE --></h3> %>
         <div>
+        <h6>Weather in <span data-weather-target="city"> <%= @site.address %> &nbsp &nbsp &nbsp &nbsp</span></h6>
           <%# <p data-weather-target="description"><!-- TODO: DESCRIPTION --></p> %>
-          <div class="d-flex justify-content-between">
-            <h3 class="text-secondary-white" data-weather-target="date"><%= Date.today %></h3>
-            <div class="d-flex">
-              <img src="" alt="Weather Icon" data-weather-target="icon">
-              <h2 data-weather-target="temperature"><!-- TODO: TEMPERATURE --></h2>
-            </div>
-          </div>
-        </div>
+      </div>
       </div>
     </div>
   </div>
