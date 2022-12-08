@@ -34,7 +34,7 @@
 }
 
 .btn-goback-newlog a,.btn-goback-newlog a:hover {
-  color: white !important;
+  color: $white !important;
   padding: 8px 24px;
   border-radius: 4px;
   background: #2A2A2A;
@@ -43,14 +43,15 @@
   // margin-left: 200px;
   margin-bottom: 20px;
   text-align: center;
+
 }
 
 .background-color {
-  background-color: white !important;
+  background-color: $white !important;
 }
 
 .scroll-content {
-  background-color: white
+  background-color: $white
 }
 
 .btn.btn-primary {

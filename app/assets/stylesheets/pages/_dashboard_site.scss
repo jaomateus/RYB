@@ -23,3 +23,49 @@
 .card-text {
   margin-left: 20px;
 }
+
+.card-wide-top {
+  background-color: $dark-grey;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+    h1 {
+      padding-left: 24px;
+    }
+
+    p {
+      padding-left: 24px;
+      font-size: 20px;
+    }
+}
+
+.card-wide-top-info {
+
+    p {
+      padding-left: 24px;
+      font-size: 20px;
+      font-weight: bolder;
+    }
+
+}
+
+.no-plants {
+   height: 400px;
+
+    h1 {
+      color: $light-grey;
+      font-weight: 48px;
+    }
+
+    a {
+      text-decoration: none;
+      color: $green-medium;
+
+       &:hover {
+        color: $dark-grey;
+       }
+    }
+
+}
