@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :sites do
     resources :site_plants
-    resources :logs, only: [:new, :create, :show, :index]
+    resources :logs, only: [:new, :create, :show, :index, :destroy]
     get "nursury", to: "pages#nursury"
     get "dashboard", to: "pages#dashboard"
     get "search", to: "pages#search"

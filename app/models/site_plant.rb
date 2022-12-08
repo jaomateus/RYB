@@ -2,7 +2,7 @@ class SitePlant < ApplicationRecord
   before_create :set_plant_id
 
 
-  has_many :logs
+  has_many :logs, dependent: :destroy
   belongs_to :plant
   belongs_to :site
   has_one_attached :photo
