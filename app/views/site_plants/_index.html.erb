@@ -16,13 +16,24 @@
     <div class="plant-list-slide plant-list-grid">
       <% site_plants.each do |site_plant| %>
         <%= link_to site_site_plant_path(site, site_plant) do %>
-          <div class="card-plant-list">
-            <%= cl_image_tag site_plant.plant.photo.key, height: 300, crop: :fill %>
-            <%# <%= image_tag("sites/IMG_0376.jpg", :alt => "rss feed") %>
-            <div class="card-plant-list-infos">
-              <h2><%= site_plant.plant.latin_name %></h2>
-              <p><%= site_plant.plant.common_name %></p>
-              <p><%= site_plant.created_at %></p>
+          <div class="card-plant-list ">
+            <div class="d-flex align-items-center">
+              <%= cl_image_tag site_plant.plant.photo.key, height: 300, crop: :fill %>
+              <%# <%= image_tag("sites/IMG_0376.jpg", :alt => "rss feed") %>
+              <div class="card-plant-list-infos">
+                <h2><%= site_plant.plant.latin_name %></h2>
+                <p><%= site_plant.plant.common_name %></p>
+                <p><%= site_plant.created_at %></p>
+              </div>
+            </div>
+            <%# edit and delete buttons that appear when hovering %>
+            <div class="mr-3">
+              <%= link_to "#" do %>
+                <i class="fa-solid fa-pen"></i>
+              <% end %>
+              <%= link_to "#" ,data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                <i class="fa-solid fa-trash"></i>
+              <% end %>
             </div>
           </div>
         <% end %>

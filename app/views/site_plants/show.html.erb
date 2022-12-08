@@ -5,8 +5,6 @@
 
 
   <%# this is the information to display in the site %>
-
-
   <% if @site_plant %>
     <div class="info-show">
       <h2><%= @site_plant.plant.latin_name %></h2>
@@ -14,18 +12,42 @@
 
       <div><%= @site_plant.plant.image_url %></div>
 
+
+  <%# all the buttons chip with the info of the plants come first. %>
       <button class="btn btn-chip" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
-          About
+        About
       </button>
+
+      <button class="btn btn-chip" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
+        Details
+      </button>
+
+      <button class="btn btn-chip" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
+        Plant's need
+      </button>
+
+      <button class="btn btn-chip" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample">
+        Medicinal uses
+      </button>
+
+      <button class="btn btn-chip" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample5" aria-expanded="false" aria-controls="collapseExample">
+        Edible uses
+      </button>
+
+      <button class="btn btn-chip" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample6" aria-expanded="false" aria-controls="collapseExample">
+        Cultivation Details
+      </button>
+
+      <button class="btn btn-chip" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample7" aria-expanded="false" aria-controls="collapseExample">
+        Propagation Details
+      </button>
+
       <div class="collapse" id="collapseExample1">
         <div class="card card-body">
           <p><%=  @site_plant.plant.summary %></p>
         </div>
       </div>
 
-      <button class="btn btn-chip" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
-          Details
-      </button>
       <div class="collapse" id="collapseExample2">
         <div class="card card-body">
           <p>Type: <%=  @site_plant.plant.type %></p>
@@ -38,9 +60,6 @@
         </div>
       </div>
 
-      <button class="btn btn-chip" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
-          Plant's need
-      </button>
       <div class="collapse" id="collapseExample3">
         <div class="card card-body">
           <div class="info-char"><%= "This plant can fix nitrogen" if @site_plant.plant.n_fixer %></div>
@@ -56,37 +75,24 @@
         </div>
       </div>
 
-      <button class="btn btn-chip" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample">
-          Medicinal uses
-      </button>
       <div class="collapse" id="collapseExample4">
         <div class="card card-body">
           <div><%= @site_plant.plant.medicinal_uses if @site_plant.plant.medicinal_rating %></div>
         </div>
       </div>
 
-      <button class="btn btn-chip" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample5" aria-expanded="false" aria-controls="collapseExample">
-          Edible uses
-      </button>
       <div class="collapse" id="collapseExample5">
         <div class="card card-body">
            <div><%= @site_plant.plant.edible_uses if @site_plant.plant.edible_uses %></div>
         </div>
       </div>
 
-
-      <button class="btn btn-chip" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample6" aria-expanded="false" aria-controls="collapseExample">
-          Cultivation Details
-      </button>
       <div class="collapse" id="collapseExample6">
         <div class="card card-body">
            <div><p><%= @site_plant.plant.cultivation_details %></p></div>
         </div>
       </div>
 
-      <button class="btn btn-chip" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample7" aria-expanded="false" aria-controls="collapseExample">
-        Propagation Details
-      </button>
       <div class="collapse" id="collapseExample7">
         <div class="card card-body">
           <p><%= @site_plant.plant.propagation_details %></p>
