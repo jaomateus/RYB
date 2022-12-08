@@ -18,12 +18,13 @@
         <%= link_to site_site_plant_path(site, site_plant) do %>
           <div class="card-plant-list">
             <%= cl_image_tag site_plant.plant.photo.key, height: 300, crop: :fill %>
-            <%# <%= image_tag("sites/IMG_0376.jpg", :alt => "rss feed") %>
             <div class="card-plant-list-infos">
               <h2><%= site_plant.plant.latin_name %></h2>
               <p><%= site_plant.plant.common_name %></p>
-              <p><%= site_plant.created_at %></p>
+              <p>Planted on:&nbsp&nbsp<%= site_plant.created_at.strftime("%-d/%-m/%y") %></p>
             </div>
+            <%# LINK BUTTONS %>
+            
           </div>
         <% end %>
       <% end %>

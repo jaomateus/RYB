@@ -24,7 +24,6 @@ html {
 
 .backgr-home {
   background-color: $black;
-
 }
 
 .full-scr {
@@ -32,13 +31,16 @@ html {
   height: 100vh;
 }
 
-
 .rewild-anim {
   color: $white;
   font-size: larger;
 
   .arrow {
-    margin-top: 90px;
+    margin-top: 120px;
+
+    a {
+      color: $green-dark !important;
+    }
   }
 }
 
