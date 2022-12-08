@@ -29,6 +29,7 @@ class SitesController < ApplicationController
 
   def show
     @site = Site.find(params[:id])
+    @logs = Log.where(site_id: @site.id).order(date: :desc)
   end
 
   def edit
