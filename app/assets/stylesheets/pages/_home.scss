@@ -24,7 +24,17 @@ html {
 
 .backgr-home {
   background-color: $black;
+
 }
+
+
+.vertical-center {
+  margin-bottom: 60px;
+  .btn-login {
+  }
+}
+
+
 
 .full-scr {
   width: 100vw;
@@ -108,6 +118,3 @@ html {
 .dark-background {
   background-color: $black;
 }
-
-
-

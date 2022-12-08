@@ -21,7 +21,7 @@
               <%= cl_image_tag site_plant.plant.photo.key, height: 300, crop: :fill %>
               <%# <%= image_tag("sites/IMG_0376.jpg", :alt => "rss feed") %>
               <div class="card-plant-list-infos">
-                <h2><%= site_plant.plant.latin_name %>&nbsp&nbsp&nbsp<%= site_plant.identifier %></h2>
+                <h2><%= site_plant.plant.latin_name %>&nbsp&nbsp&nbsp<%= site_plant.plant_tag %>.00<%= site_plant.identifier %></h2>
                 <p><%= site_plant.plant.common_name %></p>
                 <p>Planted on:&nbsp&nbsp<%= site_plant.created_at.strftime("%-d/%-m/%y") %></p>
               </div>

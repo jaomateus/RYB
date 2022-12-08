@@ -3,11 +3,10 @@
   <%= render "site_plants/index", site:@site, site_plants: @site_plants %>
   <div class="scroll-content background-white">
 
-
   <%# this is the information to display in the site %>
   <% if @site_plant %>
     <div class="info-show">
-      <h2><%= @site_plant.plant.latin_name %></h2>
+      <h2><%= @site_plant.plant.latin_name %><span class = "weak">&nbsp&nbsp&nbsp<%= @site_plant.plant_tag %>.00<%= @site_plant.identifier %></span></h2>
       <h3><%= @site_plant.plant.common_name %></h3>
 
       <div><%= @site_plant.plant.image_url %></div>
@@ -122,7 +121,7 @@
         <% @logs.each do |log| %>
           <div class="col-3">
             <div style="border-right: 2px solid black; height: 60%; margin: 5px 0 5px 5px;"></div>
-            <div style="text-align: right; position: relative; left: 7px;"><%= log.date.strftime("%d / %m / %Y") %> <i class="fa-solid fa-circle"></i></div>
+            <div style="text-align: right; position: relative; left: 7px;"><%= log.date.strftime("%d / %m / %Y") %>&nbsp&nbsp&nbsp&nbsp<i class="fa-solid fa-circle"></i></div>
             <div style="border-right: 2px solid black; height: 60%; margin: 5px 0 5px 5px;"></div>
           </div>
           <div class="log-card col-8" >

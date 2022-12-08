@@ -32,10 +32,28 @@
   }
 }
 
+.btn-medium {
+  color: white;
+  padding: 8px 18px;
+  border-radius: 0.8rem;
+  background: $green-dark;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  margin: auto;
+  margin-bottom: 16px;
+  text-align: center;
+  border:  0.5px solid white;
+  font-size: 13px;
+  &:hover{
+    color: $dark-grey;
+  }
+}
+
 .button-filter {
   display: flex;
   justify-content: center;
-  margin-top: 15px;
+  margin-bottom: 100px;
+  margin-bottom: 30px;
 }
 
 .btn-map {

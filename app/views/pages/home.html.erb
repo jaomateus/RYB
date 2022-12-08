@@ -1,41 +1,8 @@
-    <%# CENTRAL CONTAINER %>
-    <%# REWILD ANIMATION %>
-    <section class="backgr-home full-scr d-flex justify-content-center align-items-center">
-      <div>
-        <div class="rewild-anim">
-          <%# <h1>REWILD YOUR BACKYARD</h1> %>
-          <div class="ryb-logo">
-            <%= show_svg('logo/Ryb_400.svg') %>
-          </div>
-          <div>
-          <%# <h1><span data-controller="typed-js"></span></h1> %>
-          </div>
-        </div>
-        <div class="arrow w-100 text-center">
-          <%= link_to "#scroll-home" do%>
-            <i class="fa-solid fa-chevron-down fa-5x"></i>
-          <% end %>
-        </div>
-      </div>
-      </section >
-      <section class="backgr-home full-scr d-flex justify-content-center align-items-center" id="scroll-home">
-        <div class="start-here-bxs">
-          <div class= "start-here">
-            <h1>STEP 1</h1>
-          </div>
-          <div class= "start-here">
-            <h1>STEP 2</h1>
-          </div>
-          <div class= "start-here">
-            <%= link_to sites_path do%>
-              <h1>STEP 3</h1>
-            <% end %>
-          </div>
-        </div>
-      </section>
-
-
-    <%# FOOTTER %>
-<%# <div class="button-side-bar sticky-bottom">
-  <%= link_to "See my sites", sites_path(@user),:class=>"btn btn-ghost light" %>
-<%# </div> %>
+<div class="vertical-center">
+  <div>
+    <%= show_svg('logo/Ryb_400.svg') %>
+  </div>
+  <div btn-login>
+    <%= link_to "Login / Signup", sites_path , class: "btn-medium" %>
+  </div>
+</div>
