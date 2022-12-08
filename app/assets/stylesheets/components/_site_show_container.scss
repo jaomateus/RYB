@@ -3,13 +3,20 @@
   padding: 20px;
   height: 160px;
   border-radius: 15px;
-  background-color: #9AB89A;
+  background-color: $dark-grey;
+  color: $white;
 }
 
 .card-body {
   background-color: #9AB89A;
   border-radius: 25;
 }
+
+.card-body-top {
+  // background-color: $dark-grey;
+  border-radius: 25;
+}
+
 
 .text-secondary-black {
   color: black;

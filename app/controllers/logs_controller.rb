@@ -1,4 +1,4 @@
-pclass LogsController < ApplicationController
+class LogsController < ApplicationController
   def new
     @log = Log.new
     @site = Site.find(params[:site_id])

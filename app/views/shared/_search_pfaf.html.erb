@@ -23,7 +23,7 @@
           <div class="flip-card-back">
             <p><%= plant.physical_characteristics %></p>
             <div>
-              <%= link_to "Plant it!", site_site_plants_path(@site, plant_id: plant.id), class: "btn-flat-card medium", data: { turbo_method: :post, turbo_confirm: "Add this plant to yout site?" } %>
+              <%= link_to "Plant it!", site_site_plants_path(@site, plant_id: plant.id), class: "btn-flat-card medium", data: { turbo_method: :post, turbo_confirm: "Add this plant to your site?" } %>
             </div>
           </div>
         </div>
