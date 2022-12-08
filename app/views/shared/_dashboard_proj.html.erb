@@ -34,7 +34,8 @@
 <div class="container" style="">
   <% if site.site_plants != [] %>
     <div class="row">
-      <% site.logs.reverse.each do |log| %>
+      <% @logs = site.logs.order(date: :desc) %>
+      <% @logs.each do |log| %>
         <div class="col-3">
           <div style="border-right: 2px solid black; height: 60%; margin: 5px 0 5px 5px;"></div>
           <div style="text-align: right; position: relative; left: 7px;"><%= log.date.strftime("%d / %m / %Y") %> <i class="fa-solid fa-circle"></i></div>
@@ -53,7 +54,7 @@
               </div>
               <p>
                 <div class="arrow text-center down-arrow d-flex align-items-start" data-bs-toggle="collapse" data-bs-target="#<%= log.title %>" aria-expanded="false" aria-controls="collapseExample">
-                  <i class="fa-solid fa-chevron-down fa-5x"></i>
+                  <i class="fa-solid fa-chevron-down fa-8x"></i>
                 </div>
                 <div class="collapse" id="<%= log.title %>">
                   <div class="card card-body">

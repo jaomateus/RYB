@@ -130,11 +130,8 @@
               <div class="d-flex justify-content-between">
                 <div>
                   <h2><%= log.title %></h2>
-                  <div class="arrow text-center down-arrow d-flex align-items-start" data-bs-toggle="collapse" data-bs-target="#<%= log.title %>" aria-expanded="false" aria-controls="collapseExample">
-                    <i class="fa-solid fa-chevron-down fa-5x"></i>
-                  </div>
                 </div>
-                <div class="log-crud-btns">
+                <div class="log-crud-btns pb-2">
                   <%= link_to "#" do %>
                     <i class="fa-solid fa-pen"></i>
                   <% end %>
@@ -143,14 +140,14 @@
                   <% end %>
                 </div>
               </div>
-              <div class="collapse" id="<%= log.title %>">
-                <div class="card card-body">
+              <div id="<%= log.title %>">
+                <div class="card card-body image-background">
                   <% if log.photos.attached? %>
                     <% log.photos.each do |photo| %>
                       <%= cl_image_tag photo.key, height: 150, width: 200, crop: :fill %>
                     <% end %>
                   <% end  %>
-                  <%= log.description %>
+                  <p><%= log.description %></p>
                 </div>
               </div>
             </div>

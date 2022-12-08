@@ -1,3 +1,17 @@
 .log-entry {
   margin-top: 40px;
 }
+
+.image-background {
+  background-color: #9AB89A !important;
+  border: 0 !important;
+  p {
+    padding-top: 12px;
+    color: $green-dark;
+    font-weight: 500;
+  }
+
+  img {
+    border-radius: 10px;
+  }
+}
