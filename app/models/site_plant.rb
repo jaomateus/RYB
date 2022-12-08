@@ -6,8 +6,12 @@ class SitePlant < ApplicationRecord
   has_one_attached :photo
 
   def set_plant_id
-    if SitePlant.last.identifier
-      plant_id = SitePlant.last.identifier + 1
+    if SitePlant.count > 0
+      if SitePlant.last.identifier
+        plant_id = SitePlant.last.identifier + 1
+      else
+        plant_id = 1
+      end
     else
       plant_id = 1
     end

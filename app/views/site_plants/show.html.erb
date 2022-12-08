@@ -4,7 +4,7 @@
   <div class="scroll-content background-white">
 
   <%# this is the information to display in the site %>
-  <% if @site_plant %>
+  <% if @site_plant != "danko"%>
     <div class="info-show">
       <h2><%= @site_plant.plant.latin_name %><span class = "weak">&nbsp&nbsp&nbsp<%= @site_plant.plant_tag %>.00<%= @site_plant.identifier %></span></h2>
       <h3><%= @site_plant.plant.common_name %></h3>
