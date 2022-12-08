@@ -1,22 +1,20 @@
-<div class="d-flex">
+<div class="container_simple_form">
+  <% if params[:site_plant_id]   %>
+    <h2><strong>New log for:&nbsp&nbsp&nbsp</strong> <%= SitePlant.find(params[:site_plant_id]).plant.latin_name %></h2>
+  <% else %>
+      <h2><strong>New log for:&nbsp&nbsp&nbsp</strong> <%= @site.project_name %></h2>
+  <% end %>
 
-  <div class="container_simple_form dark-blackground">
-    <% if params[:site_plant_id]   %>
-      <h2><strong>New log for:&nbsp&nbsp&nbsp</strong> <%= SitePlant.find(params[:site_plant_id]).plant.latin_name %></h2>
-    <% else %>
-       <h2><strong>New log for:&nbsp&nbsp&nbsp</strong> <%= @site.project_name %></h2>
-    <% end %>
-
-    <%= simple_form_for [@site, @log] do |f| %>
-      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-      <%= f.input :date %>
-      <%= f.input :title %>
-      <%= f.input :description %>
-      <%= f.input :site_plant_id, as: :hidden, input_html: { value: params[:site_plant_id] } %>
-      <%= f.submit %>
-    <% end %>
-  </div>
+  <%= simple_form_for [@site, @log] do |f| %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.input :date %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :site_plant_id, as: :hidden, input_html: { value: params[:site_plant_id] } %>
+    <%= f.submit %>
+  <% end %>
 </div>
+
 
 <%# if we want a dropdown to select plants %>
 <%# <%= f.input :site_plant_id, collection: @site.site_plants.map { |sp| sp.plant.common_name} , selected Site_plant.find(params[:site_plant_id]) %>
