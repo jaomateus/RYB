@@ -2,7 +2,8 @@ class SitesController < ApplicationController
 
   def index
     @sites = current_user.sites
-    @markers = @sites.geocoded.map do |site|
+    @all_sites = Site.all
+    @markers = @all_sites.geocoded.map do |site|
       {
         lat: site.latitude,
         lng: site.longitude,
