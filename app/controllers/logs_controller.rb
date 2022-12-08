@@ -23,7 +23,7 @@ class LogsController < ApplicationController
   end
 
   def index
-    @logs = Log.all
+    @logs = Log.where(site_id: @site.id).order(date: :desc)
     @site = Site.find(params[:site_id])
   end
 
