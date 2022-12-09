@@ -61,16 +61,16 @@
 
       <div class="collapse" id="collapseExample3">
         <div class="card card-body mt-3">
-          <div class="info-char"><%= "This plant can fix nitrogen" if @site_plant.plant.n_fixer %></div>
-          <div class="info-char"><%= "Needs good drainage" if @site_plant.plant.well_drained %></div>
-          <div class="info-char"><%= "I need moist soil. Not too wet" if @site_plant.plant.moist_soil %></div>
-          <div class="info-char"><%= "I need wet soil!" if @site_plant.plant.wet_soil %></div>
-          <div class="info-char"><%= "Water it often!" if @site_plant.plant.water_plant %></div>
-          <div class="info-char"><%= "Full sun" if @site_plant.plant.full_sun %></div>
-          <div class="info-char"><%= "Part Shade" if @site_plant.plant.part_shade %></div>
-          <div class="info-char"><%= "Full shade" if @site_plant.plant.full_shade %></div>
-          <div class="info-char"><%= "Good to bed close to the sea" if @site_plant.plant.maritime_exposure %></div>
-          <div class="info-char"><%= "Helps with atmospheric polution" if @site_plant.plant.atmospheric_polution %></div>
+          <div class="info-char"><%= "Can fix nitrogen" if @site_plant.plant.n_fixer %></div>
+          <div class="info-char"><%= "Needs well drained soil" if @site_plant.plant.well_drained %></div>
+          <div class="info-char"><%= "Tolerates moist soil" if @site_plant.plant.moist_soil %></div>
+          <div class="info-char"><%= "Tolerates wet soil" if @site_plant.plant.wet_soil %></div>
+          <div class="info-char"><%= "Water plant" if @site_plant.plant.water_plant %></div>
+          <div class="info-char"><%= "Tolerates  Full sun" if @site_plant.plant.full_sun %></div>
+          <div class="info-char"><%= "Tolerates Partial Shade" if @site_plant.plant.part_shade %></div>
+          <div class="info-char"><%= "Tolerates  Full shade" if @site_plant.plant.full_shade %></div>
+          <div class="info-char"><%= "Tolerates marithime exposure" if @site_plant.plant.maritime_exposure %></div>
+          <div class="info-char"><%= "Tolerates atmospheric polution" if @site_plant.plant.atmospheric_polution %></div>
         </div>
       </div>
 
@@ -82,13 +82,13 @@
 
       <div class="collapse" id="collapseExample5">
         <div class="card card-body mt-3">
-           <div><%= @site_plant.plant.edible_uses if @site_plant.plant.edible_uses %></div>
+          <div><%= @site_plant.plant.edible_uses if @site_plant.plant.edible_uses %></div>
         </div>
       </div>
 
       <div class="collapse" id="collapseExample6">
         <div class="card card-body mt-3">
-           <div><p><%= @site_plant.plant.cultivation_details %></p></div>
+          <div><p><%= @site_plant.plant.cultivation_details %></p></div>
         </div>
       </div>
 
@@ -158,5 +158,4 @@
     </div>
   <% end %>
 </div>
-
 </div>
