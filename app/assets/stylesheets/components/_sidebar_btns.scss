@@ -22,6 +22,7 @@
   font-size: 25px;
   text-align: center;
   align-items: center;
+  margin-top: 10px;;
   padding: 5px;
 
     i {
@@ -36,6 +37,16 @@
           color: $white
         }
     }
+}
+
+.card card-body card-photo {
+  img {
+    border-radius: 10px;
+  }
+}
+
+.card-photo {
+  border-radius: 10px;
 }
 
 .middle-buttons {

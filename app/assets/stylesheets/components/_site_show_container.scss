@@ -27,11 +27,15 @@
 .real-logg-card {
   background-color: #9AB89A;
   color: $black;
-  font-size: 16px;
-  padding: 20px;
-  margin: 22px 0 0 22px;
+  font-size: 18px;
+  padding: px;
+  margin: 15px 0 0 15px;
   border-radius: 15px;
   width: 50vw;
+
+  h3 {
+    font-size: 16px !important;
+  }
 }
 
 .btn-goback-newlog a,.btn-goback-newlog a:hover {

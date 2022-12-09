@@ -29,17 +29,19 @@
   color: white;
   display: flex;
   align-items: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
     h1 {
       padding-left: 24px;
-      margin: 0;
+      margin-bottom: 18px;
+      font-size: 28px;
     }
 
     p {
       padding-left: 24px;
       font-size: 16px;
-      margin: 0;
+      margin-bottom: 8px;
     }
 }
 
