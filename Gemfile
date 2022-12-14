@@ -84,3 +84,4 @@ end
 
 gem "dotenv-rails", groups: [:development, :test]
 gem "geocoder"
+gem 'mapbox-gl-rails'
